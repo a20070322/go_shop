@@ -1,9 +1,12 @@
 package test
 
 import (
+	"entgo.io/ent/dialect/sql"
 	"fmt"
 	"github.com/a20070322/shop-go/ent"
 	"github.com/a20070322/shop-go/ent/goodsclassify"
+	"github.com/a20070322/shop-go/ent/goodssku"
+	"github.com/a20070322/shop-go/ent/goodsspu"
 	"github.com/a20070322/shop-go/global"
 	"github.com/a20070322/shop-go/pkg/utils/response"
 	"github.com/gin-gonic/gin"
@@ -128,11 +131,18 @@ func (t Test) Test4(ctx *gin.Context) {
 	//for _,v := range list{
 	//	v.Update().SetPrice(v.Price*100).Save(ctx)
 	//}
-	str := "12345"
-	str2 := string([]rune(str)[:len(str)-2])
-	str3 :=  string([]rune(str)[len(str)-2:len(str)])
+	//str := "12345"
+	//str2 := string([]rune(str)[:len(str)-2])
+	//str3 :=  string([]rune(str)[len(str)-2:len(str)])
+	//
+	//response.Success(ctx, "ok", str2+"."+str3)
+	list,_:=global.Db.GoodsSpu.Query().Order(func(s *sql.Selector) {
+		t := sql.Table(goodssku.Table)
+		s.Join(t).On(s.C(goodsspu.FieldID),t.C(goodssku.GoodsSpuColumn))
+		s.OrderBy(sql.Desc(t.C(goodssku.FieldSalesNum)))
+	}).Limit(10).All(ctx)
 
-	response.Success(ctx, "ok", str2+"."+str3)
+	response.Success(ctx, "ok", list)
 }
 
 type ItemFormType5 struct {

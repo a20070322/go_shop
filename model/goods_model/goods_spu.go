@@ -177,6 +177,7 @@ func (m *Spu) GetId(form *SpuGetIdFormType) (*SpuItemTypeForm, error) {
 		}
 	} else {
 		repItem.ShowPrice =utils.PriceToStr(spu.Edges.GoodsSku[0].Price)
+		repItem.Sku = spu.Edges.GoodsSku[0]
 	}
 	return repItem, nil
 }
