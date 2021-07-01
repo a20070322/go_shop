@@ -29,6 +29,7 @@ func RabbitMq() {
 	}
 	queue_jobs.DelayInit()
 	queue_jobs.PriorityInit()
+	queue_jobs.OrderInit()
 	fmt.Println("RabbitMq初始化成功")
 
 }

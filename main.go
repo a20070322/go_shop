@@ -24,8 +24,6 @@ func init() {
 
 func main() {
 	// fmt.Printf("pid: %dn", os.Getpid())
-
-
 	//fmt.Println("当前版本：")
 	initialize.Router()
 }

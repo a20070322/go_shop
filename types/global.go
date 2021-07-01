@@ -9,6 +9,7 @@ type RabbitMqType struct {
 	Conn       *amqp.Connection `json:"conn"`
 	PriorityCh *amqp.Channel    `json:"priority_ch"`
 	DelayCh    *amqp.Channel    `json:"delay_ch"`
+	OrderCh    *amqp.Channel    `json:"order_ch"`
 }
 
 func (r RabbitMqType) Close() {

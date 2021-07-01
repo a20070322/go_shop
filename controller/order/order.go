@@ -31,7 +31,7 @@ func (t Order) Create(ctx *gin.Context) {
 		return
 	}
 	//异步队列处理库存及校验订单 ， 优先级最高为10
-	queue_jobs.PriorityPublish(&types.QueuePayloadType{
+	queue_jobs.OrderPublish(&types.QueuePayloadType{
 		MethodName: "OrderProcessing",
 		PayLoad:    code,
 	}, 10)
