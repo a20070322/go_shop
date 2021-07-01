@@ -6052,3 +6052,4 @@
 2021-07-01 15:01:41	INFO	middleware/GinLogger.go:17	[200]   44ms | 192.168.3.101 | GET   "/api/goods/list"
 2021-07-01 15:02:02	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | GET   "/api/goods/list"
 2021-07-01 15:02:02	INFO	middleware/GinLogger.go:17	[200]   102ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-07-01 15:08:18	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
