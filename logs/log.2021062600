@@ -1,0 +1,93 @@
+2021-06-26 13:09:20	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 13:10:56	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:10:56	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:10:56	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=58.864478ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 13:10:56	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=21.129382ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:10:56	INFO	logger/logger.go:13	[200]   169ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 13:10:56	INFO	logger/logger.go:13	公共优先级队列方法执行 [ OrderProcessing ] : 202106261310561602920001
+2021-06-26 13:10:56	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=42.264226ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:12:27	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:12:27	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:12:27	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=38.645759ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 13:12:27	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=18.263793ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:12:27	INFO	logger/logger.go:13	[200]   140ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 13:12:27	INFO	logger/logger.go:13	公共优先级队列方法执行 [ OrderProcessing ] : 202106261312273032920002
+2021-06-26 13:12:27	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=39.238075ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:14:29	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 13:14:35	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:14:35	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:14:35	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=49.514979ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 13:14:35	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=23.208909ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:14:35	INFO	logger/logger.go:13	[200]   184ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 13:14:35	INFO	logger/logger.go:13	公共优先级队列方法执行 [ OrderProcessing ] : 202106261314351803640001
+2021-06-26 13:14:35	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=267.708961ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:16:00	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 13:16:03	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:16:03	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:16:03	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=60.70041ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 13:16:03	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=39.838473ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:16:03	INFO	logger/logger.go:13	[200]   242ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 13:16:03	INFO	logger/logger.go:13	公共优先级队列方法执行 [ OrderProcessing ] : 202106261316031974130001
+2021-06-26 13:16:03	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=57.500771ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:21:40	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 13:21:51	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 13:21:54	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:21:54	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:21:54	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=161.456295ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 13:21:55	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=75.97737ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:21:55	INFO	logger/logger.go:13	[200]   1000ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 13:21:55	INFO	logger/logger.go:13	公共优先级队列方法执行 [ OrderProcessing ] : 202106261321540857650001
+2021-06-26 13:21:55	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=GoodsSku	Time=89.21881ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-26 13:21:55	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=111.441042ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 13:22:23	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:22:23	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQyMjY3NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.BbQXzpYRtRQQH-knOAMrI4ZOQvttDI4qyfKGs29U6p0
+2021-06-26 13:22:23	INFO	logger/logger.go:13	[400]   63ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 18:30:07	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 18:30:19	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 18:39:34	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 18:39:54	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 18:56:46	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-26 18:56:49	INFO	logger/logger.go:13	[401]   157ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 18:57:39	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQ4MzE1NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.bOjKmF3PqBMvhkjMKn2yqAJroeEAhWzguBbHwSlZWqE
+2021-06-26 18:57:39	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3MDQ4MzE1NDIsImlhdCI6MTYyNDYxNzgyNiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.bOjKmF3PqBMvhkjMKn2yqAJroeEAhWzguBbHwSlZWqE
+2021-06-26 18:57:39	INFO	logger/logger.go:13	[200]   54ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-26 18:58:25	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-26 18:58:25	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-26 18:58:25	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=72.45181ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 18:58:25	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=72.583527ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-26 18:58:25	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=27.237785ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 18:58:25	INFO	logger/logger.go:13	[200]   202ms | 127.0.0.1 | POST   "/api/order/create"
+2021-06-26 18:58:25	INFO	logger/logger.go:13	公共优先级队列方法执行 [ OrderProcessing ] : 202106261858257945220001
+2021-06-26 18:58:26	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=GoodsSku	Time=27.26567ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-26 18:58:26	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=GoodsSku	Time=27.386664ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-26 18:58:26	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=50.903501ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 18:59:26	INFO	logger/logger.go:13	延时队列方法执行 [ OrderTimeout ] : 202106261858257945220001
+2021-06-26 18:59:26	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=GoodsSku	Time=27.814832ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-26 18:59:26	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=GoodsSku	Time=29.858964ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-26 18:59:26	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=OrderInfo	Time=53.329806ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-26 19:00:31	INFO	logger/logger.go:13	获取access_token，有效时长7200

@@ -1,0 +1,517 @@
+2021-06-30 00:10:20	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 GET /api/test/test4 HTTP/1.1
+Host: 127.0.0.1:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Cache-Control: no-cache
+Connection: keep-alive
+Cookie: JSESSIONID=09E87BD0569018FBD97259D03358BC0C; csrfToken=mrJBlWEO3X1nqBgcW9Q2UvU1
+Postman-Token: 9cbe0c9f-432a-40fe-ba43-d91994b46313
+User-Agent: PostmanRuntime/7.1.1
+
+ <nil>} {stack 15 0 goroutine 30 [running]:
+runtime/debug.Stack(0x0, 0xc0005f0240, 0x144)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc0000bc200, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a50ba0, 0x5234170)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/wechatpay-apiv3/wechatpay-go/core.(*Client).doRequest(0x0, 0x4cb4ab0, 0xc0000bc200, 0x4b7d9bb, 0x4, 0xc0004aabc0, 0x37, 0x0, 0x4b880b9, 0x10, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/core/client.go:212 +0x5af
+github.com/wechatpay-apiv3/wechatpay-go/core.(*Client).Request(0x0, 0x4cb4ab0, 0xc0000bc200, 0x4b7d9bb, 0x4, 0x4ba7265, 0x37, 0x0, 0x0, 0x4b3e880, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/core/client.go:276 +0x4a7
+github.com/wechatpay-apiv3/wechatpay-go/services/payments/jsapi.(*JsapiApiService).Prepay(0xc000479730, 0x4cb4ab0, 0xc0000bc200, 0xc000234a50, 0xc000234a60, 0xc000234a80, 0xc000234a90, 0x0, 0xc000234aa0, 0xc000234ab0, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/services/payments/jsapi/api_jsapi.go:94 +0x1a5
+github.com/wechatpay-apiv3/wechatpay-go/services/payments/jsapi.(*JsapiApiService).PrepayWithRequestPayment(0xc0001b5730, 0x4cb4ab0, 0xc0000bc200, 0xc000234a50, 0xc000234a60, 0xc000234a80, 0xc000234a90, 0x0, 0xc000234aa0, 0xc000234ab0, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/services/payments/jsapi/api_jsapi_request_payment.go:34 +0x98
+github.com/a20070322/shop-go/pkg/wechat.Pay.JsapiPrepay(0xc00062c410, 0x4cb4ab0, 0xc0000bc200, 0xc000624860, 0xc049c0bd85, 0x2449649c0bd85)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/wechat/pay.gp.go:35 +0x338
+github.com/a20070322/shop-go/controller/test.Test.Test4(0xc0000bc200)
+	/Users/zhaozhongyang/Desktop/goShop/controller/test/test.go:115 +0xc8
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc0000bc200)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc0000bc200)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000668000, 0xc0000bc200)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000668000, 0x4cb2198, 0xc0001fc380, 0xc0000bc100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc0001fc000, 0x4cb2198, 0xc0001fc380, 0xc0000bc100)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0001b8000, 0x4cb4880, 0xc00048c200)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 00:11:29	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 GET /api/test/test4 HTTP/1.1
+Host: 127.0.0.1:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Cache-Control: no-cache
+Connection: keep-alive
+Cookie: JSESSIONID=09E87BD0569018FBD97259D03358BC0C; csrfToken=mrJBlWEO3X1nqBgcW9Q2UvU1
+Postman-Token: 8a5bc0e1-4289-4462-80c4-26e54f872da1
+User-Agent: PostmanRuntime/7.1.1
+
+ <nil>} {stack 15 0 goroutine 85 [running]:
+runtime/debug.Stack(0x0, 0xc000272480, 0x144)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc000218300, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a50bc0, 0x5234170)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/wechatpay-apiv3/wechatpay-go/core.(*Client).doRequest(0x0, 0x4cb4ab0, 0xc000218300, 0x4b7d9db, 0x4, 0xc0004ae8c0, 0x37, 0x0, 0x4b880d9, 0x10, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/core/client.go:212 +0x5af
+github.com/wechatpay-apiv3/wechatpay-go/core.(*Client).Request(0x0, 0x4cb4ab0, 0xc000218300, 0x4b7d9db, 0x4, 0x4ba7269, 0x37, 0x0, 0x0, 0x4b3e8a0, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/core/client.go:276 +0x4a7
+github.com/wechatpay-apiv3/wechatpay-go/services/payments/jsapi.(*JsapiApiService).Prepay(0xc0004a9730, 0x4cb4ab0, 0xc000218300, 0xc000235970, 0xc000235980, 0xc000235990, 0xc0002359a0, 0x0, 0xc0002359c0, 0xc0002359d0, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/services/payments/jsapi/api_jsapi.go:94 +0x1a5
+github.com/wechatpay-apiv3/wechatpay-go/services/payments/jsapi.(*JsapiApiService).PrepayWithRequestPayment(0xc0001b3730, 0x4cb4ab0, 0xc000218300, 0xc000235970, 0xc000235980, 0xc000235990, 0xc0002359a0, 0x0, 0xc0002359c0, 0xc0002359d0, ...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/wechatpay-apiv3/wechatpay-go@v0.2.1/services/payments/jsapi/api_jsapi_request_payment.go:34 +0x98
+github.com/a20070322/shop-go/pkg/wechat.Pay.JsapiPrepay(0xc00061f4a0, 0x4cb4ab0, 0xc000218300, 0xc000275860, 0xc04aa4cce4, 0x244a64aa4cce4)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/wechat/pay.gp.go:35 +0x358
+github.com/a20070322/shop-go/controller/test.Test.Test4(0xc000218300)
+	/Users/zhaozhongyang/Desktop/goShop/controller/test/test.go:115 +0xc8
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc000218300)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc000218300)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00066a1a0, 0xc000218300)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00066a1a0, 0x4cb2198, 0xc0001cd420, 0xc000218200)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc000666460, 0x4cb2198, 0xc0001cd420, 0xc000218200)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00020e780, 0x4cb4880, 0xc000093e80)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 18:50:22	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 POST /api/test/test5 HTTP/1.1
+Host: 127.0.0.1:8088
+Connection: close
+Accept: application/json, text/plain, */*
+Connection: close
+Content-Length: 32810
+Content-Type: application/json;charset=utf-8
+User-Agent: axios/0.21.1
+
+ <nil>} {stack 15 0 goroutine 69 [running]:
+runtime/debug.Stack(0x0, 0xc0004f8140, 0xe7)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc0006fa100, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a518a0, 0x5237190)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/ent.(*GoodsClassify).Update(...)
+	/Users/zhaozhongyang/Desktop/goShop/ent/goodsclassify.go:177
+github.com/a20070322/shop-go/controller/test.Test.Test5(0xc0006fa100)
+	/Users/zhaozhongyang/Desktop/goShop/controller/test/test.go:142 +0x308
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc0006fa100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc0006fa100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00027a1a0, 0xc0006fa100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00027a1a0, 0x4cb3858, 0xc000302000, 0xc0006fa000)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc000276540, 0x4cb3858, 0xc000302000, 0xc0006fa000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0006f4000, 0x4cb5f40, 0xc00022e200)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 20:20:57	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  sql/scan: ScanSlice(non-pointer []struct { Stock int "json:\"stock\""; Sales int "json:\"sales\""; Sum int "json:\"sum\""; Count int "json:\"count\"" })} {request 15 0 GET /api/goods/get?id=1 HTTP/1.1
+Host: 127.0.0.1:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Connection: keep-alive
+Cookie: Hm_lvt_3821e8b18dc970dacd3d58ea83ca6c0b=1608169637
+Sec-Ch-Ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: none
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 31 [running]:
+runtime/debug.Stack(0x0, 0xc000478a00, 0x216)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc0000a0200, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a38e80, 0xc000119800)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/ent.(*GoodsSkuGroupBy).ScanX(...)
+	/Users/zhaozhongyang/Desktop/goShop/ent/goodssku_query.go:634
+github.com/a20070322/shop-go/model/goods_model.(*Spu).GetId(0xc000287870, 0xc0001ae0a0, 0xc0001ae0a0, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/model/goods_model/goods_spu.go:152 +0x1533
+github.com/a20070322/shop-go/controller/goods.Spu.GetID(0xc0000a0200)
+	/Users/zhaozhongyang/Desktop/goShop/controller/goods/spu.go:33 +0xca
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc0000a0200)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc0000a0200)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000126000, 0xc0000a0200)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000126000, 0x4cb4458, 0xc0004fa000, 0xc0000a0100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc0001a4460, 0x4cb4458, 0xc0004fa000, 0xc0000a0100)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00047c780, 0x4cb6b40, 0xc00015a000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 20:25:37	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  ent: GoodsSkuGroupBy.Ints is not achievable when grouping more than 1 field} {request 15 0 GET /api/goods/get?id=1 HTTP/1.1
+Host: 127.0.0.1:8088
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Connection: keep-alive
+Cookie: Hm_lvt_3821e8b18dc970dacd3d58ea83ca6c0b=1608169637
+Sec-Ch-Ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: none
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 46 [running]:
+runtime/debug.Stack(0x0, 0xc0004e8a00, 0x216)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc0005f8200, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a391e0, 0xc0003e8810)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/ent.(*GoodsSkuGroupBy).IntsX(...)
+	/Users/zhaozhongyang/Desktop/goShop/ent/goodssku_query.go:704
+github.com/a20070322/shop-go/model/goods_model.(*Spu).GetId(0xc000227870, 0xc00054a250, 0xc00054a250, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/model/goods_model/goods_spu.go:144 +0x1373
+github.com/a20070322/shop-go/controller/goods.Spu.GetID(0xc0005f8200)
+	/Users/zhaozhongyang/Desktop/goShop/controller/goods/spu.go:33 +0xca
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc0005f8200)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc0005f8200)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00042c000, 0xc0005f8200)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00042c000, 0x4cb45b8, 0xc0004c4d20, 0xc0005f8100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc000510540, 0x4cb45b8, 0xc0004c4d20, 0xc0005f8100)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000268280, 0x4cb6ca0, 0xc0002ac2c0)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 21:21:37	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 POST /api/order/create HTTP/1.1
+Host: 192.168.3.108:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjUxNDUwNzk1NjcsImlhdCI6MTYyNTA1ODY3OSwidXNlcl9pZCI6NiwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.ERrRrvlgfFQPTUelJOco-f1KE86vaCuCPeptjO1eIzM
+Connection: keep-alive
+Content-Length: 63
+Content-Type: application/json
+Origin: chrome-extension://ebiododddhjccikhminneafpoppneknc
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 45 [running]:
+runtime/debug.Stack(0x0, 0xc000195500, 0x291)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc00013c100, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a51c00, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx.func1(0xc000492300)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:17 +0x77
+panic(0x4a51c00, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder.func1(0xc000492300, 0x4cb6410, 0xc00013c100)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:50 +0x264
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx(0x4cb6410, 0xc00013c100, 0xc0004ae000, 0xc0003ad748, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:20 +0xc2
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder(0xc000482570, 0x4cb6410, 0xc00013c100, 0xc000550510, 0x0, 0xc00042c480, 0xc0000b1820, 0x4944d09)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:41 +0x1e5
+github.com/a20070322/shop-go/controller/order.Order.Create(0xc00013c100)
+	/Users/zhaozhongyang/Desktop/goShop/controller/order/order.go:28 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.JwtAuth.func1(0xc00013c100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/jwt_auth.go:53 +0x277
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc00013c100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc00013c100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000b49c0, 0xc00013c100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000b49c0, 0x4cb3af8, 0xc00016e0e0, 0xc00013c000)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc000209260, 0x4cb3af8, 0xc00016e0e0, 0xc00013c000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0002a6000, 0x4cb61e0, 0xc000620000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 21:24:17	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 POST /api/order/create HTTP/1.1
+Host: 192.168.3.108:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjUxNDUwNzk1NjcsImlhdCI6MTYyNTA1ODY3OSwidXNlcl9pZCI6NiwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.ERrRrvlgfFQPTUelJOco-f1KE86vaCuCPeptjO1eIzM
+Connection: keep-alive
+Content-Length: 63
+Content-Type: application/json
+Origin: chrome-extension://ebiododddhjccikhminneafpoppneknc
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 68 [running]:
+runtime/debug.Stack(0x0, 0xc00056b500, 0x291)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc0006fe100, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a51ba0, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx.func1(0xc0000a2100)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:17 +0x77
+panic(0x4a51ba0, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder.func1(0xc0000a2100, 0x4cb63f0, 0xc0006fe100)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:52 +0x2d4
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx(0x4cb63f0, 0xc0006fe100, 0xc0000aa3c0, 0xc00071f748, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:20 +0xc2
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder(0xc0000feb40, 0x4cb63f0, 0xc0006fe100, 0xc0005a40c0, 0x0, 0xc0000fc000, 0xc000293820, 0x4944ca9)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:42 +0x1e5
+github.com/a20070322/shop-go/controller/order.Order.Create(0xc0006fe100)
+	/Users/zhaozhongyang/Desktop/goShop/controller/order/order.go:28 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.JwtAuth.func1(0xc0006fe100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/jwt_auth.go:53 +0x277
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc0006fe100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc0006fe100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0001264e0, 0xc0006fe100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0001264e0, 0x4cb3ad8, 0xc000288000, 0xc0006fe000)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc000194a80, 0x4cb3ad8, 0xc000288000, 0xc0006fe000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0006f8000, 0x4cb61c0, 0xc00023c240)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 21:24:34	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 POST /api/order/create HTTP/1.1
+Host: 192.168.3.108:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjUxNDUwNzk1NjcsImlhdCI6MTYyNTA1ODY3OSwidXNlcl9pZCI6NiwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.ERrRrvlgfFQPTUelJOco-f1KE86vaCuCPeptjO1eIzM
+Connection: keep-alive
+Content-Length: 63
+Content-Type: application/json
+Origin: chrome-extension://ebiododddhjccikhminneafpoppneknc
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 32 [running]:
+runtime/debug.Stack(0x0, 0xc0000dd500, 0x291)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc000492500, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a51bc0, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx.func1(0xc000492100)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:17 +0x77
+panic(0x4a51bc0, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder.func1(0xc000492100, 0x4cb6410, 0xc000492500)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:52 +0x2c9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx(0x4cb6410, 0xc000492500, 0xc0000a8460, 0xc0003d7748, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:20 +0xc2
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder(0xc0000feb70, 0x4cb6410, 0xc000492500, 0xc000284090, 0x0, 0xc0000fc000, 0xc0005c7820, 0x4944cc9)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:42 +0x1e5
+github.com/a20070322/shop-go/controller/order.Order.Create(0xc000492500)
+	/Users/zhaozhongyang/Desktop/goShop/controller/order/order.go:28 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.JwtAuth.func1(0xc000492500)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/jwt_auth.go:53 +0x277
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc000492500)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc000492500)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0001264e0, 0xc000492500)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0001264e0, 0x4cb3af8, 0xc00046a000, 0xc000492400)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc0001b95e0, 0x4cb3af8, 0xc00046a000, 0xc000492400)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000454000, 0x4cb61e0, 0xc0006700c0)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 21:26:57	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 POST /api/order/create HTTP/1.1
+Host: 192.168.3.108:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjUxNDUwNzk1NjcsImlhdCI6MTYyNTA1ODY3OSwidXNlcl9pZCI6NiwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.ERrRrvlgfFQPTUelJOco-f1KE86vaCuCPeptjO1eIzM
+Connection: keep-alive
+Content-Length: 63
+Content-Type: application/json
+Origin: chrome-extension://ebiododddhjccikhminneafpoppneknc
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 43 [running]:
+runtime/debug.Stack(0x0, 0xc00026f500, 0x291)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc00023e300, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a51b60, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx.func1(0xc00023e400)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:17 +0x77
+panic(0x4a51b60, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder.func1(0xc00023e400, 0x4cb6390, 0xc00023e300)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:52 +0x2c9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx(0x4cb6390, 0xc00023e300, 0xc0000bc000, 0xc0005c7748, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:20 +0xc2
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder(0xc0000a85d0, 0x4cb6390, 0xc00023e300, 0xc00064e990, 0x0, 0xc00016c900, 0xc0005bb820, 0x4944c69)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:42 +0x1e5
+github.com/a20070322/shop-go/controller/order.Order.Create(0xc00023e300)
+	/Users/zhaozhongyang/Desktop/goShop/controller/order/order.go:28 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.JwtAuth.func1(0xc00023e300)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/jwt_auth.go:53 +0x277
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc00023e300)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc00023e300)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc00018e000, 0xc00023e300)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc00018e000, 0x4cb3ab8, 0xc0002ea2a0, 0xc00023e000)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc0003c41c0, 0x4cb3ab8, 0xc0002ea2a0, 0xc00023e000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000664000, 0x4cb6160, 0xc00048a080)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}
+2021-06-30 21:28:36	ERROR	middleware/GinRecovery.go:43	[Recovery from panic]{error 26 0  runtime error: invalid memory address or nil pointer dereference} {request 15 0 POST /api/order/create HTTP/1.1
+Host: 192.168.3.108:8088
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjUxNDUwNzk1NjcsImlhdCI6MTYyNTA1ODY3OSwidXNlcl9pZCI6NiwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.ERrRrvlgfFQPTUelJOco-f1KE86vaCuCPeptjO1eIzM
+Connection: keep-alive
+Content-Length: 63
+Content-Type: application/json
+Origin: chrome-extension://ebiododddhjccikhminneafpoppneknc
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+
+ <nil>} {stack 15 0 goroutine 66 [running]:
+runtime/debug.Stack(0x0, 0xc0000d5500, 0x291)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/debug/stack.go:24 +0x9f
+github.com/a20070322/shop-go/middleware.GinRecovery.func1.1(0xc0006b0100, 0x1)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:46 +0x238
+panic(0x4a51b00, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx.func1(0xc0004be000)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:17 +0x77
+panic(0x4a51b00, 0x5237150)
+	/usr/local/Cellar/go/1.16.5/libexec/src/runtime/panic.go:965 +0x1b9
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder.func1(0xc0004be000, 0x4cb6370, 0xc0006b0100)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:54 +0x2c9
+github.com/a20070322/shop-go/pkg/utils/ent_utils.WithTx(0x4cb6370, 0xc0006b0100, 0xc00044a000, 0xc0000b1748, 0x0, 0x0)
+	/Users/zhaozhongyang/Desktop/goShop/pkg/utils/ent_utils/with_tx.go:20 +0xc2
+github.com/a20070322/shop-go/model/order.OrderInfo.CreateOrder(0xc000433320, 0x4cb6370, 0xc0006b0100, 0xc00056c0c0, 0x0, 0xc000168120, 0xc0002a5820, 0x4944c09)
+	/Users/zhaozhongyang/Desktop/goShop/model/order/order_info.go:44 +0x38b
+github.com/a20070322/shop-go/controller/order.Order.Create(0xc0006b0100)
+	/Users/zhaozhongyang/Desktop/goShop/controller/order/order.go:28 +0xe5
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.JwtAuth.func1(0xc0006b0100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/jwt_auth.go:53 +0x277
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinLogger.func1(0xc0006b0100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinLogger.go:15 +0x95
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/a20070322/shop-go/middleware.GinRecovery.func1(0xc0006b0100)
+	/Users/zhaozhongyang/Desktop/goShop/middleware/GinRecovery.go:57 +0x6a
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/context.go:165
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000b44e0, 0xc0006b0100)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:489 +0x2aa
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000b44e0, 0x4cb3a98, 0xc0006c4000, 0xc0006b0000)
+	/Users/zhaozhongyang/go/pkg/mod/github.com/gin-gonic/gin@v1.7.2/gin.go:445 +0x15c
+net/http.serverHandler.ServeHTTP(0xc0001f68c0, 0x4cb3a98, 0xc0006c4000, 0xc0006b0000)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0006aa000, 0x4cb6140, 0xc000092040)
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.16.5/libexec/src/net/http/server.go:3013 +0x39b
+ <nil>}

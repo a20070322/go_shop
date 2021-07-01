@@ -1,0 +1,144 @@
+2021-06-20 11:52:01	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:01:10	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:01:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:01:54	INFO	logger/logger.go:13	[404]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 12:02:09	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:02:12	INFO	logger/logger.go:13	[200]   115ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 12:05:36	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:05:38	INFO	logger/logger.go:13	[200]   266ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 12:07:32	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:07:36	INFO	logger/logger.go:13	[200]   656ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 12:16:21	INFO	logger/logger.go:13	[200]   658ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 12:24:58	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 12:25:03	INFO	logger/logger.go:13	[200]   1255ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:07:40	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:16:38	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:16:44	INFO	logger/logger.go:13	[200]   1212ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:19:42	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:19:50	INFO	logger/logger.go:13	[200]   2075ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:19:54	INFO	logger/logger.go:13	[200]   996ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:20:16	INFO	logger/logger.go:13	[200]   1013ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:20:18	INFO	logger/logger.go:13	[200]   943ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:26:50	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:26:54	INFO	logger/logger.go:13	[200]   1228ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:27:43	INFO	logger/logger.go:13	[200]   1052ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:28:02	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:28:05	INFO	logger/logger.go:13	[200]   1439ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:28:31	INFO	logger/logger.go:13	[200]   1198ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:28:59	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:29:01	INFO	logger/logger.go:13	[200]   468ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:29:27	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:29:29	INFO	logger/logger.go:13	[200]   505ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:34:09	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:34:11	INFO	logger/logger.go:13	[200]   235ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:37:55	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:37:57	INFO	logger/logger.go:13	[200]   423ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:39:23	INFO	logger/logger.go:13	[200]   209ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:41:42	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:41:45	INFO	logger/logger.go:13	[200]   361ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:43:15	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:43:20	INFO	logger/logger.go:13	[200]   2115ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:43:22	INFO	logger/logger.go:13	[200]   973ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:43:25	INFO	logger/logger.go:13	[200]   998ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:43:27	INFO	logger/logger.go:13	[200]   953ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 13:44:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 13:45:02	INFO	logger/logger.go:13	[200]   731ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:06:32	INFO	logger/logger.go:13	[200]   724ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:27:13	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:27:15	INFO	logger/logger.go:13	[200]   840ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:28:18	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:28:22	INFO	logger/logger.go:13	[200]   834ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:28:58	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:29:01	INFO	logger/logger.go:13	[200]   880ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:31:59	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:32:02	INFO	logger/logger.go:13	[200]   894ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:32:12	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:32:15	INFO	logger/logger.go:13	[200]   958ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:34:22	INFO	logger/logger.go:13	[200]   667ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:34:33	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:34:38	INFO	logger/logger.go:13	[200]   1472ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:34:59	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:35:03	INFO	logger/logger.go:13	[200]   998ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:35:22	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:37:06	INFO	logger/logger.go:13	[200]   973ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:38:12	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:38:16	INFO	logger/logger.go:13	[200]   1124ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 15:38:38	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 15:38:56	INFO	logger/logger.go:13	[200]   1055ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 16:46:37	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 16:46:43	INFO	logger/logger.go:13	[200]   1792ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 16:47:12	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 16:47:18	INFO	logger/logger.go:13	[200]   1751ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 17:36:16	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 17:48:18	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 17:49:07	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 17:50:26	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 17:50:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 17:50:55	INFO	logger/logger.go:13	[200]   323ms | 127.0.0.1 | GET   "/api/goods/list"
+2021-06-20 18:02:54	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:03:33	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:03:35	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:08:51	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:08:52	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:09:33	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:09:35	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:09:50	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:09:51	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:10:20	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:12:36	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:14:20	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:14:48	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:18:15	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:18:37	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:18:38	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:19:51	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:21:09	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:22:24	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:22:59	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:23:32	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:23:33	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:23:58	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:24:22	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:24:24	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:24:41	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:24:58	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:25:36	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:25:38	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:26:16	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:26:18	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:26:33	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:27:57	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:28:44	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:29:03	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:29:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:29:54	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:30:30	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:30:39	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:30:41	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:30:57	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:30:59	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 18:32:01	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:32:52	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:33:20	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 18:48:01	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:13:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:14:28	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:15:28	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:15:31	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 19:16:05	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:16:08	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 19:16:48	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:16:50	INFO	logger/logger.go:13	[200]   7ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 19:17:10	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:17:50	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:18:11	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:18:13	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 19:19:23	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:19:29	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:19:31	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 19:19:46	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:19:48	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 19:20:36	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-20 19:20:37	INFO	logger/logger.go:13	[200]   3ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 21:18:44	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-20 23:51:13	INFO	logger/logger.go:13	[200]   288ms | 127.0.0.1 | GET   "/api/goods/list"

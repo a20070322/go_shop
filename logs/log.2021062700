@@ -1,0 +1,88 @@
+2021-06-27 09:37:03	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 09:51:20	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:06:51	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:16:04	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:16:04	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:16:04	INFO	logger/logger.go:13	[200]   26ms | 127.0.0.1 | POST   "/api/customer/address"
+2021-06-27 11:17:06	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:17:06	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:17:06	INFO	logger/logger.go:13	[200]   13ms | 127.0.0.1 | POST   "/api/customer/address"
+2021-06-27 11:17:37	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:17:39	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:17:39	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:17:39	INFO	logger/logger.go:13	[400]   13ms | 127.0.0.1 | POST   "/api/customer/address"
+2021-06-27 11:18:00	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:18:00	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:18:00	INFO	logger/logger.go:13	[400]   11ms | 127.0.0.1 | POST   "/api/customer/address"
+2021-06-27 11:18:35	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:18:37	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:18:37	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:18:37	INFO	logger/logger.go:13	Op=OpCreate	Type=CustomerAddress	Time=61.604006ms	ConcreteType=*ent.CustomerAddressMutation
+
+2021-06-27 11:18:37	INFO	logger/logger.go:13	[200]   76ms | 127.0.0.1 | POST   "/api/customer/address"
+2021-06-27 11:18:50	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:18:50	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:18:50	INFO	logger/logger.go:13	Op=OpCreate	Type=CustomerAddress	Time=41.017382ms	ConcreteType=*ent.CustomerAddressMutation
+
+2021-06-27 11:18:50	INFO	logger/logger.go:13	[200]   48ms | 127.0.0.1 | POST   "/api/customer/address"
+2021-06-27 11:19:55	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:19:55	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:19:55	INFO	logger/logger.go:13	[200]   44ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:20:46	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:20:46	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:20:46	INFO	logger/logger.go:13	[200]   37ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:22:12	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:22:12	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:22:12	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=CustomerAddress	Time=57.754004ms	ConcreteType=*ent.CustomerAddressMutation
+
+2021-06-27 11:22:12	INFO	logger/logger.go:13	[200]   80ms | 127.0.0.1 | PUT   "/api/customer/address/2"
+2021-06-27 11:22:22	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:22:22	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:22:22	INFO	logger/logger.go:13	[200]   45ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:22:59	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:22:59	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:22:59	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=CustomerAddress	Time=51.597774ms	ConcreteType=*ent.CustomerAddressMutation
+
+2021-06-27 11:22:59	INFO	logger/logger.go:13	[200]   88ms | 127.0.0.1 | PUT   "/api/customer/address/1"
+2021-06-27 11:23:06	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:23:06	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:23:06	INFO	logger/logger.go:13	[200]   44ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:23:54	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:23:54	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:23:54	INFO	logger/logger.go:13	Op=OpUpdateOne	Type=CustomerAddress	Time=55.268645ms	ConcreteType=*ent.CustomerAddressMutation
+
+2021-06-27 11:23:54	INFO	logger/logger.go:13	[200]   77ms | 127.0.0.1 | DELETE   "/api/customer/address/2"
+2021-06-27 11:24:08	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:24:08	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ3OTE0NTkxMTgsImlhdCI6MTYyNDcwNTA1OSwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.PTH3JrkGSi2R4VSoxeW848XvKU7TtA5DSN89VQIs8o0
+2021-06-27 11:24:08	INFO	logger/logger.go:13	[200]   45ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:36:23	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:36:35	DEBUG	logger/logger.go:9	我是测试%!(EXTRA *context.emptyCtx=context.Background)
+2021-06-27 11:36:35	INFO	logger/logger.go:13	[200]   49ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:48:02	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:48:04	DEBUG	logger/logger.go:9	我是测试%!(EXTRA *context.emptyCtx=context.Background)
+2021-06-27 11:48:04	INFO	logger/logger.go:13	[200]   61ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:57:46	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:57:49	INFO	customer/address.go:19	我s是测试
+2021-06-27 11:57:49	INFO	logger/logger.go:13	[200]   49ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 11:58:19	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-27 11:58:21	INFO	customer/address.go:19	我s是测试
+2021-06-27 11:58:21	INFO	customer/address.go:20	我是测试2号
+2021-06-27 11:58:21	INFO	logger/logger.go:13	[200]   71ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 12:08:02	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 12:08:15	INFO	customer/address.go:19	我s是测试
+2021-06-27 12:08:15	INFO	customer/address.go:20	我是测试2号
+2021-06-27 12:08:15	INFO	middleware/GinLogger.go:17	[200]   59ms | 127.0.0.1 | GET   "/api/customer/address/list"
+2021-06-27 15:57:29	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 16:13:47	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 16:14:09	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 16:20:22	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 16:49:17	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 16:59:11	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 17:01:07	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 17:01:56	INFO	middleware/GinLogger.go:17	[400]   0ms | 127.0.0.1 | GET   "/api/banner/list/:id"
+2021-06-27 17:02:00	INFO	middleware/GinLogger.go:17	[200]   19ms | 127.0.0.1 | GET   "/api/banner/list/1"
+2021-06-27 17:05:37	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 17:06:35	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 17:17:09	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-27 17:18:12	INFO	middleware/GinLogger.go:17	[400]   0ms | 127.0.0.1 | GET   "/api/banner/list/:id"
+2021-06-27 17:18:14	INFO	middleware/GinLogger.go:17	[200]   25ms | 127.0.0.1 | GET   "/api/banner/list/1"

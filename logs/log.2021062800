@@ -1,0 +1,1360 @@
+2021-06-28 19:01:30	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-28 19:05:26	INFO	middleware/GinLogger.go:17	[200]   26ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:05:59	INFO	middleware/GinLogger.go:17	[200]   21ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:06:39	INFO	middleware/GinLogger.go:17	[200]   25ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:07:08	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:08:00	INFO	middleware/GinLogger.go:17	[200]   25ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:09:28	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:10:52	INFO	middleware/GinLogger.go:17	[200]   40ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 19:10:52	INFO	middleware/GinLogger.go:17	[200]   25ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:10:52	INFO	middleware/GinLogger.go:17	[200]   102ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 19:13:13	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 19:13:13	INFO	middleware/GinLogger.go:17	[200]   26ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 19:13:13	INFO	middleware/GinLogger.go:17	[200]   61ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 19:13:20	INFO	middleware/GinLogger.go:17	[200]   22ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 19:13:20	INFO	middleware/GinLogger.go:17	[200]   47ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 19:13:24	INFO	middleware/GinLogger.go:17	[200]   20ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 19:13:24	INFO	middleware/GinLogger.go:17	[200]   55ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:36:36	INFO	middleware/GinLogger.go:17	[404]   0ms | 127.0.0.1 | POST   "/test/test"
+2021-06-28 21:37:27	INFO	middleware/GinLogger.go:17	[200]   0ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:37:41	INFO	middleware/GinLogger.go:17	[200]   64ms | 127.0.0.1 | GET   "/api/goods/list"
+2021-06-28 21:38:10	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-28 21:40:33	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-28 21:44:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=41.620973ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.393726ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.555713ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.634354ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=83.959695ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:05	INFO	middleware/GinLogger.go:17	[200]   163ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=51.010251ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.887648ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.043141ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.16228ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=71.52508ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:06	INFO	middleware/GinLogger.go:17	[200]   163ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=116.772986ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.11114ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.26077ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.314433ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.75217ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:08	INFO	middleware/GinLogger.go:17	[200]   222ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=41.181336ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.352483ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.539844ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.607227ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=75.422569ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:09	INFO	middleware/GinLogger.go:17	[200]   158ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.902583ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=46.754802ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=46.921268ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.082772ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=81.987672ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:11	INFO	middleware/GinLogger.go:17	[200]   168ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.986309ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.169818ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.339097ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.411071ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=70.422029ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:12	INFO	middleware/GinLogger.go:17	[200]   148ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:13	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.89761ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=243.503174ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=243.70818ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=243.808346ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=84.265581ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:14	INFO	middleware/GinLogger.go:17	[200]   364ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:15	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=42.450284ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:15	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=54.976269ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:15	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=55.163188ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:15	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=55.23554ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:15	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=65.170949ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:15	INFO	middleware/GinLogger.go:17	[200]   163ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=175.406004ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.145562ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.394604ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.533445ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=65.462293ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:17	INFO	middleware/GinLogger.go:17	[200]   291ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:18	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.148729ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:18	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.902267ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:18	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.057008ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:18	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.152098ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:18	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=73.381402ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:18	INFO	middleware/GinLogger.go:17	[200]   148ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.902041ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.806699ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.969274ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.055999ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=74.4804ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:20	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:21	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=43.461471ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:21	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.964161ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:21	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.122702ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:21	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.195796ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:21	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.169724ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:21	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.836629ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.961156ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.13698ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.280331ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.391773ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:22	INFO	middleware/GinLogger.go:17	[200]   149ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.760383ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.041775ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.238611ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.340145ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=70.653997ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:24	INFO	middleware/GinLogger.go:17	[200]   149ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.863517ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.114171ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.304301ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.449492ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.795827ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:25	INFO	middleware/GinLogger.go:17	[200]   144ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=47.997204ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.153587ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.344641ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.490635ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=72.347202ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:27	INFO	middleware/GinLogger.go:17	[200]   163ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.9129ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.132688ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.346169ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.430008ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=71.552147ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:28	INFO	middleware/GinLogger.go:17	[200]   146ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.885641ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.599375ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.776184ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.871472ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.003101ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:29	INFO	middleware/GinLogger.go:17	[200]   141ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.029862ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.967431ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.147683ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.23133ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.20303ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:31	INFO	middleware/GinLogger.go:17	[200]   148ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.625231ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=49.245409ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=49.415985ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=49.49309ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.773982ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:32	INFO	middleware/GinLogger.go:17	[200]   156ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.570535ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.194473ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.389211ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.466158ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=74.19125ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:33	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.867128ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.424794ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.682192ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.829121ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=73.104032ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:35	INFO	middleware/GinLogger.go:17	[200]   164ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.059841ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.408196ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.601899ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.759654ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.010705ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:36	INFO	middleware/GinLogger.go:17	[200]   142ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.254295ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.919587ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.176621ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.385402ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=72.200558ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:37	INFO	middleware/GinLogger.go:17	[200]   150ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.224962ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=43.43774ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=43.625868ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=43.708131ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.230802ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:39	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:44:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.571101ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:44:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.635717ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.801505ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.877335ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:44:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=70.550959ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:44:40	INFO	middleware/GinLogger.go:17	[200]   146ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:45:11	INFO	middleware/GinLogger.go:17	[200]   322ms | 127.0.0.1 | GET   "/api/goods/list"
+2021-06-28 21:45:41	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 21:45:41	INFO	middleware/GinLogger.go:17	[200]   42ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 21:45:41	INFO	middleware/GinLogger.go:17	[200]   340ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:45:52	INFO	middleware/GinLogger.go:17	[200]   327ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:45:55	INFO	middleware/GinLogger.go:17	[200]   255ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:46:50	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 21:46:50	INFO	middleware/GinLogger.go:17	[200]   315ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:46:54	INFO	middleware/GinLogger.go:17	[200]   44ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 21:46:55	INFO	middleware/GinLogger.go:17	[200]   328ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:48:31	INFO	middleware/GinLogger.go:17	[200]   492ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:48:32	INFO	middleware/GinLogger.go:17	[200]   233ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:48:39	INFO	middleware/GinLogger.go:17	[200]   32ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 21:48:39	INFO	middleware/GinLogger.go:17	[200]   301ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:48:40	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 21:48:42	INFO	middleware/GinLogger.go:17	[200]   314ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:48:42	INFO	middleware/GinLogger.go:17	[200]   226ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 21:51:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.928053ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.292122ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.467064ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.544456ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=92.649432ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:22	INFO	middleware/GinLogger.go:17	[200]   170ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.401002ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.079773ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.220322ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.284211ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=79.138506ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:23	INFO	middleware/GinLogger.go:17	[200]   157ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=48.90329ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=60.890829ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=61.059267ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=61.127858ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:25	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=92.505372ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:25	INFO	middleware/GinLogger.go:17	[200]   203ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.615698ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.911765ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.055068ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.118794ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=64.063025ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:26	INFO	middleware/GinLogger.go:17	[200]   137ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=43.205942ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.997546ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.15056ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.221573ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=82.685115ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:27	INFO	middleware/GinLogger.go:17	[200]   165ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.227384ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.822839ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.964067ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=43.04118ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.605188ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:29	INFO	middleware/GinLogger.go:17	[200]   150ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.388649ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.054093ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.240236ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.342622ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=71.280036ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:30	INFO	middleware/GinLogger.go:17	[200]   147ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=34.366616ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.667874ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.855634ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.946947ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=79.35944ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:31	INFO	middleware/GinLogger.go:17	[200]   152ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.425316ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.505278ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.647471ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.71023ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=65.883699ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:33	INFO	middleware/GinLogger.go:17	[200]   143ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=45.852256ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.751721ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.895933ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.960717ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=110.753926ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:34	INFO	middleware/GinLogger.go:17	[200]   197ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=43.576649ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.855398ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.136405ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.263055ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=83.753914ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:36	INFO	middleware/GinLogger.go:17	[200]   164ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.316154ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.537111ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.680106ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.752243ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=77.19188ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:37	INFO	middleware/GinLogger.go:17	[200]   162ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=42.127919ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.621533ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.760324ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.83884ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=75.558607ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:38	INFO	middleware/GinLogger.go:17	[200]   155ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=34.153255ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.802881ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.96013ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.035514ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=86.242118ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:40	INFO	middleware/GinLogger.go:17	[200]   159ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.094422ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=32.506221ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=32.836021ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=32.974034ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=102.511463ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:41	INFO	middleware/GinLogger.go:17	[200]   172ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.069995ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.197494ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.359764ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.423205ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:43	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=63.199935ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:43	INFO	middleware/GinLogger.go:17	[200]   142ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:44	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.510825ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:44	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.152244ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:44	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.289056ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:44	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.353844ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:44	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.322585ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:44	INFO	middleware/GinLogger.go:17	[200]   139ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.562234ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=54.627161ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=54.76568ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=54.857766ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.831982ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:45	INFO	middleware/GinLogger.go:17	[200]   163ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.567754ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.61443ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.775862ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.836008ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.939795ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:46	INFO	middleware/GinLogger.go:17	[200]   149ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:48	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=42.031677ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:48	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.47524ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:48	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.611183ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:48	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.67943ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:48	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=62.401145ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:48	INFO	middleware/GinLogger.go:17	[200]   142ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.362612ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.08292ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.210218ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.263487ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=76.075702ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:49	INFO	middleware/GinLogger.go:17	[200]   154ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.374583ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.591664ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.793202ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.906313ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=65.725564ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:51	INFO	middleware/GinLogger.go:17	[200]   142ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:52	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=34.448796ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:52	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.78581ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:52	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.91929ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:52	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.990514ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:52	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=72.137338ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:52	INFO	middleware/GinLogger.go:17	[200]   143ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.573113ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.733554ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.931511ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.040476ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=95.768341ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:53	INFO	middleware/GinLogger.go:17	[200]   170ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.802839ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.814592ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.975778ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=43.037017ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=74.681673ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:55	INFO	middleware/GinLogger.go:17	[200]   155ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:56	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.284819ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:56	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.797002ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:56	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.912076ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:56	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.964062ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:56	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.429342ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:56	INFO	middleware/GinLogger.go:17	[200]   144ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=44.711448ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.417493ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.539102ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.598855ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:58	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=97.38955ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:58	INFO	middleware/GinLogger.go:17	[200]   179ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:51:59	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=42.599914ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:51:59	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.493319ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:59	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.615517ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:59	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.676744ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:51:59	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=93.469484ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:51:59	INFO	middleware/GinLogger.go:17	[200]   174ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.003594ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.871429ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.042931ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.098892ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=82.51211ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:00	INFO	middleware/GinLogger.go:17	[200]   156ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:01	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=69.673341ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=49.96843ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.09441ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.149916ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=118.655901ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:02	INFO	middleware/GinLogger.go:17	[200]   238ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:03	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=49.169136ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:03	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.617564ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:03	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.742594ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:03	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.79374ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:03	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=69.902482ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:03	INFO	middleware/GinLogger.go:17	[200]   161ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.347009ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=48.417514ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=48.531239ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=48.579598ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=69.937914ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:04	INFO	middleware/GinLogger.go:17	[200]   158ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.254635ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.160975ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.277964ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.333208ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=69.719494ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:06	INFO	middleware/GinLogger.go:17	[200]   152ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:07	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=51.517125ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:07	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.163382ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:07	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.278038ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:07	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.326436ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:07	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=64.857665ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:07	INFO	middleware/GinLogger.go:17	[200]   153ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=43.608422ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.012767ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.134788ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.183344ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=74.493443ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:08	INFO	middleware/GinLogger.go:17	[200]   156ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:10	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=77.836065ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:10	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.020941ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:10	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.143068ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:10	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.196217ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:10	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=87.220022ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:10	INFO	middleware/GinLogger.go:17	[200]   201ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=45.522382ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.174553ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.291036ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.337618ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=77.444077ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:11	INFO	middleware/GinLogger.go:17	[200]   170ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:13	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.595546ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:13	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.929546ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:13	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.040808ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:13	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.089894ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:13	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=74.406966ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:13	INFO	middleware/GinLogger.go:17	[200]   149ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.744808ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.904831ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.021691ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.075191ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:14	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.080945ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:14	INFO	middleware/GinLogger.go:17	[200]   150ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:15	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.969056ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:16	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.997608ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:16	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.123556ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:16	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.171202ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:16	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.87784ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:16	INFO	middleware/GinLogger.go:17	[200]   140ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.524541ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.804865ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.922937ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.96789ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:17	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=84.343417ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:17	INFO	middleware/GinLogger.go:17	[200]   156ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:19	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=80.028255ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:19	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=208.278141ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:19	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=208.39132ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:19	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=208.437696ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:19	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=194.470502ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:19	INFO	middleware/GinLogger.go:17	[200]   483ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.461383ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.828611ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.942351ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.995694ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:20	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=86.355989ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:20	INFO	middleware/GinLogger.go:17	[200]   166ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=51.53631ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=46.397914ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=46.513643ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=46.55936ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:22	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=83.646355ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:22	INFO	middleware/GinLogger.go:17	[200]   182ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.280903ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=33.91874ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.02378ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.087935ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:23	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.754381ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:23	INFO	middleware/GinLogger.go:17	[200]   137ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.943684ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.417843ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.538112ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.590153ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:24	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=84.884522ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:24	INFO	middleware/GinLogger.go:17	[200]   157ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.184031ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.179813ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.300428ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.350998ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:26	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=93.839492ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:26	INFO	middleware/GinLogger.go:17	[200]   168ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.529434ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.510122ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.633874ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.685051ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:27	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=77.619766ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:27	INFO	middleware/GinLogger.go:17	[200]   159ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.146578ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.577836ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.697807ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:28	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.744406ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:29	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=77.539849ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:29	INFO	middleware/GinLogger.go:17	[200]   154ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=34.268406ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.185284ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.333313ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.405887ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:30	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.43772ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:30	INFO	middleware/GinLogger.go:17	[200]   140ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=44.310259ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=33.772474ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=33.893825ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=33.941669ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:31	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=71.527661ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:31	INFO	middleware/GinLogger.go:17	[200]   150ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=42.988489ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.056319ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.180438ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:32	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.22771ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:33	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=85.23826ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:33	INFO	middleware/GinLogger.go:17	[200]   165ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=34.932237ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.568158ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.686672ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.730996ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:34	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=74.869895ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:34	INFO	middleware/GinLogger.go:17	[200]   148ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.830529ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.958076ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.077687ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.139671ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:35	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=76.183943ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:35	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:36	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.978599ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.613594ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.724265ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.769679ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:37	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.268365ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:37	INFO	middleware/GinLogger.go:17	[200]   144ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.717648ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.272294ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.445607ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.544236ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:38	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.217721ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:38	INFO	middleware/GinLogger.go:17	[200]   142ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.867188ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.969994ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.082746ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.136557ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:39	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=70.697984ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:39	INFO	middleware/GinLogger.go:17	[200]   149ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:40	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.131399ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.725634ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.846936ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.891197ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:41	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=76.727503ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:41	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=45.496932ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.323598ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.440475ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=39.485766ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:42	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=77.7974ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:42	INFO	middleware/GinLogger.go:17	[200]   163ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:43	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.564355ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:43	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.26012ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:43	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.369361ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:43	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.416424ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:43	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=69.308938ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:43	INFO	middleware/GinLogger.go:17	[200]   141ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.52312ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.44537ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.614547ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.711004ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:45	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=85.77944ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:45	INFO	middleware/GinLogger.go:17	[200]   161ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.789393ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.48035ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.601133ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.655569ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:46	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.368212ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:46	INFO	middleware/GinLogger.go:17	[200]   141ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:47	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.028744ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:47	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.817318ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:47	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.931615ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:47	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.983065ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:47	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.100286ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:47	INFO	middleware/GinLogger.go:17	[200]   139ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=53.709569ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.600247ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.711489ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.761936ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:49	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.001913ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:49	INFO	middleware/GinLogger.go:17	[200]   156ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:50	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=54.185427ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:50	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.797703ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:50	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=42.935939ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:50	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=43.026186ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:50	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=68.605666ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:50	INFO	middleware/GinLogger.go:17	[200]   166ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.197372ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.288469ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.402507ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=40.456737ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:51	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=64.644924ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:51	INFO	middleware/GinLogger.go:17	[200]   144ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=46.274009ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.2217ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.327954ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.376128ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:53	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=67.556906ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:53	INFO	middleware/GinLogger.go:17	[200]   149ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:54	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.904257ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:54	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.764705ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:54	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.8813ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:54	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.926385ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:54	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=66.845228ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:54	INFO	middleware/GinLogger.go:17	[200]   141ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.873825ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.860443ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.984476ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:55	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.04145ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:56	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=69.719596ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:56	INFO	middleware/GinLogger.go:17	[200]   143ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=50.316216ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.871607ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=34.982057ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.026949ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:57	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=83.317684ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:57	INFO	middleware/GinLogger.go:17	[200]   169ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:52:58	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.042121ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:52:58	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.091637ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:58	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.202745ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:58	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.247667ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:52:58	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=108.075662ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:52:58	INFO	middleware/GinLogger.go:17	[200]   183ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.32762ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.906765ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.021706ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=38.072316ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:00	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=90.368211ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:00	INFO	middleware/GinLogger.go:17	[200]   165ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:01	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=39.886944ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:01	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.203471ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:01	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.319755ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:01	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=41.373029ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:01	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=80.10042ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:01	INFO	middleware/GinLogger.go:17	[200]   161ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=53.217671ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.38201ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.505246ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=47.573075ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:02	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=116.177292ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:02	INFO	middleware/GinLogger.go:17	[200]   217ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=40.320873ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.635163ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.804522ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=50.925079ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:04	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=93.319382ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:04	INFO	middleware/GinLogger.go:17	[200]   184ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=35.495465ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.124964ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.258951ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=35.314046ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:05	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=91.090237ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:05	INFO	middleware/GinLogger.go:17	[200]   162ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=36.028122ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.825161ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.941909ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:06	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.989094ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:07	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=78.508607ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:07	INFO	middleware/GinLogger.go:17	[200]   151ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=38.368997ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.120316ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.237922ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.290785ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:08	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=64.381365ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:08	INFO	middleware/GinLogger.go:17	[200]   139ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=37.198226ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.343762ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.47426ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=37.531548ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:09	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=71.140839ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:09	INFO	middleware/GinLogger.go:17	[200]   146ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=65.422366ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.764913ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.880833ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=44.928595ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:11	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=84.64797ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:11	INFO	middleware/GinLogger.go:17	[200]   195ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 21:53:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSku	Time=41.016521ms	ConcreteType=*ent.GoodsSkuMutation
+
+2021-06-28 21:53:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.156421ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.344957ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpuImgs	Time=36.41459ms	ConcreteType=*ent.GoodsSpuImgsMutation
+
+2021-06-28 21:53:12	INFO	initialize/ent.go:47	Op=OpCreate	Type=GoodsSpu	Time=91.594354ms	ConcreteType=*ent.GoodsSpuMutation
+
+2021-06-28 21:53:12	INFO	middleware/GinLogger.go:17	[200]   169ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-28 22:04:04	INFO	middleware/GinLogger.go:17	[200]   33ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:04:04	INFO	middleware/GinLogger.go:17	[200]   39ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:04:04	INFO	middleware/GinLogger.go:17	[200]   307ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:04:19	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:11:31	INFO	wechat/minichat.go:51	获取access_token，有效时长7200
+2021-06-28 22:12:06	INFO	middleware/GinLogger.go:17	[200]   30ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:12:06	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:12:06	INFO	middleware/GinLogger.go:17	[200]   273ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:09	INFO	middleware/GinLogger.go:17	[200]   276ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:10	INFO	middleware/GinLogger.go:17	[200]   290ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:11	INFO	middleware/GinLogger.go:17	[200]   278ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:12	INFO	middleware/GinLogger.go:17	[200]   269ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:13	INFO	middleware/GinLogger.go:17	[200]   261ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:14	INFO	middleware/GinLogger.go:17	[200]   263ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:15	INFO	middleware/GinLogger.go:17	[200]   251ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:15	INFO	middleware/GinLogger.go:17	[200]   245ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:16	INFO	middleware/GinLogger.go:17	[200]   269ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:12:17	INFO	middleware/GinLogger.go:17	[200]   212ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:13:49	INFO	middleware/GinLogger.go:17	[200]   22ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:13:49	INFO	middleware/GinLogger.go:17	[200]   261ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:13:50	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:13:54	INFO	middleware/GinLogger.go:17	[200]   266ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:13:56	INFO	middleware/GinLogger.go:17	[200]   279ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:13:57	INFO	middleware/GinLogger.go:17	[200]   256ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:13:59	INFO	middleware/GinLogger.go:17	[200]   261ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:14:01	INFO	middleware/GinLogger.go:17	[200]   276ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:14:03	INFO	middleware/GinLogger.go:17	[200]   270ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:14:04	INFO	middleware/GinLogger.go:17	[200]   275ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:14:06	INFO	middleware/GinLogger.go:17	[200]   258ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:14:08	INFO	middleware/GinLogger.go:17	[200]   259ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:14:10	INFO	middleware/GinLogger.go:17	[200]   227ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:04	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:24:04	INFO	middleware/GinLogger.go:17	[200]   277ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:04	INFO	middleware/GinLogger.go:17	[200]   39ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:24:08	INFO	middleware/GinLogger.go:17	[200]   263ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:10	INFO	middleware/GinLogger.go:17	[200]   275ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:12	INFO	middleware/GinLogger.go:17	[200]   288ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:14	INFO	middleware/GinLogger.go:17	[200]   273ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:15	INFO	middleware/GinLogger.go:17	[200]   280ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:16	INFO	middleware/GinLogger.go:17	[200]   276ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:17	INFO	middleware/GinLogger.go:17	[200]   266ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:18	INFO	middleware/GinLogger.go:17	[200]   270ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:20	INFO	middleware/GinLogger.go:17	[200]   312ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:24:21	INFO	middleware/GinLogger.go:17	[200]   225ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:50	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:25:50	INFO	middleware/GinLogger.go:17	[200]   258ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:50	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:25:52	INFO	middleware/GinLogger.go:17	[200]   264ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:53	INFO	middleware/GinLogger.go:17	[200]   276ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:54	INFO	middleware/GinLogger.go:17	[200]   276ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:54	INFO	middleware/GinLogger.go:17	[200]   268ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:55	INFO	middleware/GinLogger.go:17	[200]   268ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:56	INFO	middleware/GinLogger.go:17	[200]   270ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:57	INFO	middleware/GinLogger.go:17	[200]   272ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:58	INFO	middleware/GinLogger.go:17	[200]   266ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:25:59	INFO	middleware/GinLogger.go:17	[200]   272ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:00	INFO	middleware/GinLogger.go:17	[200]   215ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:18	INFO	middleware/GinLogger.go:17	[200]   39ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:26:19	INFO	middleware/GinLogger.go:17	[200]   274ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:19	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:26:21	INFO	middleware/GinLogger.go:17	[200]   276ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:22	INFO	middleware/GinLogger.go:17	[200]   282ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:22	INFO	middleware/GinLogger.go:17	[200]   288ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:23	INFO	middleware/GinLogger.go:17	[200]   282ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:24	INFO	middleware/GinLogger.go:17	[200]   286ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:26	INFO	middleware/GinLogger.go:17	[200]   271ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:26	INFO	middleware/GinLogger.go:17	[200]   266ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:27	INFO	middleware/GinLogger.go:17	[200]   279ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:28	INFO	middleware/GinLogger.go:17	[200]   270ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:29	INFO	middleware/GinLogger.go:17	[200]   222ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:56	INFO	middleware/GinLogger.go:17	[200]   40ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:26:56	INFO	middleware/GinLogger.go:17	[200]   22ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:26:56	INFO	middleware/GinLogger.go:17	[200]   301ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:58	INFO	middleware/GinLogger.go:17	[200]   291ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:59	INFO	middleware/GinLogger.go:17	[200]   286ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:26:59	INFO	middleware/GinLogger.go:17	[200]   271ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:00	INFO	middleware/GinLogger.go:17	[200]   269ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:01	INFO	middleware/GinLogger.go:17	[200]   281ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:02	INFO	middleware/GinLogger.go:17	[200]   266ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:02	INFO	middleware/GinLogger.go:17	[200]   275ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:03	INFO	middleware/GinLogger.go:17	[200]   272ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:04	INFO	middleware/GinLogger.go:17	[200]   277ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:05	INFO	middleware/GinLogger.go:17	[200]   217ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:27:20	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | GET   "/api/customer/address/list"
+2021-06-28 22:27:22	INFO	middleware/GinLogger.go:17	[200]   30ms | 192.168.3.101 | GET   "/api/customer/address/list"
+2021-06-28 22:28:47	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:28:47	INFO	middleware/GinLogger.go:17	[200]   34ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 22:28:47	INFO	middleware/GinLogger.go:17	[200]   288ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:28:51	INFO	middleware/GinLogger.go:17	[200]   27ms | 192.168.3.101 | GET   "/api/customer/address/list"
+2021-06-28 22:28:53	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | GET   "/api/customer/address/list"
+2021-06-28 22:29:06	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | GET   "/api/customer/address/list"
+2021-06-28 22:29:08	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | GET   "/api/customer/address/list"
+2021-06-28 22:39:32	INFO	middleware/GinLogger.go:17	[200]   21ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:39:33	INFO	middleware/GinLogger.go:17	[200]   252ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:41	INFO	middleware/GinLogger.go:17	[200]   273ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:42	INFO	middleware/GinLogger.go:17	[200]   264ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:43	INFO	middleware/GinLogger.go:17	[200]   260ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:44	INFO	middleware/GinLogger.go:17	[200]   257ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:46	INFO	middleware/GinLogger.go:17	[200]   263ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:47	INFO	middleware/GinLogger.go:17	[200]   252ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 22:39:50	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 22:39:50	INFO	middleware/GinLogger.go:17	[200]   264ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 23:23:11	INFO	middleware/GinLogger.go:17	[200]   32ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 23:23:11	INFO	middleware/GinLogger.go:17	[200]   265ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 23:23:12	INFO	middleware/GinLogger.go:17	[200]   51ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:24:22	INFO	middleware/GinLogger.go:17	[200]   35ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 23:24:22	INFO	middleware/GinLogger.go:17	[200]   255ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 23:24:48	INFO	middleware/GinLogger.go:17	[200]   32ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 23:24:48	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:24:48	INFO	middleware/GinLogger.go:17	[200]   269ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 23:25:00	INFO	middleware/GinLogger.go:17	[200]   21ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:25:06	INFO	middleware/GinLogger.go:17	[200]   26ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:26:00	INFO	middleware/GinLogger.go:17	[200]   22ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:27:32	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:27:38	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:28:08	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:29:49	INFO	middleware/GinLogger.go:17	[200]   32ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:30:55	INFO	middleware/GinLogger.go:17	[200]   34ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:33:34	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:36:51	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:37:14	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:38:28	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:39:05	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:39:11	INFO	middleware/GinLogger.go:17	[200]   27ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:39:36	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:39:46	INFO	middleware/GinLogger.go:17	[200]   31ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:40:06	INFO	middleware/GinLogger.go:17	[200]   24ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:40:49	INFO	middleware/GinLogger.go:17	[200]   26ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:41:33	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:41:56	INFO	middleware/GinLogger.go:17	[200]   25ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:43:55	INFO	middleware/GinLogger.go:17	[200]   20ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:44:39	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:44:48	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:45:42	INFO	middleware/GinLogger.go:17	[200]   28ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:46:13	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:46:44	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:48:51	INFO	middleware/GinLogger.go:17	[200]   20ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:49:25	INFO	middleware/GinLogger.go:17	[200]   29ms | 192.168.3.101 | POST   "/api/auth/min_chat_login"
+2021-06-28 23:49:40	INFO	middleware/GinLogger.go:17	[200]   23ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 23:49:40	INFO	middleware/GinLogger.go:17	[200]   275ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 23:49:49	INFO	middleware/GinLogger.go:17	[200]   33ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 23:49:50	INFO	middleware/GinLogger.go:17	[200]   288ms | 192.168.3.101 | GET   "/api/goods/list"
+2021-06-28 23:54:14	INFO	middleware/GinLogger.go:17	[200]   40ms | 192.168.3.101 | GET   "/api/banner/list/1"
+2021-06-28 23:54:14	INFO	middleware/GinLogger.go:17	[200]   296ms | 192.168.3.101 | GET   "/api/goods/list"

@@ -1,0 +1,100 @@
+2021-06-23 11:24:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 11:34:24	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 11:49:43	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 12:35:53	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 12:36:09	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 12:36:12	INFO	logger/logger.go:13	[200]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-23 13:14:50	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 13:34:28	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 16:01:17	INFO	logger/logger.go:13	[200]   840ms | 127.0.0.1 | GET   "/api/goods/get"
+2021-06-23 16:01:30	INFO	logger/logger.go:13	[200]   536ms | 127.0.0.1 | POST   "/api/goods/get_sku"
+2021-06-23 16:12:46	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 16:12:50	INFO	logger/logger.go:13	[400]   0ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 16:15:22	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 16:15:46	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 16:15:48	INFO	logger/logger.go:13	[400]   461ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 16:16:50	INFO	logger/logger.go:13	[200]   496ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 16:34:18	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 16:58:27	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:08:42	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:08:44	INFO	logger/logger.go:13	[200]   724ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:11:43	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:11:49	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=241.407255ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:11:49	INFO	logger/logger.go:13	[200]   1043ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:15:08	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:15:11	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=239.446001ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:15:11	INFO	logger/logger.go:13	[400]   1010ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:15:36	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=241.122773ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:15:36	INFO	logger/logger.go:13	[400]   1038ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:15:38	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=268.674619ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:15:38	INFO	logger/logger.go:13	[400]   1111ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:15:39	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=238.671074ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:15:39	INFO	logger/logger.go:13	[400]   1024ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:15:42	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=237.043009ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:15:42	INFO	logger/logger.go:13	[400]   1043ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:17:02	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:17:04	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=100.406826ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:17:04	INFO	logger/logger.go:13	[200]   893ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:19:06	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:19:11	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=269.285663ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:19:11	INFO	logger/logger.go:13	[400]   1126ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:20:26	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:20:28	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=233.475825ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:20:28	INFO	logger/logger.go:13	[400]   1060ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:24:19	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:24:21	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=265.524875ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:37:03	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:37:09	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=1.343829ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 17:37:09	INFO	logger/logger.go:13	[400]   768ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:37:59	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:38:03	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=442.422511ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 17:38:03	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=237.182956ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 17:38:03	INFO	logger/logger.go:13	[200]   1478ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:38:13	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=271.514494ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 17:38:13	INFO	logger/logger.go:13	[400]   1064ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:39:13	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:39:27	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 17:39:30	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=407.060276ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 17:39:30	INFO	logger/logger.go:13	[400]   1212ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 17:40:11	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:22:14	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:23:47	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:24:56	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:35:23	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:36:41	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:37:01	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:37:34	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:37:47	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=435.625961ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 22:37:47	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=262.642459ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 22:37:47	INFO	logger/logger.go:13	[200]   1792ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 22:37:54	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=249.661253ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 22:37:54	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=264.171472ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 22:37:54	INFO	logger/logger.go:13	[200]   1349ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 22:38:38	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 22:38:41	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderGoodsSku	Time=441.49866ms	ConcreteType=*ent.OrderGoodsSkuMutation
+
+2021-06-23 22:38:41	INFO	logger/logger.go:13	Op=OpCreate	Type=OrderInfo	Time=266.13941ms	ConcreteType=*ent.OrderInfoMutation
+
+2021-06-23 22:38:41	INFO	logger/logger.go:13	[200]   1810ms | 127.0.0.1 | POST   "/api/test/test"
+2021-06-23 22:44:58	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 23:08:26	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-23 23:12:35	INFO	logger/logger.go:13	获取access_token，有效时长7200

@@ -1,0 +1,53 @@
+2021-06-22 10:42:58	INFO	logger/logger.go:13	[200]   941ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:43:06	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 10:43:18	INFO	logger/logger.go:13	[401]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:43:42	INFO	logger/logger.go:13	[200]   489ms | 127.0.0.1 | POST   "/api/auth/min_chat_login"
+2021-06-22 10:44:02	INFO	logger/logger.go:13	[401]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:44:06	INFO	logger/logger.go:13	[401]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:45:20	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 10:45:21	DEBUG	logger/logger.go:9	customer
+2021-06-22 10:45:21	INFO	logger/logger.go:13	[401]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:45:52	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 10:45:55	DEBUG	logger/logger.go:9	customer
+2021-06-22 10:45:55	INFO	logger/logger.go:13	[200]   65ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:46:27	DEBUG	logger/logger.go:9	customer
+2021-06-22 10:46:27	INFO	logger/logger.go:13	[401]   64ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:46:31	DEBUG	logger/logger.go:9	customer
+2021-06-22 10:46:32	INFO	logger/logger.go:13	[401]   65ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:47:31	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 10:47:33	DEBUG	logger/logger.go:9	customer
+2021-06-22 10:47:33	INFO	logger/logger.go:13	[401]   0ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:47:49	DEBUG	logger/logger.go:9	customer
+2021-06-22 10:47:49	INFO	logger/logger.go:13	[200]   108ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:52:37	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 10:52:39	INFO	logger/logger.go:13	[200]   61ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 10:54:06	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 10:54:09	INFO	logger/logger.go:13	[200]   63ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 11:19:02	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 11:20:12	INFO	logger/logger.go:13	[200]   58ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 11:20:30	INFO	logger/logger.go:13	[400]   64ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:20:57	INFO	logger/logger.go:13	[400]   58ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:20:58	INFO	logger/logger.go:13	[400]   76ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:21:38	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 11:21:40	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTYyMjIwNjMsImlhdCI6MTYyNDMyOTgyMiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.wC7PMuSRmKG4ZvH30tYcBdlETpqrfNtFRKAXJ_44D3k%!(EXTRA string=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTY4MjY4NjMsImlhdCI6MTYyNDMyOTgyMiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.9gTJgVb_jIl1CGl7NuqakA-S1AG2OVhFxsLCtFRVDMo)
+2021-06-22 11:21:40	INFO	logger/logger.go:13	[400]   59ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:21:58	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 11:22:00	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTYyMjIwNjMsImlhdCI6MTYyNDMyOTgyMiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.wC7PMuSRmKG4ZvH30tYcBdlETpqrfNtFRKAXJ_44D3k
+2021-06-22 11:22:00	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTY4MjY4NjMsImlhdCI6MTYyNDMyOTgyMiwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.9gTJgVb_jIl1CGl7NuqakA-S1AG2OVhFxsLCtFRVDMo
+2021-06-22 11:22:00	INFO	logger/logger.go:13	[400]   59ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:22:17	INFO	logger/logger.go:13	[200]   429ms | 127.0.0.1 | POST   "/api/auth/min_chat_login"
+2021-06-22 11:22:38	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTg1MzczOTUsImlhdCI6MTYyNDMzMjEzNywidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.tKxcnGH4V8cL9lsUadVBwE-eEKv47hsPnZcDlFRgMoI
+2021-06-22 11:22:38	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTkxNDIxOTUsImlhdCI6MTYyNDMzMjEzNywidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.f6pNCSpFDOSFAou6gPdu65pQ45rMzDw4qc5j0iz1xYE
+2021-06-22 11:22:38	INFO	logger/logger.go:13	[400]   56ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:23:22	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 11:23:27	INFO	logger/logger.go:13	[200]   424ms | 127.0.0.1 | POST   "/api/auth/min_chat_login"
+2021-06-22 11:23:50	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTkyMTIwMTksImlhdCI6MTYyNDMzMjIwNywidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.G99v5uOK9XgA3jR96516TpEb-WopkLe3y-0B0lL_9Vg
+2021-06-22 11:23:50	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTkyMTIwMTksImlhdCI6MTYyNDMzMjIwNywidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6dHJ1ZX0.G99v5uOK9XgA3jR96516TpEb-WopkLe3y-0B0lL_9Vg
+2021-06-22 11:23:50	INFO	logger/logger.go:13	[200]   318ms | 127.0.0.1 | POST   "/api/auth/refresh_token"
+2021-06-22 11:24:21	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTg2MzAyMDcsImlhdCI6MTYyNDMzMjIzMCwidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.FF0dMg6P0j387PFcwO1zrGWOjQ0Tfszn3pn-CGbGSxQ
+2021-06-22 11:24:21	DEBUG	logger/logger.go:9	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQ0MTg2MDcyMTksImlhdCI6MTYyNDMzMjIwNywidXNlcl9pZCI6MSwidXNlcl9ncm91cCI6ImN1c3RvbWVyIiwiaXNfcmVmcmVzaF90b2tlbiI6ZmFsc2V9.pzQLggFCfIj3ueWlr7aXER1s5su-ZB9Q79i0cJt9zFM
+2021-06-22 11:24:21	INFO	logger/logger.go:13	[401]   56ms | 127.0.0.1 | GET   "/api/test/test"
+2021-06-22 11:32:21	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 11:32:34	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 11:32:42	INFO	logger/logger.go:13	获取access_token，有效时长7200
+2021-06-22 17:40:29	INFO	logger/logger.go:13	获取access_token，有效时长7200
