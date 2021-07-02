@@ -14,7 +14,7 @@ type DelayQueue struct {
 
 // 订单超时处理
 func (del *DelayQueue) OrderTimeout(d amqp.Delivery, payload *types.QueuePayloadType) {
-	boolOrder := order.OrderInfoInit(context.Background()).TimeOutOrder(payload.PayLoad)
+	boolOrder := order.InfoInit(context.Background()).TimeOutOrder(payload.PayLoad)
 	if boolOrder == false {
 		global.Logger.Error("[%s] 订单c超时处理失败", payload.PayLoad)
 	}

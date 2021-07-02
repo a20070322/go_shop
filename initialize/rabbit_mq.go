@@ -27,6 +27,11 @@ func RabbitMq() {
 		fmt.Printf("RabbitMq DelayCh 连接异常%s", err.Error())
 		panic(err)
 	}
+	global.RabbitMq.OrderCh, err = global.RabbitMq.Conn.Channel()
+	if err != nil {
+		fmt.Printf("RabbitMq OrderCh 连接异常%s", err.Error())
+		panic(err)
+	}
 	queue_jobs.DelayInit()
 	queue_jobs.PriorityInit()
 	queue_jobs.OrderInit()

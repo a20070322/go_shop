@@ -11,10 +11,10 @@ import (
 )
 
 const (
-	OrderQueueName      = "priority_queue"
-	OrderExchange   = "priority_exchange"
-	OrderRoutingKey = "priority_routingKey"
-	OrderConsume    = "priority_consume"
+	OrderQueueName  = "order_queue"
+	OrderExchange   = "order_exchange"
+	OrderRoutingKey = "order_routingKey"
+	OrderConsume    = "order_consume"
 )
 
 // 初始化订单处理业务队列，每次只取一个消息
@@ -24,7 +24,7 @@ func OrderInit() {
 	_, err = global.RabbitMq.OrderCh.QueueDeclare(OrderQueueName, true, false, false, false,
 		amqp.Table{
 			//优先级定义
-			"x-max-priority": 10,
+			"x-max-order": 10,
 		},
 	)
 	if err != nil {
@@ -44,7 +44,7 @@ func OrderInit() {
 }
 
 // 发布延时任务队列
-func OrderPublish(payload *types.QueuePayloadType, priority int) error {
+func OrderPublish(payload *types.QueuePayloadType, order int) error {
 	// 序列化消息
 	body, errJson := json.Marshal(payload)
 	if errJson != nil {
@@ -60,7 +60,7 @@ func OrderPublish(payload *types.QueuePayloadType, priority int) error {
 			ContentType: "text/plain",
 			Body:        body,
 			// 设置优先级
-			Priority: uint8(priority),
+			Priority: uint8(order),
 			// 设置持久化存贮
 			DeliveryMode: amqp.Persistent,
 		})
@@ -81,14 +81,14 @@ func OrderWorkOn() {
 		false,
 		false,
 		amqp.Table{
-			"x-max-priority": int32(10),
+			"x-max-order": int32(10),
 		},
 	)
 	if err != nil {
 		global.Logger.Panic(err.Error())
 	}
 	//设置每次从消息队列获取任务的数量
-	if  errQos := global.RabbitMq.DelayCh.Qos(1, 0,false); errQos != nil {
+	if errQos := global.RabbitMq.DelayCh.Qos(1, 0, false); errQos != nil {
 		global.Logger.Panic(errQos.Error())
 	}
 	go func() {

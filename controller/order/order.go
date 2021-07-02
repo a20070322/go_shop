@@ -14,7 +14,7 @@ type Order struct {
 }
 
 func (t Order) Create(ctx *gin.Context) {
-	var form order.OrderCreateFormType
+	var form order.CreateFormType
 	uid, errJwt := jwt.GetTokenId(ctx)
 	if errJwt != nil {
 		response.Fail(ctx, http.StatusUnprocessableEntity, errJwt.Error(), nil)
@@ -25,7 +25,7 @@ func (t Order) Create(ctx *gin.Context) {
 		response.Fail(ctx, http.StatusUnprocessableEntity, err.Error(), nil)
 		return
 	}
-	code, err := order.OrderInfoInit(ctx).CreateOrder(&form)
+	code, err := order.InfoInit(ctx).CreateOrder(&form)
 	if err != nil {
 		response.Fail(ctx, http.StatusBadRequest, err.Error(), nil)
 		return

@@ -2,38 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c89ae3-632a-4905-b9a1-85facf76c874" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/queue_jobs/order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/queue_jobs/order_queue.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goShop.service" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/order/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/order/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ent/schema/orderinfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/schema/orderinfo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/initialize/rabbit_mq.go" beforeDir="false" afterPath="$PROJECT_DIR$/initialize/rabbit_mq.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog.2021061800" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog.2021061900" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog.2021062300" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog.2021062900" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog.2021063000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/errlog.2021070100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021061800" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021061900" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062200" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062300" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062400" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062500" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062600" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062700" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062800" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021062900" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021063000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.2021070100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/wechat/minichat.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/wechat/minichat.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queue_jobs/priority.go" beforeDir="false" afterPath="$PROJECT_DIR$/queue_jobs/priority.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queue_jobs/priority_queue.go" beforeDir="false" afterPath="$PROJECT_DIR$/queue_jobs/priority_queue.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/types/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/goods_model/goods_spu.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/goods_model/goods_spu.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/order/order_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/order/order_info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/utils/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/utils/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queue_jobs/delay_queue.go" beforeDir="false" afterPath="$PROJECT_DIR$/queue_jobs/delay_queue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queue_jobs/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/queue_jobs/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queue_jobs/order_queue.go" beforeDir="false" afterPath="$PROJECT_DIR$/queue_jobs/order_queue.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +65,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.配色方案字体" />
+    <property name="settings.editor.selected.configurable" value="go" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -102,7 +83,7 @@
       <recent name="$PROJECT_DIR$/model/goods" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build main.go (1)">
+  <component name="RunManager" selected="Makefile.linux">
     <configuration name="go build github.com/a20070322/shop-go/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop" />
       <working_directory value="$PROJECT_DIR$" />
@@ -128,12 +109,10 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build variable.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goShop" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/global/variable.go" />
-      <directory value="$PROJECT_DIR$" />
+    <configuration name="linux" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="linux" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
       <method v="2" />
     </configuration>
     <configuration name="mac" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
@@ -144,9 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile.linux" />
+        <item itemvalue="Makefile.linux" />
+        <item itemvalue="Makefile.mac" />
         <item itemvalue="Go 构建.go build main.go (1)" />
         <item itemvalue="Go 构建.go build github.com/a20070322/shop-go/test" />
-        <item itemvalue="Go 构建.go build main.go" />
       </list>
     </recent_temporary>
   </component>

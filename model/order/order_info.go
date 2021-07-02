@@ -13,26 +13,26 @@ import (
 
 )
 
-func OrderInfoInit(ctx context.Context) *OrderInfo {
-	art := &OrderInfo{}
+func InfoInit(ctx context.Context) *Info {
+	art := &Info{}
 	art.db = global.Db.OrderInfo
 	art.ctx = ctx
 	return art
 }
 
-type OrderInfo struct {
+type Info struct {
 	db  *ent.OrderInfoClient
 	ctx context.Context
 }
 
-type OrderCreateFormType struct {
+type CreateFormType struct {
 	CustomerId int                                 `json:"customer_id" binding:"required"`
 	Products   []*order_utils.OrderCreateGoodsItem `json:"products" binding:"required"`
 	Remarks    string                              `json:"remarks"`
 }
 
 // 下单操作
-func (m OrderInfo) CreateOrder(orderInfo *OrderCreateFormType) (string, error) {
+func (m Info) CreateOrder(orderInfo *CreateFormType) (string, error) {
 	// 生成订单号
 	orderCode := order_utils.GenerateOrderCode()
 	checkBool, skus, productMap, err := goods_model.SkuInit(m.ctx).CheckGetSku(orderInfo.Products)
@@ -83,7 +83,7 @@ func (m OrderInfo) CreateOrder(orderInfo *OrderCreateFormType) (string, error) {
 }
 
 // 库存校验 订单状态改变
-func (m OrderInfo) HandleOrder(code string) bool {
+func (m Info) HandleOrder(code string) bool {
 	orderTmp, err := m.db.Query().
 		Where(
 			orderinfo.OrderNumberEQ(code),
@@ -116,7 +116,7 @@ func (m OrderInfo) HandleOrder(code string) bool {
 }
 
 // 订单超时处理
-func (m OrderInfo) TimeOutOrder(code string) bool {
+func (m Info) TimeOutOrder(code string) bool {
 	orderTmp, err := m.db.Query().
 		Where(
 			orderinfo.OrderNumberEQ(code),

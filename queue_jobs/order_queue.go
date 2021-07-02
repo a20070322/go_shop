@@ -13,7 +13,7 @@ type OrderQueue struct {
 
 // 订单处理
 func (del *OrderQueue) OrderProcessing(d amqp.Delivery, payload *types.QueuePayloadType) {
-	boolOrder := order.OrderInfoInit(context.Background()).HandleOrder(payload.PayLoad)
+	boolOrder := order.InfoInit(context.Background()).HandleOrder(payload.PayLoad)
 	if boolOrder == false {
 		global.Logger.Error("[%s] 订单处理失败", payload.PayLoad)
 	}else{

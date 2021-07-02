@@ -1,0 +1,15 @@
+# 服务说明
+[Unit]
+# 简单描述服务
+Description=GoShop API server
+# 描述服务类别，表示本服务需要在network服务启动后在启动
+After=network.target
+
+# 服务的关键
+
+# 表示后台运行模式
+Type=forking
+PIDFile=/usr/local/go_shop/go_shop.pid
+ExecStart=/usr/local/go_shop/bin/startup.sh
+
+
