@@ -12,6 +12,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/a20070322/shop-go/ent/orderaddress"
+	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/predicate"
 )
 
@@ -24,6 +25,9 @@ type OrderAddressQuery struct {
 	order      []OrderFunc
 	fields     []string
 	predicates []predicate.OrderAddress
+	// eager-loading edges.
+	withOrderInfo *OrderInfoQuery
+	withFKs       bool
 	// intermediate query (i.e. traversal path).
 	sql  *sql.Selector
 	path func(context.Context) (*sql.Selector, error)
@@ -58,6 +62,28 @@ func (oaq *OrderAddressQuery) Unique(unique bool) *OrderAddressQuery {
 func (oaq *OrderAddressQuery) Order(o ...OrderFunc) *OrderAddressQuery {
 	oaq.order = append(oaq.order, o...)
 	return oaq
+}
+
+// QueryOrderInfo chains the current query on the "order_info" edge.
+func (oaq *OrderAddressQuery) QueryOrderInfo() *OrderInfoQuery {
+	query := &OrderInfoQuery{config: oaq.config}
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := oaq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := oaq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderaddress.Table, orderaddress.FieldID, selector),
+			sqlgraph.To(orderinfo.Table, orderinfo.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, orderaddress.OrderInfoTable, orderaddress.OrderInfoColumn),
+		)
+		fromU = sqlgraph.SetNeighbors(oaq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
 }
 
 // First returns the first OrderAddress entity from the query.
@@ -236,19 +262,44 @@ func (oaq *OrderAddressQuery) Clone() *OrderAddressQuery {
 		return nil
 	}
 	return &OrderAddressQuery{
-		config:     oaq.config,
-		limit:      oaq.limit,
-		offset:     oaq.offset,
-		order:      append([]OrderFunc{}, oaq.order...),
-		predicates: append([]predicate.OrderAddress{}, oaq.predicates...),
+		config:        oaq.config,
+		limit:         oaq.limit,
+		offset:        oaq.offset,
+		order:         append([]OrderFunc{}, oaq.order...),
+		predicates:    append([]predicate.OrderAddress{}, oaq.predicates...),
+		withOrderInfo: oaq.withOrderInfo.Clone(),
 		// clone intermediate query.
 		sql:  oaq.sql.Clone(),
 		path: oaq.path,
 	}
 }
 
+// WithOrderInfo tells the query-builder to eager-load the nodes that are connected to
+// the "order_info" edge. The optional arguments are used to configure the query builder of the edge.
+func (oaq *OrderAddressQuery) WithOrderInfo(opts ...func(*OrderInfoQuery)) *OrderAddressQuery {
+	query := &OrderInfoQuery{config: oaq.config}
+	for _, opt := range opts {
+		opt(query)
+	}
+	oaq.withOrderInfo = query
+	return oaq
+}
+
 // GroupBy is used to group vertices by one or more fields/columns.
 // It is often used with aggregate functions, like: count, max, mean, min, sum.
+//
+// Example:
+//
+//	var v []struct {
+//		Name string `json:"name,omitempty"`
+//		Count int `json:"count,omitempty"`
+//	}
+//
+//	client.OrderAddress.Query().
+//		GroupBy(orderaddress.FieldName).
+//		Aggregate(ent.Count()).
+//		Scan(ctx, &v)
+//
 func (oaq *OrderAddressQuery) GroupBy(field string, fields ...string) *OrderAddressGroupBy {
 	group := &OrderAddressGroupBy{config: oaq.config}
 	group.fields = append([]string{field}, fields...)
@@ -263,6 +314,17 @@ func (oaq *OrderAddressQuery) GroupBy(field string, fields ...string) *OrderAddr
 
 // Select allows the selection one or more fields/columns for the given query,
 // instead of selecting all fields in the entity.
+//
+// Example:
+//
+//	var v []struct {
+//		Name string `json:"name,omitempty"`
+//	}
+//
+//	client.OrderAddress.Query().
+//		Select(orderaddress.FieldName).
+//		Scan(ctx, &v)
+//
 func (oaq *OrderAddressQuery) Select(field string, fields ...string) *OrderAddressSelect {
 	oaq.fields = append([]string{field}, fields...)
 	return &OrderAddressSelect{OrderAddressQuery: oaq}
@@ -286,9 +348,19 @@ func (oaq *OrderAddressQuery) prepareQuery(ctx context.Context) error {
 
 func (oaq *OrderAddressQuery) sqlAll(ctx context.Context) ([]*OrderAddress, error) {
 	var (
-		nodes = []*OrderAddress{}
-		_spec = oaq.querySpec()
+		nodes       = []*OrderAddress{}
+		withFKs     = oaq.withFKs
+		_spec       = oaq.querySpec()
+		loadedTypes = [1]bool{
+			oaq.withOrderInfo != nil,
+		}
 	)
+	if oaq.withOrderInfo != nil {
+		withFKs = true
+	}
+	if withFKs {
+		_spec.Node.Columns = append(_spec.Node.Columns, orderaddress.ForeignKeys...)
+	}
 	_spec.ScanValues = func(columns []string) ([]interface{}, error) {
 		node := &OrderAddress{config: oaq.config}
 		nodes = append(nodes, node)
@@ -299,6 +371,7 @@ func (oaq *OrderAddressQuery) sqlAll(ctx context.Context) ([]*OrderAddress, erro
 			return fmt.Errorf("ent: Assign called without calling ScanValues")
 		}
 		node := nodes[len(nodes)-1]
+		node.Edges.loadedTypes = loadedTypes
 		return node.assignValues(columns, values)
 	}
 	if err := sqlgraph.QueryNodes(ctx, oaq.driver, _spec); err != nil {
@@ -307,6 +380,36 @@ func (oaq *OrderAddressQuery) sqlAll(ctx context.Context) ([]*OrderAddress, erro
 	if len(nodes) == 0 {
 		return nodes, nil
 	}
+
+	if query := oaq.withOrderInfo; query != nil {
+		ids := make([]int, 0, len(nodes))
+		nodeids := make(map[int][]*OrderAddress)
+		for i := range nodes {
+			if nodes[i].order_info_order_address == nil {
+				continue
+			}
+			fk := *nodes[i].order_info_order_address
+			if _, ok := nodeids[fk]; !ok {
+				ids = append(ids, fk)
+			}
+			nodeids[fk] = append(nodeids[fk], nodes[i])
+		}
+		query.Where(orderinfo.IDIn(ids...))
+		neighbors, err := query.All(ctx)
+		if err != nil {
+			return nil, err
+		}
+		for _, n := range neighbors {
+			nodes, ok := nodeids[n.ID]
+			if !ok {
+				return nil, fmt.Errorf(`unexpected foreign-key "order_info_order_address" returned %v`, n.ID)
+			}
+			for i := range nodes {
+				nodes[i].Edges.OrderInfo = n
+			}
+		}
+	}
+
 	return nodes, nil
 }
 

@@ -15,6 +15,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/viper v1.8.1
 	github.com/streadway/amqp v1.0.0
+	github.com/urfave/cli/v2 v2.3.0 // indirect
 	github.com/wechatpay-apiv3/wechatpay-go v0.2.1
 	go.uber.org/zap v1.18.1
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e

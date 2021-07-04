@@ -974,6 +974,34 @@ func HasOrderGoodsSkuWith(preds ...predicate.OrderGoodsSku) predicate.OrderInfo 
 	})
 }
 
+// HasOrderAddress applies the HasEdge predicate on the "order_address" edge.
+func HasOrderAddress() predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(OrderAddressTable, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, OrderAddressTable, OrderAddressColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasOrderAddressWith applies the HasEdge predicate on the "order_address" edge with a given conditions (other predicates).
+func HasOrderAddressWith(preds ...predicate.OrderAddress) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(OrderAddressInverseTable, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, OrderAddressTable, OrderAddressColumn),
+		)
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
+	})
+}
+
 // And groups predicates with the AND operator between them.
 func And(predicates ...predicate.OrderInfo) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {

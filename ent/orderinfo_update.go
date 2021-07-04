@@ -11,6 +11,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/a20070322/shop-go/ent/customer"
+	"github.com/a20070322/shop-go/ent/orderaddress"
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/predicate"
@@ -183,6 +184,21 @@ func (oiu *OrderInfoUpdate) AddOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfoUpda
 	return oiu.AddOrderGoodsSkuIDs(ids...)
 }
 
+// AddOrderAddresIDs adds the "order_address" edge to the OrderAddress entity by IDs.
+func (oiu *OrderInfoUpdate) AddOrderAddresIDs(ids ...int) *OrderInfoUpdate {
+	oiu.mutation.AddOrderAddresIDs(ids...)
+	return oiu
+}
+
+// AddOrderAddress adds the "order_address" edges to the OrderAddress entity.
+func (oiu *OrderInfoUpdate) AddOrderAddress(o ...*OrderAddress) *OrderInfoUpdate {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiu.AddOrderAddresIDs(ids...)
+}
+
 // Mutation returns the OrderInfoMutation object of the builder.
 func (oiu *OrderInfoUpdate) Mutation() *OrderInfoMutation {
 	return oiu.mutation
@@ -213,6 +229,27 @@ func (oiu *OrderInfoUpdate) RemoveOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfoU
 		ids[i] = o[i].ID
 	}
 	return oiu.RemoveOrderGoodsSkuIDs(ids...)
+}
+
+// ClearOrderAddress clears all "order_address" edges to the OrderAddress entity.
+func (oiu *OrderInfoUpdate) ClearOrderAddress() *OrderInfoUpdate {
+	oiu.mutation.ClearOrderAddress()
+	return oiu
+}
+
+// RemoveOrderAddresIDs removes the "order_address" edge to OrderAddress entities by IDs.
+func (oiu *OrderInfoUpdate) RemoveOrderAddresIDs(ids ...int) *OrderInfoUpdate {
+	oiu.mutation.RemoveOrderAddresIDs(ids...)
+	return oiu
+}
+
+// RemoveOrderAddress removes "order_address" edges to OrderAddress entities.
+func (oiu *OrderInfoUpdate) RemoveOrderAddress(o ...*OrderAddress) *OrderInfoUpdate {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiu.RemoveOrderAddresIDs(ids...)
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -469,6 +506,60 @@ func (oiu *OrderInfoUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
+	if oiu.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiu.mutation.RemovedOrderAddressIDs(); len(nodes) > 0 && !oiu.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiu.mutation.OrderAddressIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
 	if n, err = sqlgraph.UpdateNodes(ctx, oiu.driver, _spec); err != nil {
 		if _, ok := err.(*sqlgraph.NotFoundError); ok {
 			err = &NotFoundError{orderinfo.Label}
@@ -642,6 +733,21 @@ func (oiuo *OrderInfoUpdateOne) AddOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfo
 	return oiuo.AddOrderGoodsSkuIDs(ids...)
 }
 
+// AddOrderAddresIDs adds the "order_address" edge to the OrderAddress entity by IDs.
+func (oiuo *OrderInfoUpdateOne) AddOrderAddresIDs(ids ...int) *OrderInfoUpdateOne {
+	oiuo.mutation.AddOrderAddresIDs(ids...)
+	return oiuo
+}
+
+// AddOrderAddress adds the "order_address" edges to the OrderAddress entity.
+func (oiuo *OrderInfoUpdateOne) AddOrderAddress(o ...*OrderAddress) *OrderInfoUpdateOne {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiuo.AddOrderAddresIDs(ids...)
+}
+
 // Mutation returns the OrderInfoMutation object of the builder.
 func (oiuo *OrderInfoUpdateOne) Mutation() *OrderInfoMutation {
 	return oiuo.mutation
@@ -672,6 +778,27 @@ func (oiuo *OrderInfoUpdateOne) RemoveOrderGoodsSku(o ...*OrderGoodsSku) *OrderI
 		ids[i] = o[i].ID
 	}
 	return oiuo.RemoveOrderGoodsSkuIDs(ids...)
+}
+
+// ClearOrderAddress clears all "order_address" edges to the OrderAddress entity.
+func (oiuo *OrderInfoUpdateOne) ClearOrderAddress() *OrderInfoUpdateOne {
+	oiuo.mutation.ClearOrderAddress()
+	return oiuo
+}
+
+// RemoveOrderAddresIDs removes the "order_address" edge to OrderAddress entities by IDs.
+func (oiuo *OrderInfoUpdateOne) RemoveOrderAddresIDs(ids ...int) *OrderInfoUpdateOne {
+	oiuo.mutation.RemoveOrderAddresIDs(ids...)
+	return oiuo
+}
+
+// RemoveOrderAddress removes "order_address" edges to OrderAddress entities.
+func (oiuo *OrderInfoUpdateOne) RemoveOrderAddress(o ...*OrderAddress) *OrderInfoUpdateOne {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiuo.RemoveOrderAddresIDs(ids...)
 }
 
 // Select allows selecting one or more fields (columns) of the returned entity.
@@ -944,6 +1071,60 @@ func (oiuo *OrderInfoUpdateOne) sqlSave(ctx context.Context) (_node *OrderInfo, 
 				IDSpec: &sqlgraph.FieldSpec{
 					Type:   field.TypeInt,
 					Column: ordergoodssku.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if oiuo.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiuo.mutation.RemovedOrderAddressIDs(); len(nodes) > 0 && !oiuo.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiuo.mutation.OrderAddressIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
 				},
 			},
 		}

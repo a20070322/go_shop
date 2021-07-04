@@ -50,9 +50,11 @@ type OrderInfoEdges struct {
 	Customer *Customer `json:"customer,omitempty"`
 	// OrderGoodsSku holds the value of the order_goods_sku edge.
 	OrderGoodsSku []*OrderGoodsSku `json:"order_goods_sku,omitempty"`
+	// OrderAddress holds the value of the order_address edge.
+	OrderAddress []*OrderAddress `json:"order_address,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [2]bool
+	loadedTypes [3]bool
 }
 
 // CustomerOrErr returns the Customer value or an error if the edge
@@ -76,6 +78,15 @@ func (e OrderInfoEdges) OrderGoodsSkuOrErr() ([]*OrderGoodsSku, error) {
 		return e.OrderGoodsSku, nil
 	}
 	return nil, &NotLoadedError{edge: "order_goods_sku"}
+}
+
+// OrderAddressOrErr returns the OrderAddress value or an error if the edge
+// was not loaded in eager-loading.
+func (e OrderInfoEdges) OrderAddressOrErr() ([]*OrderAddress, error) {
+	if e.loadedTypes[2] {
+		return e.OrderAddress, nil
+	}
+	return nil, &NotLoadedError{edge: "order_address"}
 }
 
 // scanValues returns the types for scanning values from sql.Rows.
@@ -180,6 +191,11 @@ func (oi *OrderInfo) QueryCustomer() *CustomerQuery {
 // QueryOrderGoodsSku queries the "order_goods_sku" edge of the OrderInfo entity.
 func (oi *OrderInfo) QueryOrderGoodsSku() *OrderGoodsSkuQuery {
 	return (&OrderInfoClient{config: oi.config}).QueryOrderGoodsSku(oi)
+}
+
+// QueryOrderAddress queries the "order_address" edge of the OrderInfo entity.
+func (oi *OrderInfo) QueryOrderAddress() *OrderAddressQuery {
+	return (&OrderInfoClient{config: oi.config}).QueryOrderAddress(oi)
 }
 
 // Update returns a builder for updating this OrderInfo.

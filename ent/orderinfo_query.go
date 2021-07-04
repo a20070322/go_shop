@@ -13,6 +13,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/a20070322/shop-go/ent/customer"
+	"github.com/a20070322/shop-go/ent/orderaddress"
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/predicate"
@@ -30,6 +31,7 @@ type OrderInfoQuery struct {
 	// eager-loading edges.
 	withCustomer      *CustomerQuery
 	withOrderGoodsSku *OrderGoodsSkuQuery
+	withOrderAddress  *OrderAddressQuery
 	withFKs           bool
 	// intermediate query (i.e. traversal path).
 	sql  *sql.Selector
@@ -104,6 +106,28 @@ func (oiq *OrderInfoQuery) QueryOrderGoodsSku() *OrderGoodsSkuQuery {
 			sqlgraph.From(orderinfo.Table, orderinfo.FieldID, selector),
 			sqlgraph.To(ordergoodssku.Table, ordergoodssku.FieldID),
 			sqlgraph.Edge(sqlgraph.O2M, false, orderinfo.OrderGoodsSkuTable, orderinfo.OrderGoodsSkuColumn),
+		)
+		fromU = sqlgraph.SetNeighbors(oiq.driver.Dialect(), step)
+		return fromU, nil
+	}
+	return query
+}
+
+// QueryOrderAddress chains the current query on the "order_address" edge.
+func (oiq *OrderInfoQuery) QueryOrderAddress() *OrderAddressQuery {
+	query := &OrderAddressQuery{config: oiq.config}
+	query.path = func(ctx context.Context) (fromU *sql.Selector, err error) {
+		if err := oiq.prepareQuery(ctx); err != nil {
+			return nil, err
+		}
+		selector := oiq.sqlQuery(ctx)
+		if err := selector.Err(); err != nil {
+			return nil, err
+		}
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderinfo.Table, orderinfo.FieldID, selector),
+			sqlgraph.To(orderaddress.Table, orderaddress.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, orderinfo.OrderAddressTable, orderinfo.OrderAddressColumn),
 		)
 		fromU = sqlgraph.SetNeighbors(oiq.driver.Dialect(), step)
 		return fromU, nil
@@ -294,6 +318,7 @@ func (oiq *OrderInfoQuery) Clone() *OrderInfoQuery {
 		predicates:        append([]predicate.OrderInfo{}, oiq.predicates...),
 		withCustomer:      oiq.withCustomer.Clone(),
 		withOrderGoodsSku: oiq.withOrderGoodsSku.Clone(),
+		withOrderAddress:  oiq.withOrderAddress.Clone(),
 		// clone intermediate query.
 		sql:  oiq.sql.Clone(),
 		path: oiq.path,
@@ -319,6 +344,17 @@ func (oiq *OrderInfoQuery) WithOrderGoodsSku(opts ...func(*OrderGoodsSkuQuery)) 
 		opt(query)
 	}
 	oiq.withOrderGoodsSku = query
+	return oiq
+}
+
+// WithOrderAddress tells the query-builder to eager-load the nodes that are connected to
+// the "order_address" edge. The optional arguments are used to configure the query builder of the edge.
+func (oiq *OrderInfoQuery) WithOrderAddress(opts ...func(*OrderAddressQuery)) *OrderInfoQuery {
+	query := &OrderAddressQuery{config: oiq.config}
+	for _, opt := range opts {
+		opt(query)
+	}
+	oiq.withOrderAddress = query
 	return oiq
 }
 
@@ -388,9 +424,10 @@ func (oiq *OrderInfoQuery) sqlAll(ctx context.Context) ([]*OrderInfo, error) {
 		nodes       = []*OrderInfo{}
 		withFKs     = oiq.withFKs
 		_spec       = oiq.querySpec()
-		loadedTypes = [2]bool{
+		loadedTypes = [3]bool{
 			oiq.withCustomer != nil,
 			oiq.withOrderGoodsSku != nil,
+			oiq.withOrderAddress != nil,
 		}
 	)
 	if oiq.withCustomer != nil {
@@ -474,6 +511,35 @@ func (oiq *OrderInfoQuery) sqlAll(ctx context.Context) ([]*OrderInfo, error) {
 				return nil, fmt.Errorf(`unexpected foreign-key "order_info_order_goods_sku" returned %v for node %v`, *fk, n.ID)
 			}
 			node.Edges.OrderGoodsSku = append(node.Edges.OrderGoodsSku, n)
+		}
+	}
+
+	if query := oiq.withOrderAddress; query != nil {
+		fks := make([]driver.Value, 0, len(nodes))
+		nodeids := make(map[int]*OrderInfo)
+		for i := range nodes {
+			fks = append(fks, nodes[i].ID)
+			nodeids[nodes[i].ID] = nodes[i]
+			nodes[i].Edges.OrderAddress = []*OrderAddress{}
+		}
+		query.withFKs = true
+		query.Where(predicate.OrderAddress(func(s *sql.Selector) {
+			s.Where(sql.InValues(orderinfo.OrderAddressColumn, fks...))
+		}))
+		neighbors, err := query.All(ctx)
+		if err != nil {
+			return nil, err
+		}
+		for _, n := range neighbors {
+			fk := n.order_info_order_address
+			if fk == nil {
+				return nil, fmt.Errorf(`foreign-key "order_info_order_address" is nil for node %v`, n.ID)
+			}
+			node, ok := nodeids[*fk]
+			if !ok {
+				return nil, fmt.Errorf(`unexpected foreign-key "order_info_order_address" returned %v for node %v`, *fk, n.ID)
+			}
+			node.Edges.OrderAddress = append(node.Edges.OrderAddress, n)
 		}
 	}
 

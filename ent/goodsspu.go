@@ -32,6 +32,9 @@ type GoodsSpu struct {
 	// SpuHeadImg holds the value of the "spu_head_img" field.
 	// 简介
 	SpuHeadImg string `json:"spu_head_img,omitempty"`
+	// SalesNum holds the value of the "sales_num" field.
+	// 商品总销量
+	SalesNum int `json:"sales_num,omitempty"`
 	// SpuDesc holds the value of the "spu_desc" field.
 	// 描述
 	SpuDesc string `json:"spu_desc,omitempty"`
@@ -110,7 +113,7 @@ func (*GoodsSpu) scanValues(columns []string) ([]interface{}, error) {
 		switch columns[i] {
 		case goodsspu.FieldIsCustomSku:
 			values[i] = new(sql.NullBool)
-		case goodsspu.FieldID:
+		case goodsspu.FieldID, goodsspu.FieldSalesNum:
 			values[i] = new(sql.NullInt64)
 		case goodsspu.FieldSpuName, goodsspu.FieldSpuCode, goodsspu.FieldSpuHeadImg, goodsspu.FieldSpuDesc, goodsspu.FieldSpuDetails:
 			values[i] = new(sql.NullString)
@@ -174,6 +177,12 @@ func (gs *GoodsSpu) assignValues(columns []string, values []interface{}) error {
 				return fmt.Errorf("unexpected type %T for field spu_head_img", values[i])
 			} else if value.Valid {
 				gs.SpuHeadImg = value.String
+			}
+		case goodsspu.FieldSalesNum:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for field sales_num", values[i])
+			} else if value.Valid {
+				gs.SalesNum = int(value.Int64)
 			}
 		case goodsspu.FieldSpuDesc:
 			if value, ok := values[i].(*sql.NullString); !ok {
@@ -260,6 +269,8 @@ func (gs *GoodsSpu) String() string {
 	builder.WriteString(gs.SpuCode)
 	builder.WriteString(", spu_head_img=")
 	builder.WriteString(gs.SpuHeadImg)
+	builder.WriteString(", sales_num=")
+	builder.WriteString(fmt.Sprintf("%v", gs.SalesNum))
 	builder.WriteString(", spu_desc=")
 	builder.WriteString(gs.SpuDesc)
 	builder.WriteString(", spu_details=")

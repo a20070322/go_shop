@@ -31,6 +31,8 @@ const (
 	EdgeCustomer = "customer"
 	// EdgeOrderGoodsSku holds the string denoting the order_goods_sku edge name in mutations.
 	EdgeOrderGoodsSku = "order_goods_sku"
+	// EdgeOrderAddress holds the string denoting the order_address edge name in mutations.
+	EdgeOrderAddress = "order_address"
 	// Table holds the table name of the orderinfo in the database.
 	Table = "order_infos"
 	// CustomerTable is the table the holds the customer relation/edge.
@@ -47,6 +49,13 @@ const (
 	OrderGoodsSkuInverseTable = "order_goods_skus"
 	// OrderGoodsSkuColumn is the table column denoting the order_goods_sku relation/edge.
 	OrderGoodsSkuColumn = "order_info_order_goods_sku"
+	// OrderAddressTable is the table the holds the order_address relation/edge.
+	OrderAddressTable = "order_addresses"
+	// OrderAddressInverseTable is the table name for the OrderAddress entity.
+	// It exists in this package in order to avoid circular dependency with the "orderaddress" package.
+	OrderAddressInverseTable = "order_addresses"
+	// OrderAddressColumn is the table column denoting the order_address relation/edge.
+	OrderAddressColumn = "order_info_order_address"
 )
 
 // Columns holds all SQL columns for orderinfo fields.

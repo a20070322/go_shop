@@ -95,6 +95,33 @@ func (gsu *GoodsSpuUpdate) ClearSpuHeadImg() *GoodsSpuUpdate {
 	return gsu
 }
 
+// SetSalesNum sets the "sales_num" field.
+func (gsu *GoodsSpuUpdate) SetSalesNum(i int) *GoodsSpuUpdate {
+	gsu.mutation.ResetSalesNum()
+	gsu.mutation.SetSalesNum(i)
+	return gsu
+}
+
+// SetNillableSalesNum sets the "sales_num" field if the given value is not nil.
+func (gsu *GoodsSpuUpdate) SetNillableSalesNum(i *int) *GoodsSpuUpdate {
+	if i != nil {
+		gsu.SetSalesNum(*i)
+	}
+	return gsu
+}
+
+// AddSalesNum adds i to the "sales_num" field.
+func (gsu *GoodsSpuUpdate) AddSalesNum(i int) *GoodsSpuUpdate {
+	gsu.mutation.AddSalesNum(i)
+	return gsu
+}
+
+// ClearSalesNum clears the value of the "sales_num" field.
+func (gsu *GoodsSpuUpdate) ClearSalesNum() *GoodsSpuUpdate {
+	gsu.mutation.ClearSalesNum()
+	return gsu
+}
+
 // SetSpuDesc sets the "spu_desc" field.
 func (gsu *GoodsSpuUpdate) SetSpuDesc(s string) *GoodsSpuUpdate {
 	gsu.mutation.SetSpuDesc(s)
@@ -410,6 +437,26 @@ func (gsu *GoodsSpuUpdate) sqlSave(ctx context.Context) (n int, err error) {
 			Column: goodsspu.FieldSpuHeadImg,
 		})
 	}
+	if value, ok := gsu.mutation.SalesNum(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: goodsspu.FieldSalesNum,
+		})
+	}
+	if value, ok := gsu.mutation.AddedSalesNum(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: goodsspu.FieldSalesNum,
+		})
+	}
+	if gsu.mutation.SalesNumCleared() {
+		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Column: goodsspu.FieldSalesNum,
+		})
+	}
 	if value, ok := gsu.mutation.SpuDesc(); ok {
 		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
 			Type:   field.TypeString,
@@ -720,6 +767,33 @@ func (gsuo *GoodsSpuUpdateOne) SetNillableSpuHeadImg(s *string) *GoodsSpuUpdateO
 // ClearSpuHeadImg clears the value of the "spu_head_img" field.
 func (gsuo *GoodsSpuUpdateOne) ClearSpuHeadImg() *GoodsSpuUpdateOne {
 	gsuo.mutation.ClearSpuHeadImg()
+	return gsuo
+}
+
+// SetSalesNum sets the "sales_num" field.
+func (gsuo *GoodsSpuUpdateOne) SetSalesNum(i int) *GoodsSpuUpdateOne {
+	gsuo.mutation.ResetSalesNum()
+	gsuo.mutation.SetSalesNum(i)
+	return gsuo
+}
+
+// SetNillableSalesNum sets the "sales_num" field if the given value is not nil.
+func (gsuo *GoodsSpuUpdateOne) SetNillableSalesNum(i *int) *GoodsSpuUpdateOne {
+	if i != nil {
+		gsuo.SetSalesNum(*i)
+	}
+	return gsuo
+}
+
+// AddSalesNum adds i to the "sales_num" field.
+func (gsuo *GoodsSpuUpdateOne) AddSalesNum(i int) *GoodsSpuUpdateOne {
+	gsuo.mutation.AddSalesNum(i)
+	return gsuo
+}
+
+// ClearSalesNum clears the value of the "sales_num" field.
+func (gsuo *GoodsSpuUpdateOne) ClearSalesNum() *GoodsSpuUpdateOne {
+	gsuo.mutation.ClearSalesNum()
 	return gsuo
 }
 
@@ -1060,6 +1134,26 @@ func (gsuo *GoodsSpuUpdateOne) sqlSave(ctx context.Context) (_node *GoodsSpu, er
 		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
 			Type:   field.TypeString,
 			Column: goodsspu.FieldSpuHeadImg,
+		})
+	}
+	if value, ok := gsuo.mutation.SalesNum(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: goodsspu.FieldSalesNum,
+		})
+	}
+	if value, ok := gsuo.mutation.AddedSalesNum(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: goodsspu.FieldSalesNum,
+		})
+	}
+	if gsuo.mutation.SalesNumCleared() {
+		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Column: goodsspu.FieldSalesNum,
 		})
 	}
 	if value, ok := gsuo.mutation.SpuDesc(); ok {

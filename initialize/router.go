@@ -52,7 +52,6 @@ func Router() {
 	signal.Notify(quit, os.Interrupt)
 	<-quit
 	log.Println("Shutdown Server ...")
-
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
@@ -61,11 +60,7 @@ func Router() {
 	log.Println("数据库连接关闭")
 	global.Db.Close()
 	global.RabbitMq.Close()
-
 	log.Println("Server exiting")
-	//fmt.Println(srv)
-	//router.Run(":" + strconv.Itoa(global.AppSetting.Server.Port))
-
 }
 
 func apiRegisterApis(api *gin.RouterGroup) {

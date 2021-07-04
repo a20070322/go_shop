@@ -224,6 +224,7 @@ var (
 		{Name: "spu_name", Type: field.TypeString},
 		{Name: "spu_code", Type: field.TypeString, Unique: true},
 		{Name: "spu_head_img", Type: field.TypeString, Nullable: true, Size: 2147483647},
+		{Name: "sales_num", Type: field.TypeInt, Nullable: true},
 		{Name: "spu_desc", Type: field.TypeString, Nullable: true, Size: 2147483647},
 		{Name: "spu_details", Type: field.TypeString, Nullable: true, Size: 2147483647},
 		{Name: "is_custom_sku", Type: field.TypeBool},
@@ -237,7 +238,7 @@ var (
 		ForeignKeys: []*schema.ForeignKey{
 			{
 				Symbol:     "goods_spus_goods_classifies_goods_spu",
-				Columns:    []*schema.Column{GoodsSpusColumns[10]},
+				Columns:    []*schema.Column{GoodsSpusColumns[11]},
 				RefColumns: []*schema.Column{GoodsClassifiesColumns[0]},
 				OnDelete:   schema.SetNull,
 			},
@@ -270,13 +271,28 @@ var (
 	// OrderAddressesColumns holds the columns for the "order_addresses" table.
 	OrderAddressesColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeInt, Increment: true},
+		{Name: "name", Type: field.TypeString},
+		{Name: "phone", Type: field.TypeString},
+		{Name: "province", Type: field.TypeString},
+		{Name: "city", Type: field.TypeString},
+		{Name: "area", Type: field.TypeString},
+		{Name: "detailed", Type: field.TypeString},
+		{Name: "remark", Type: field.TypeString, Nullable: true},
+		{Name: "order_info_order_address", Type: field.TypeInt, Nullable: true},
 	}
 	// OrderAddressesTable holds the schema information for the "order_addresses" table.
 	OrderAddressesTable = &schema.Table{
-		Name:        "order_addresses",
-		Columns:     OrderAddressesColumns,
-		PrimaryKey:  []*schema.Column{OrderAddressesColumns[0]},
-		ForeignKeys: []*schema.ForeignKey{},
+		Name:       "order_addresses",
+		Columns:    OrderAddressesColumns,
+		PrimaryKey: []*schema.Column{OrderAddressesColumns[0]},
+		ForeignKeys: []*schema.ForeignKey{
+			{
+				Symbol:     "order_addresses_order_infos_order_address",
+				Columns:    []*schema.Column{OrderAddressesColumns[8]},
+				RefColumns: []*schema.Column{OrderInfosColumns[0]},
+				OnDelete:   schema.SetNull,
+			},
+		},
 	}
 	// OrderGoodsSkusColumns holds the columns for the "order_goods_skus" table.
 	OrderGoodsSkusColumns = []*schema.Column{
@@ -399,6 +415,7 @@ func init() {
 	GoodsSpecsOptionsTable.ForeignKeys[0].RefTable = GoodsSpecsTable
 	GoodsSpusTable.ForeignKeys[0].RefTable = GoodsClassifiesTable
 	GoodsSpuImgsTable.ForeignKeys[0].RefTable = GoodsSpusTable
+	OrderAddressesTable.ForeignKeys[0].RefTable = OrderInfosTable
 	OrderGoodsSkusTable.ForeignKeys[0].RefTable = GoodsSpusTable
 	OrderGoodsSkusTable.ForeignKeys[1].RefTable = OrderInfosTable
 	OrderInfosTable.ForeignKeys[0].RefTable = CustomersTable

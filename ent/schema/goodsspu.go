@@ -29,6 +29,9 @@ func (GoodsSpu) Fields() []ent.Field {
 		field.Text("spu_head_img").
 			Optional().
 			Comment("简介"),
+		field.Int("sales_num").
+			Optional().
+			Comment("商品总销量"),
 		field.Text("spu_desc").
 			Optional().
 			Comment("描述"),

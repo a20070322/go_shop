@@ -47,5 +47,6 @@ func (OrderInfo) Edges() []ent.Edge {
 			Ref("order_info").
 			Unique(),
 		edge.To("order_goods_sku", OrderGoodsSku.Type),
+		edge.To("order_address", OrderAddress.Type),
 	}
 }

@@ -10,6 +10,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/a20070322/shop-go/ent/orderaddress"
+	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/predicate"
 )
 
@@ -26,9 +27,90 @@ func (oau *OrderAddressUpdate) Where(ps ...predicate.OrderAddress) *OrderAddress
 	return oau
 }
 
+// SetName sets the "name" field.
+func (oau *OrderAddressUpdate) SetName(s string) *OrderAddressUpdate {
+	oau.mutation.SetName(s)
+	return oau
+}
+
+// SetPhone sets the "phone" field.
+func (oau *OrderAddressUpdate) SetPhone(s string) *OrderAddressUpdate {
+	oau.mutation.SetPhone(s)
+	return oau
+}
+
+// SetProvince sets the "province" field.
+func (oau *OrderAddressUpdate) SetProvince(s string) *OrderAddressUpdate {
+	oau.mutation.SetProvince(s)
+	return oau
+}
+
+// SetCity sets the "city" field.
+func (oau *OrderAddressUpdate) SetCity(s string) *OrderAddressUpdate {
+	oau.mutation.SetCity(s)
+	return oau
+}
+
+// SetArea sets the "area" field.
+func (oau *OrderAddressUpdate) SetArea(s string) *OrderAddressUpdate {
+	oau.mutation.SetArea(s)
+	return oau
+}
+
+// SetDetailed sets the "detailed" field.
+func (oau *OrderAddressUpdate) SetDetailed(s string) *OrderAddressUpdate {
+	oau.mutation.SetDetailed(s)
+	return oau
+}
+
+// SetRemark sets the "remark" field.
+func (oau *OrderAddressUpdate) SetRemark(s string) *OrderAddressUpdate {
+	oau.mutation.SetRemark(s)
+	return oau
+}
+
+// SetNillableRemark sets the "remark" field if the given value is not nil.
+func (oau *OrderAddressUpdate) SetNillableRemark(s *string) *OrderAddressUpdate {
+	if s != nil {
+		oau.SetRemark(*s)
+	}
+	return oau
+}
+
+// ClearRemark clears the value of the "remark" field.
+func (oau *OrderAddressUpdate) ClearRemark() *OrderAddressUpdate {
+	oau.mutation.ClearRemark()
+	return oau
+}
+
+// SetOrderInfoID sets the "order_info" edge to the OrderInfo entity by ID.
+func (oau *OrderAddressUpdate) SetOrderInfoID(id int) *OrderAddressUpdate {
+	oau.mutation.SetOrderInfoID(id)
+	return oau
+}
+
+// SetNillableOrderInfoID sets the "order_info" edge to the OrderInfo entity by ID if the given value is not nil.
+func (oau *OrderAddressUpdate) SetNillableOrderInfoID(id *int) *OrderAddressUpdate {
+	if id != nil {
+		oau = oau.SetOrderInfoID(*id)
+	}
+	return oau
+}
+
+// SetOrderInfo sets the "order_info" edge to the OrderInfo entity.
+func (oau *OrderAddressUpdate) SetOrderInfo(o *OrderInfo) *OrderAddressUpdate {
+	return oau.SetOrderInfoID(o.ID)
+}
+
 // Mutation returns the OrderAddressMutation object of the builder.
 func (oau *OrderAddressUpdate) Mutation() *OrderAddressMutation {
 	return oau.mutation
+}
+
+// ClearOrderInfo clears the "order_info" edge to the OrderInfo entity.
+func (oau *OrderAddressUpdate) ClearOrderInfo() *OrderAddressUpdate {
+	oau.mutation.ClearOrderInfo()
+	return oau
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -100,6 +182,96 @@ func (oau *OrderAddressUpdate) sqlSave(ctx context.Context) (n int, err error) {
 			}
 		}
 	}
+	if value, ok := oau.mutation.Name(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldName,
+		})
+	}
+	if value, ok := oau.mutation.Phone(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldPhone,
+		})
+	}
+	if value, ok := oau.mutation.Province(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldProvince,
+		})
+	}
+	if value, ok := oau.mutation.City(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldCity,
+		})
+	}
+	if value, ok := oau.mutation.Area(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldArea,
+		})
+	}
+	if value, ok := oau.mutation.Detailed(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldDetailed,
+		})
+	}
+	if value, ok := oau.mutation.Remark(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldRemark,
+		})
+	}
+	if oau.mutation.RemarkCleared() {
+		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Column: orderaddress.FieldRemark,
+		})
+	}
+	if oau.mutation.OrderInfoCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   orderaddress.OrderInfoTable,
+			Columns: []string{orderaddress.OrderInfoColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderinfo.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oau.mutation.OrderInfoIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   orderaddress.OrderInfoTable,
+			Columns: []string{orderaddress.OrderInfoColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderinfo.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
 	if n, err = sqlgraph.UpdateNodes(ctx, oau.driver, _spec); err != nil {
 		if _, ok := err.(*sqlgraph.NotFoundError); ok {
 			err = &NotFoundError{orderaddress.Label}
@@ -119,9 +291,90 @@ type OrderAddressUpdateOne struct {
 	mutation *OrderAddressMutation
 }
 
+// SetName sets the "name" field.
+func (oauo *OrderAddressUpdateOne) SetName(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetName(s)
+	return oauo
+}
+
+// SetPhone sets the "phone" field.
+func (oauo *OrderAddressUpdateOne) SetPhone(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetPhone(s)
+	return oauo
+}
+
+// SetProvince sets the "province" field.
+func (oauo *OrderAddressUpdateOne) SetProvince(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetProvince(s)
+	return oauo
+}
+
+// SetCity sets the "city" field.
+func (oauo *OrderAddressUpdateOne) SetCity(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetCity(s)
+	return oauo
+}
+
+// SetArea sets the "area" field.
+func (oauo *OrderAddressUpdateOne) SetArea(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetArea(s)
+	return oauo
+}
+
+// SetDetailed sets the "detailed" field.
+func (oauo *OrderAddressUpdateOne) SetDetailed(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetDetailed(s)
+	return oauo
+}
+
+// SetRemark sets the "remark" field.
+func (oauo *OrderAddressUpdateOne) SetRemark(s string) *OrderAddressUpdateOne {
+	oauo.mutation.SetRemark(s)
+	return oauo
+}
+
+// SetNillableRemark sets the "remark" field if the given value is not nil.
+func (oauo *OrderAddressUpdateOne) SetNillableRemark(s *string) *OrderAddressUpdateOne {
+	if s != nil {
+		oauo.SetRemark(*s)
+	}
+	return oauo
+}
+
+// ClearRemark clears the value of the "remark" field.
+func (oauo *OrderAddressUpdateOne) ClearRemark() *OrderAddressUpdateOne {
+	oauo.mutation.ClearRemark()
+	return oauo
+}
+
+// SetOrderInfoID sets the "order_info" edge to the OrderInfo entity by ID.
+func (oauo *OrderAddressUpdateOne) SetOrderInfoID(id int) *OrderAddressUpdateOne {
+	oauo.mutation.SetOrderInfoID(id)
+	return oauo
+}
+
+// SetNillableOrderInfoID sets the "order_info" edge to the OrderInfo entity by ID if the given value is not nil.
+func (oauo *OrderAddressUpdateOne) SetNillableOrderInfoID(id *int) *OrderAddressUpdateOne {
+	if id != nil {
+		oauo = oauo.SetOrderInfoID(*id)
+	}
+	return oauo
+}
+
+// SetOrderInfo sets the "order_info" edge to the OrderInfo entity.
+func (oauo *OrderAddressUpdateOne) SetOrderInfo(o *OrderInfo) *OrderAddressUpdateOne {
+	return oauo.SetOrderInfoID(o.ID)
+}
+
 // Mutation returns the OrderAddressMutation object of the builder.
 func (oauo *OrderAddressUpdateOne) Mutation() *OrderAddressMutation {
 	return oauo.mutation
+}
+
+// ClearOrderInfo clears the "order_info" edge to the OrderInfo entity.
+func (oauo *OrderAddressUpdateOne) ClearOrderInfo() *OrderAddressUpdateOne {
+	oauo.mutation.ClearOrderInfo()
+	return oauo
 }
 
 // Select allows selecting one or more fields (columns) of the returned entity.
@@ -216,6 +469,96 @@ func (oauo *OrderAddressUpdateOne) sqlSave(ctx context.Context) (_node *OrderAdd
 				ps[i](selector)
 			}
 		}
+	}
+	if value, ok := oauo.mutation.Name(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldName,
+		})
+	}
+	if value, ok := oauo.mutation.Phone(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldPhone,
+		})
+	}
+	if value, ok := oauo.mutation.Province(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldProvince,
+		})
+	}
+	if value, ok := oauo.mutation.City(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldCity,
+		})
+	}
+	if value, ok := oauo.mutation.Area(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldArea,
+		})
+	}
+	if value, ok := oauo.mutation.Detailed(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldDetailed,
+		})
+	}
+	if value, ok := oauo.mutation.Remark(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Value:  value,
+			Column: orderaddress.FieldRemark,
+		})
+	}
+	if oauo.mutation.RemarkCleared() {
+		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
+			Type:   field.TypeString,
+			Column: orderaddress.FieldRemark,
+		})
+	}
+	if oauo.mutation.OrderInfoCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   orderaddress.OrderInfoTable,
+			Columns: []string{orderaddress.OrderInfoColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderinfo.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oauo.mutation.OrderInfoIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.M2O,
+			Inverse: true,
+			Table:   orderaddress.OrderInfoTable,
+			Columns: []string{orderaddress.OrderInfoColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderinfo.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
 	_node = &OrderAddress{config: oauo.config}
 	_spec.Assign = _node.assignValues

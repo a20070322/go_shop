@@ -10,7 +10,6 @@ import (
 	"github.com/a20070322/shop-go/model/goods_model"
 	"github.com/a20070322/shop-go/pkg/order_utils"
 	"github.com/a20070322/shop-go/pkg/utils/ent_utils"
-
 )
 
 func InfoInit(ctx context.Context) *Info {
@@ -27,6 +26,7 @@ type Info struct {
 
 type CreateFormType struct {
 	CustomerId int                                 `json:"customer_id" binding:"required"`
+	AddressId  int                                 `json:"address_id" binding:"required"`
 	Products   []*order_utils.OrderCreateGoodsItem `json:"products" binding:"required"`
 	Remarks    string                              `json:"remarks"`
 }

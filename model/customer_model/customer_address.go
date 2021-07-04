@@ -66,6 +66,9 @@ func (m *Curd) List(form *model_utils.PageOptions, customerId int) (*AddressRepL
 }
 
 func (m *Curd) Add(form *AddressFromType, customerId int) (*ent.CustomerAddress, error) {
+	if form.IsDefault{
+		m.db.Update().Where(customeraddress.HasCustomerWith(customer.ID(customerId))).SetIsDefault(false).Save(m.ctx)
+	}
 	db := m.db.
 		Create().
 		SetCustomerID(customerId).
@@ -85,6 +88,9 @@ func (m *Curd) Add(form *AddressFromType, customerId int) (*ent.CustomerAddress,
 }
 
 func (m *Curd) Update(uid int, form *AddressFromType, customerId int) (*ent.CustomerAddress, error) {
+	if form.IsDefault{
+		m.db.Update().Where(customeraddress.HasCustomerWith(customer.ID(customerId))).SetIsDefault(false).Save(m.ctx)
+	}
 	db, err2 := m.db.
 		Query().
 		Where(

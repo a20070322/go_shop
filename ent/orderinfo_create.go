@@ -11,6 +11,7 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/a20070322/shop-go/ent/customer"
+	"github.com/a20070322/shop-go/ent/orderaddress"
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
 )
@@ -158,6 +159,21 @@ func (oic *OrderInfoCreate) AddOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfoCrea
 		ids[i] = o[i].ID
 	}
 	return oic.AddOrderGoodsSkuIDs(ids...)
+}
+
+// AddOrderAddresIDs adds the "order_address" edge to the OrderAddress entity by IDs.
+func (oic *OrderInfoCreate) AddOrderAddresIDs(ids ...int) *OrderInfoCreate {
+	oic.mutation.AddOrderAddresIDs(ids...)
+	return oic
+}
+
+// AddOrderAddress adds the "order_address" edges to the OrderAddress entity.
+func (oic *OrderInfoCreate) AddOrderAddress(o ...*OrderAddress) *OrderInfoCreate {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oic.AddOrderAddresIDs(ids...)
 }
 
 // Mutation returns the OrderInfoMutation object of the builder.
@@ -362,6 +378,25 @@ func (oic *OrderInfoCreate) createSpec() (*OrderInfo, *sqlgraph.CreateSpec) {
 				IDSpec: &sqlgraph.FieldSpec{
 					Type:   field.TypeInt,
 					Column: ordergoodssku.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges = append(_spec.Edges, edge)
+	}
+	if nodes := oic.mutation.OrderAddressIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
 				},
 			},
 		}

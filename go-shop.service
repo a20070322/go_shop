@@ -4,12 +4,16 @@
 Description=GoShop API server
 # 描述服务类别，表示本服务需要在network服务启动后在启动
 After=network.target
-
 # 服务的关键
-
+[Service]
 # 表示后台运行模式
-Type=forking
-PIDFile=/usr/local/go_shop/go_shop.pid
-ExecStart=/usr/local/go_shop/bin/startup.sh
+#Type=forking
+# 设置工作目录
+WorkingDirectory=/app/go_shop_linux
+#PIDFile=/app/go_shop_linux/go_shop.pid
+ExecStart=/app/go_shop_linux/go_shop_linux
+[Install]
+WantedBy=multi-user.target
+
 
 

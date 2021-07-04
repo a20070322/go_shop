@@ -1576,6 +1576,22 @@ func (c *OrderAddressClient) GetX(ctx context.Context, id int) *OrderAddress {
 	return obj
 }
 
+// QueryOrderInfo queries the order_info edge of a OrderAddress.
+func (c *OrderAddressClient) QueryOrderInfo(oa *OrderAddress) *OrderInfoQuery {
+	query := &OrderInfoQuery{config: c.config}
+	query.path = func(ctx context.Context) (fromV *sql.Selector, _ error) {
+		id := oa.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderaddress.Table, orderaddress.FieldID, id),
+			sqlgraph.To(orderinfo.Table, orderinfo.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, orderaddress.OrderInfoTable, orderaddress.OrderInfoColumn),
+		)
+		fromV = sqlgraph.Neighbors(oa.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
 // Hooks returns the client hooks.
 func (c *OrderAddressClient) Hooks() []Hook {
 	return c.hooks.OrderAddress
@@ -1813,6 +1829,22 @@ func (c *OrderInfoClient) QueryOrderGoodsSku(oi *OrderInfo) *OrderGoodsSkuQuery 
 			sqlgraph.From(orderinfo.Table, orderinfo.FieldID, id),
 			sqlgraph.To(ordergoodssku.Table, ordergoodssku.FieldID),
 			sqlgraph.Edge(sqlgraph.O2M, false, orderinfo.OrderGoodsSkuTable, orderinfo.OrderGoodsSkuColumn),
+		)
+		fromV = sqlgraph.Neighbors(oi.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// QueryOrderAddress queries the order_address edge of a OrderInfo.
+func (c *OrderInfoClient) QueryOrderAddress(oi *OrderInfo) *OrderAddressQuery {
+	query := &OrderAddressQuery{config: c.config}
+	query.path = func(ctx context.Context) (fromV *sql.Selector, _ error) {
+		id := oi.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderinfo.Table, orderinfo.FieldID, id),
+			sqlgraph.To(orderaddress.Table, orderaddress.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, orderinfo.OrderAddressTable, orderinfo.OrderAddressColumn),
 		)
 		fromV = sqlgraph.Neighbors(oi.driver.Dialect(), step)
 		return fromV, nil

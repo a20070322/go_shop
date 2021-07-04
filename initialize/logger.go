@@ -1,7 +1,6 @@
 package initialize
 
 import (
-	"fmt"
 	"github.com/a20070322/shop-go/global"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap"
@@ -69,7 +68,6 @@ func Logger(logPath, errPath string, level string) {
 		zapcore.NewCore(zapcore.NewConsoleEncoder(config), zapcore.NewMultiWriteSyncer(zapcore.AddSync(os.Stdout)), logLevel),
 	)
 	global.Logger = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.InfoLevel)).Sugar() // 需要传入 zap.AddCaller() 才会显示打日志点的文件名和行数, 有点小坑
-	fmt.Println("日志模块初始化成功")
 }
 
 func getWriter(filename string) io.Writer {

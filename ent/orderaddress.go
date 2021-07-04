@@ -8,13 +8,62 @@ import (
 
 	"entgo.io/ent/dialect/sql"
 	"github.com/a20070322/shop-go/ent/orderaddress"
+	"github.com/a20070322/shop-go/ent/orderinfo"
 )
 
 // OrderAddress is the model entity for the OrderAddress schema.
 type OrderAddress struct {
-	config
+	config `json:"-"`
 	// ID of the ent.
 	ID int `json:"id,omitempty"`
+	// Name holds the value of the "name" field.
+	// 姓名
+	Name string `json:"name,omitempty"`
+	// Phone holds the value of the "phone" field.
+	// 联系方式
+	Phone string `json:"phone,omitempty"`
+	// Province holds the value of the "province" field.
+	// 省
+	Province string `json:"province,omitempty"`
+	// City holds the value of the "city" field.
+	// 市
+	City string `json:"city,omitempty"`
+	// Area holds the value of the "area" field.
+	// 区
+	Area string `json:"area,omitempty"`
+	// Detailed holds the value of the "detailed" field.
+	// 详细地址
+	Detailed string `json:"detailed,omitempty"`
+	// Remark holds the value of the "remark" field.
+	// 备注
+	Remark string `json:"remark,omitempty"`
+	// Edges holds the relations/edges for other nodes in the graph.
+	// The values are being populated by the OrderAddressQuery when eager-loading is set.
+	Edges                    OrderAddressEdges `json:"edges"`
+	order_info_order_address *int
+}
+
+// OrderAddressEdges holds the relations/edges for other nodes in the graph.
+type OrderAddressEdges struct {
+	// OrderInfo holds the value of the order_info edge.
+	OrderInfo *OrderInfo `json:"order_info,omitempty"`
+	// loadedTypes holds the information for reporting if a
+	// type was loaded (or requested) in eager-loading or not.
+	loadedTypes [1]bool
+}
+
+// OrderInfoOrErr returns the OrderInfo value or an error if the edge
+// was not loaded in eager-loading, or loaded but was not found.
+func (e OrderAddressEdges) OrderInfoOrErr() (*OrderInfo, error) {
+	if e.loadedTypes[0] {
+		if e.OrderInfo == nil {
+			// The edge order_info was loaded in eager-loading,
+			// but was not found.
+			return nil, &NotFoundError{label: orderinfo.Label}
+		}
+		return e.OrderInfo, nil
+	}
+	return nil, &NotLoadedError{edge: "order_info"}
 }
 
 // scanValues returns the types for scanning values from sql.Rows.
@@ -23,6 +72,10 @@ func (*OrderAddress) scanValues(columns []string) ([]interface{}, error) {
 	for i := range columns {
 		switch columns[i] {
 		case orderaddress.FieldID:
+			values[i] = new(sql.NullInt64)
+		case orderaddress.FieldName, orderaddress.FieldPhone, orderaddress.FieldProvince, orderaddress.FieldCity, orderaddress.FieldArea, orderaddress.FieldDetailed, orderaddress.FieldRemark:
+			values[i] = new(sql.NullString)
+		case orderaddress.ForeignKeys[0]: // order_info_order_address
 			values[i] = new(sql.NullInt64)
 		default:
 			return nil, fmt.Errorf("unexpected column %q for type OrderAddress", columns[i])
@@ -45,9 +98,63 @@ func (oa *OrderAddress) assignValues(columns []string, values []interface{}) err
 				return fmt.Errorf("unexpected type %T for field id", value)
 			}
 			oa.ID = int(value.Int64)
+		case orderaddress.FieldName:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field name", values[i])
+			} else if value.Valid {
+				oa.Name = value.String
+			}
+		case orderaddress.FieldPhone:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field phone", values[i])
+			} else if value.Valid {
+				oa.Phone = value.String
+			}
+		case orderaddress.FieldProvince:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field province", values[i])
+			} else if value.Valid {
+				oa.Province = value.String
+			}
+		case orderaddress.FieldCity:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field city", values[i])
+			} else if value.Valid {
+				oa.City = value.String
+			}
+		case orderaddress.FieldArea:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field area", values[i])
+			} else if value.Valid {
+				oa.Area = value.String
+			}
+		case orderaddress.FieldDetailed:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field detailed", values[i])
+			} else if value.Valid {
+				oa.Detailed = value.String
+			}
+		case orderaddress.FieldRemark:
+			if value, ok := values[i].(*sql.NullString); !ok {
+				return fmt.Errorf("unexpected type %T for field remark", values[i])
+			} else if value.Valid {
+				oa.Remark = value.String
+			}
+		case orderaddress.ForeignKeys[0]:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for edge-field order_info_order_address", value)
+			} else if value.Valid {
+				oa.order_info_order_address = new(int)
+				*oa.order_info_order_address = int(value.Int64)
+			}
 		}
 	}
 	return nil
+}
+
+// QueryOrderInfo queries the "order_info" edge of the OrderAddress entity.
+func (oa *OrderAddress) QueryOrderInfo() *OrderInfoQuery {
+	return (&OrderAddressClient{config: oa.config}).QueryOrderInfo(oa)
 }
 
 // Update returns a builder for updating this OrderAddress.
@@ -73,6 +180,20 @@ func (oa *OrderAddress) String() string {
 	var builder strings.Builder
 	builder.WriteString("OrderAddress(")
 	builder.WriteString(fmt.Sprintf("id=%v", oa.ID))
+	builder.WriteString(", name=")
+	builder.WriteString(oa.Name)
+	builder.WriteString(", phone=")
+	builder.WriteString(oa.Phone)
+	builder.WriteString(", province=")
+	builder.WriteString(oa.Province)
+	builder.WriteString(", city=")
+	builder.WriteString(oa.City)
+	builder.WriteString(", area=")
+	builder.WriteString(oa.Area)
+	builder.WriteString(", detailed=")
+	builder.WriteString(oa.Detailed)
+	builder.WriteString(", remark=")
+	builder.WriteString(oa.Remark)
 	builder.WriteByte(')')
 	return builder.String()
 }

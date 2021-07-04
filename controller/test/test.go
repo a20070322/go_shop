@@ -1,12 +1,9 @@
 package test
 
 import (
-	"entgo.io/ent/dialect/sql"
 	"fmt"
 	"github.com/a20070322/shop-go/ent"
 	"github.com/a20070322/shop-go/ent/goodsclassify"
-	"github.com/a20070322/shop-go/ent/goodssku"
-	"github.com/a20070322/shop-go/ent/goodsspu"
 	"github.com/a20070322/shop-go/global"
 	"github.com/a20070322/shop-go/pkg/utils/response"
 	"github.com/gin-gonic/gin"
@@ -105,7 +102,6 @@ func (t Test) Test2(ctx *gin.Context) {
 	//}
 	//global.Db.GoodsClassify.CreateBulk(bulk...).Save(ctx)
 
-
 	global.Db.GoodsSku.Update().Where().SetStockNum(100).SetSalesNum(10).Save(ctx)
 	response.Success(ctx, "ok", "")
 }
@@ -136,13 +132,21 @@ func (t Test) Test4(ctx *gin.Context) {
 	//str3 :=  string([]rune(str)[len(str)-2:len(str)])
 	//
 	//response.Success(ctx, "ok", str2+"."+str3)
-	list,_:=global.Db.GoodsSpu.Query().Order(func(s *sql.Selector) {
-		t := sql.Table(goodssku.Table)
-		s.Join(t).On(s.C(goodsspu.FieldID),t.C(goodssku.GoodsSpuColumn))
-		s.OrderBy(sql.Desc(t.C(goodssku.FieldSalesNum)))
-	}).Limit(10).All(ctx)
+	//list,_:=global.Db.GoodsSpu.Query().Order(func(s *sql.Selector) {
+	//	t := sql.Table(goodssku.Table)
+	//	s.Join(t).On(s.C(goodsspu.FieldID),t.C(goodssku.GoodsSpuColumn))
+	//	s.OrderBy(sql.Desc(t.C(goodssku.FieldSalesNum)))
+	//}).Limit(10).All(ctx)
+	list, _ := global.Db.GoodsSpu.Query().WithGoodsSku().All(ctx)
+	for _, v := range list {
+		salesNum := 0
+		for _, sv := range v.Edges.GoodsSku {
+			salesNum += sv.SalesNum
+		}
+		v.Update().SetSalesNum(salesNum).Save(ctx)
+	}
 
-	response.Success(ctx, "ok", list)
+	response.Success(ctx, "ok", "")
 }
 
 type ItemFormType5 struct {

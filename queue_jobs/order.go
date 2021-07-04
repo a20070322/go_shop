@@ -72,7 +72,7 @@ func OrderPublish(payload *types.QueuePayloadType, order int) error {
 
 // 消费任务
 func OrderWorkOn() {
-	fmt.Println("公共优先级队列监听中")
+	fmt.Println("订单优先级队列监听中")
 	works, err := global.RabbitMq.DelayCh.Consume(
 		OrderQueueName,
 		OrderConsume,

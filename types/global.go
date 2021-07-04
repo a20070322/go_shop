@@ -19,6 +19,9 @@ func (r RabbitMqType) Close() {
 	if err := r.DelayCh.Close(); err != nil {
 		log.Println("RabbitMq [DelayCh] 通道关闭异常", err)
 	}
+	if err := r.OrderCh.Close(); err != nil {
+		log.Println("RabbitMq [OrderCh] 通道关闭异常", err)
+	}
 	if err := r.Conn.Close(); err != nil {
 		log.Println("RabbitMq [Conn] 连接关闭异常", err)
 	}

@@ -5,6 +5,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"fmt"
 	"github.com/a20070322/shop-go/ent"
+	"github.com/a20070322/shop-go/ent/goodsclassify"
 	"github.com/a20070322/shop-go/ent/goodssku"
 	"github.com/a20070322/shop-go/ent/goodsspecsoption"
 	"github.com/a20070322/shop-go/ent/goodsspu"
@@ -30,6 +31,7 @@ type Spu struct {
 type SpuListFormType struct {
 	model_utils.PageOptions
 	//model_utils.PageSort
+	ClassifyId int `json:"classify_id" form:"classify_id" query:"classify_id"`
 	// 商品名字搜索
 	SpuName string `json:"spu_name" form:"spu_name" query:"spu_name"`
 	Sort    string `json:"sort" form:"sort" query:"sort"` // multiple 综合排序  sales_desc 销量排序  price_asc 价格正序  price_desc 价格倒叙
@@ -41,7 +43,6 @@ type SpuItemTypeForm struct {
 	ShowPrice string            `json:"show_price"`
 	Sku       *ent.GoodsSku     `json:"sku"`
 	StockNum  int               `json:"stock_num"`
-	SalesNum  int               `json:"sales_num"`
 }
 
 type SpuListResponse struct {
@@ -66,6 +67,9 @@ func (m *Spu) List(form *SpuListFormType) (repList SpuListResponse, err error) {
 	if form.SpuName != "" {
 		whereArr = append(whereArr, goodsspu.SpuNameContains(form.SpuName))
 	}
+	if form.ClassifyId != 0 {
+		whereArr = append(whereArr,goodsspu.HasGoodsClassifyWith(goodsclassify.IDEQ(form.ClassifyId )))
+	}
 	db := m.db.Query().
 		Where(whereArr...).
 		Select(
@@ -74,20 +78,19 @@ func (m *Spu) List(form *SpuListFormType) (repList SpuListResponse, err error) {
 			goodsspu.FieldSpuCode,
 			goodsspu.FieldSpuHeadImg,
 			goodsspu.FieldIsCustomSku,
+			goodsspu.FieldSalesNum,
 		)
 	global.Logger.Debug(" form.Sort %s", form.Sort)
 	//综合排序 （创建时间,更新时间）
 	if form.Sort == "" || form.Sort == "multiple" {
 		db.Order(ent.Desc(goodsspu.FieldCreatedAt), ent.Desc(goodsspu.FieldUpdatedAt))
+	} else if form.Sort == "sales_desc"{
+		db.Order(ent.Desc(goodsspu.FieldSalesNum))
 	} else {
 		// 其他排序需要连表查询
 		db.Order(func(s *sql.Selector) {
 			t := sql.Table(goodssku.Table)
 			s.Join(t).On(s.C(goodsspu.FieldID), t.C(goodssku.GoodsSpuColumn))
-			// 销量排序
-			if form.Sort == "sales_desc" {
-				s.OrderBy(sql.Desc(t.C(goodssku.FieldSalesNum)))
-			}
 			// 价格正序
 			if form.Sort == "price_asc" {
 				s.OrderBy(t.C(goodssku.FieldPrice))
@@ -117,7 +120,11 @@ func (m *Spu) List(form *SpuListFormType) (repList SpuListResponse, err error) {
 		var showPrice = ""
 
 		sort.Sort(&SkuSort{item.Edges.GoodsSku, func(x, y *ent.GoodsSku) bool {
-			return x.Price < y.Price
+			if form.Sort == "price_desc"{
+				return x.Price > y.Price
+			}else{
+				return x.Price < y.Price
+			}
 		}})
 		price1 := item.Edges.GoodsSku[0].Price
 		price2 := item.Edges.GoodsSku[len(item.Edges.GoodsSku)-1].Price
@@ -139,12 +146,11 @@ func (m *Spu) List(form *SpuListFormType) (repList SpuListResponse, err error) {
 			showPrice,
 			sku,
 			0,
-			0,
 		}
-		//计算总销量总库存
+		//计算总库存
 		for _, v := range item.Edges.GoodsSku {
 			goodsItem.StockNum += v.StockNum
-			goodsItem.SalesNum += v.SalesNum
+			//goodsItem.SalesNum += v.SalesNum
 		}
 		data = append(data, goodsItem)
 	}
@@ -174,7 +180,6 @@ func (m *Spu) GetId(form *SpuGetIdFormType) (*SpuItemTypeForm, error) {
 		"",
 		nil,
 		0,
-		0,
 	}
 	if err != nil {
 		return repItem, err
@@ -182,7 +187,7 @@ func (m *Spu) GetId(form *SpuGetIdFormType) (*SpuItemTypeForm, error) {
 
 	for _, v := range spu.Edges.GoodsSku {
 		repItem.StockNum += v.StockNum
-		repItem.SalesNum += v.SalesNum
+		//repItem.SalesNum += v.SalesNum
 	}
 
 	// 如果是sku商品

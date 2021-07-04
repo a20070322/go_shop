@@ -1,6 +1,7 @@
 package config
 
 type AppConfigure struct {
+	Version   string     `yaml:"Version"`
 	Server    *Server    `yaml:"Server"`
 	Jwt       *Jwt       `yaml:Jwt`
 	Redis     *Redis     `yaml:Redis`
