@@ -71,17 +71,23 @@ func (oic *OrderInfoCreate) SetOrderNumber(s string) *OrderInfoCreate {
 	return oic
 }
 
-// SetPrepayID sets the "prepay_id" field.
-func (oic *OrderInfoCreate) SetPrepayID(s string) *OrderInfoCreate {
-	oic.mutation.SetPrepayID(s)
+// SetPayMethod sets the "pay_method" field.
+func (oic *OrderInfoCreate) SetPayMethod(i int8) *OrderInfoCreate {
+	oic.mutation.SetPayMethod(i)
 	return oic
 }
 
-// SetNillablePrepayID sets the "prepay_id" field if the given value is not nil.
-func (oic *OrderInfoCreate) SetNillablePrepayID(s *string) *OrderInfoCreate {
-	if s != nil {
-		oic.SetPrepayID(*s)
+// SetNillablePayMethod sets the "pay_method" field if the given value is not nil.
+func (oic *OrderInfoCreate) SetNillablePayMethod(i *int8) *OrderInfoCreate {
+	if i != nil {
+		oic.SetPayMethod(*i)
 	}
+	return oic
+}
+
+// SetPayMoney sets the "pay_money" field.
+func (oic *OrderInfoCreate) SetPayMoney(i int) *OrderInfoCreate {
+	oic.mutation.SetPayMoney(i)
 	return oic
 }
 
@@ -250,6 +256,9 @@ func (oic *OrderInfoCreate) check() error {
 	if _, ok := oic.mutation.OrderNumber(); !ok {
 		return &ValidationError{Name: "order_number", err: errors.New("ent: missing required field \"order_number\"")}
 	}
+	if _, ok := oic.mutation.PayMoney(); !ok {
+		return &ValidationError{Name: "pay_money", err: errors.New("ent: missing required field \"pay_money\"")}
+	}
 	if _, ok := oic.mutation.Status(); !ok {
 		return &ValidationError{Name: "status", err: errors.New("ent: missing required field \"status\"")}
 	}
@@ -315,13 +324,21 @@ func (oic *OrderInfoCreate) createSpec() (*OrderInfo, *sqlgraph.CreateSpec) {
 		})
 		_node.OrderNumber = value
 	}
-	if value, ok := oic.mutation.PrepayID(); ok {
+	if value, ok := oic.mutation.PayMethod(); ok {
 		_spec.Fields = append(_spec.Fields, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
+			Type:   field.TypeInt8,
 			Value:  value,
-			Column: orderinfo.FieldPrepayID,
+			Column: orderinfo.FieldPayMethod,
 		})
-		_node.PrepayID = value
+		_node.PayMethod = value
+	}
+	if value, ok := oic.mutation.PayMoney(); ok {
+		_spec.Fields = append(_spec.Fields, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
+		})
+		_node.PayMoney = value
 	}
 	if value, ok := oic.mutation.Remark(); ok {
 		_spec.Fields = append(_spec.Fields, &sqlgraph.FieldSpec{

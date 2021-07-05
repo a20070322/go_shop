@@ -342,7 +342,8 @@ var (
 		{Name: "updated_at", Type: field.TypeTime, Nullable: true},
 		{Name: "deleted_at", Type: field.TypeTime, Nullable: true},
 		{Name: "order_number", Type: field.TypeString, Unique: true},
-		{Name: "prepay_id", Type: field.TypeString, Unique: true, Nullable: true},
+		{Name: "pay_method", Type: field.TypeInt8, Nullable: true},
+		{Name: "pay_money", Type: field.TypeInt},
 		{Name: "remark", Type: field.TypeString, Nullable: true, Size: 2147483647},
 		{Name: "status", Type: field.TypeInt8, Default: 0},
 		{Name: "delivery_status", Type: field.TypeInt8, Default: 0},
@@ -356,7 +357,7 @@ var (
 		ForeignKeys: []*schema.ForeignKey{
 			{
 				Symbol:     "order_infos_customers_order_info",
-				Columns:    []*schema.Column{OrderInfosColumns[9]},
+				Columns:    []*schema.Column{OrderInfosColumns[10]},
 				RefColumns: []*schema.Column{CustomersColumns[0]},
 				OnDelete:   schema.SetNull,
 			},

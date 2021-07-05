@@ -249,11 +249,11 @@ func init() {
 	// orderinfo.UpdateDefaultUpdatedAt holds the default value on update for the updated_at field.
 	orderinfo.UpdateDefaultUpdatedAt = orderinfoDescUpdatedAt.UpdateDefault.(func() time.Time)
 	// orderinfoDescStatus is the schema descriptor for status field.
-	orderinfoDescStatus := orderinfoFields[3].Descriptor()
+	orderinfoDescStatus := orderinfoFields[4].Descriptor()
 	// orderinfo.DefaultStatus holds the default value on creation for the status field.
 	orderinfo.DefaultStatus = orderinfoDescStatus.Default.(int8)
 	// orderinfoDescDeliveryStatus is the schema descriptor for delivery_status field.
-	orderinfoDescDeliveryStatus := orderinfoFields[4].Descriptor()
+	orderinfoDescDeliveryStatus := orderinfoFields[5].Descriptor()
 	// orderinfo.DefaultDeliveryStatus holds the default value on creation for the delivery_status field.
 	orderinfo.DefaultDeliveryStatus = orderinfoDescDeliveryStatus.Default.(int8)
 }

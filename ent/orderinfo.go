@@ -26,9 +26,12 @@ type OrderInfo struct {
 	// OrderNumber holds the value of the "order_number" field.
 	// 订单号
 	OrderNumber string `json:"order_number,omitempty"`
-	// PrepayID holds the value of the "prepay_id" field.
-	// 微信支付prepay_id
-	PrepayID string `json:"prepay_id,omitempty"`
+	// PayMethod holds the value of the "pay_method" field.
+	// 支付方式
+	PayMethod int8 `json:"pay_method,omitempty"`
+	// PayMoney holds the value of the "pay_money" field.
+	// 支付金额
+	PayMoney int `json:"pay_money,omitempty"`
 	// Remark holds the value of the "remark" field.
 	// 订单备注
 	Remark string `json:"remark,omitempty"`
@@ -94,9 +97,9 @@ func (*OrderInfo) scanValues(columns []string) ([]interface{}, error) {
 	values := make([]interface{}, len(columns))
 	for i := range columns {
 		switch columns[i] {
-		case orderinfo.FieldID, orderinfo.FieldStatus, orderinfo.FieldDeliveryStatus:
+		case orderinfo.FieldID, orderinfo.FieldPayMethod, orderinfo.FieldPayMoney, orderinfo.FieldStatus, orderinfo.FieldDeliveryStatus:
 			values[i] = new(sql.NullInt64)
-		case orderinfo.FieldOrderNumber, orderinfo.FieldPrepayID, orderinfo.FieldRemark:
+		case orderinfo.FieldOrderNumber, orderinfo.FieldRemark:
 			values[i] = new(sql.NullString)
 		case orderinfo.FieldCreatedAt, orderinfo.FieldUpdatedAt, orderinfo.FieldDeletedAt:
 			values[i] = new(sql.NullTime)
@@ -147,11 +150,17 @@ func (oi *OrderInfo) assignValues(columns []string, values []interface{}) error 
 			} else if value.Valid {
 				oi.OrderNumber = value.String
 			}
-		case orderinfo.FieldPrepayID:
-			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field prepay_id", values[i])
+		case orderinfo.FieldPayMethod:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for field pay_method", values[i])
 			} else if value.Valid {
-				oi.PrepayID = value.String
+				oi.PayMethod = int8(value.Int64)
+			}
+		case orderinfo.FieldPayMoney:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for field pay_money", values[i])
+			} else if value.Valid {
+				oi.PayMoney = int(value.Int64)
 			}
 		case orderinfo.FieldRemark:
 			if value, ok := values[i].(*sql.NullString); !ok {
@@ -229,8 +238,10 @@ func (oi *OrderInfo) String() string {
 	builder.WriteString(oi.DeletedAt.Format(time.ANSIC))
 	builder.WriteString(", order_number=")
 	builder.WriteString(oi.OrderNumber)
-	builder.WriteString(", prepay_id=")
-	builder.WriteString(oi.PrepayID)
+	builder.WriteString(", pay_method=")
+	builder.WriteString(fmt.Sprintf("%v", oi.PayMethod))
+	builder.WriteString(", pay_money=")
+	builder.WriteString(fmt.Sprintf("%v", oi.PayMoney))
 	builder.WriteString(", remark=")
 	builder.WriteString(oi.Remark)
 	builder.WriteString(", status=")

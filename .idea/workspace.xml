@@ -2,47 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80c89ae3-632a-4905-b9a1-85facf76c874" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/ent_migrate.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/test/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/test/test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/goodsspu.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/goodsspu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/goodsspu/goodsspu.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/goodsspu/goodsspu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/goodsspu/where.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/goodsspu/where.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/goodsspu_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/goodsspu_create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/goodsspu_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/goodsspu_update.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/migrate/schema.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/migrate/schema.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/mutation.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/mutation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderaddress.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderaddress.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderaddress/orderaddress.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderaddress/orderaddress.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderaddress/where.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderaddress/where.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderaddress_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderaddress_create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderaddress_query.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderaddress_query.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderaddress_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderaddress_update.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/orderinfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderinfo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/orderinfo/orderinfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderinfo/orderinfo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/orderinfo/where.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderinfo/where.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/orderinfo_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderinfo_create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/orderinfo_query.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderinfo_query.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/orderinfo_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/orderinfo_update.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/schema/goodsspu.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/schema/goodsspu.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ent/schema/orderaddress.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/schema/orderaddress.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ent/runtime.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/runtime.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ent/schema/orderinfo.go" beforeDir="false" afterPath="$PROJECT_DIR$/ent/schema/orderinfo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global/variable.go" beforeDir="false" afterPath="$PROJECT_DIR$/global/variable.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goShop.service" beforeDir="false" afterPath="$PROJECT_DIR$/go-shop.service" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initialize/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/initialize/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initialize/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/initialize/logger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initialize/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/initialize/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/customer_model/customer_address.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/customer_model/customer_address.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/goods_model/goods_spu.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/goods_model/goods_spu.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/order/order_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/order/order_info.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queue_jobs/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/queue_jobs/order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/types/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/types/global.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +81,16 @@
       <recent name="$PROJECT_DIR$/model/goods" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile.ent_m">
+  <component name="RunManager" selected="Go 构建.go build github.com/a20070322/shop-go/test">
+    <configuration name="go build github.com/a20070322/shop-go/test" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/test/main.go" />
+      <package value="github.com/a20070322/shop-go/test" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop" />
       <working_directory value="$PROJECT_DIR$" />
@@ -122,12 +101,6 @@
     </configuration>
     <configuration name="deploy" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="deploy" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
-    <configuration name="deploy_service" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="deploy_service" workingDirectory="" arguments="">
         <envs />
       </makefile>
       <method v="2" />
@@ -146,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build github.com/a20070322/shop-go/test" />
         <item itemvalue="Makefile.ent_m" />
         <item itemvalue="Go 构建.go build main.go (1)" />
         <item itemvalue="Makefile.deploy" />
         <item itemvalue="Makefile.linux" />
-        <item itemvalue="Makefile.deploy_service" />
       </list>
     </recent_temporary>
   </component>

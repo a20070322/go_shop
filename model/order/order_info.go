@@ -2,8 +2,9 @@ package order
 
 import (
 	"context"
-	"fmt"
+	"errors"
 	"github.com/a20070322/shop-go/ent"
+	"github.com/a20070322/shop-go/ent/customeraddress"
 	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/schema"
 	"github.com/a20070322/shop-go/global"
@@ -39,16 +40,37 @@ func (m Info) CreateOrder(orderInfo *CreateFormType) (string, error) {
 	if checkBool != true || err != nil {
 		return orderCode, err
 	}
+	// 获取用户下单地址
+	addr, errAddr := global.Db.CustomerAddress.Query().Where(customeraddress.IDEQ(orderInfo.AddressId)).First(m.ctx)
+	if addr == nil || errAddr != nil {
+		return orderCode, errors.New("收货地址异常")
+	}
+
 	err2 := ent_utils.WithTx(m.ctx, global.Db, func(tx *ent.Tx) error {
+		// 订单基础信息创建
 		orderDb := tx.OrderInfo.Create().
 			SetRemark(orderInfo.Remarks).
 			SetOrderNumber(orderCode).
 			SetCustomerID(orderInfo.CustomerId)
+		// 订单地址创建
+		orderAddr, orderAddrError := tx.OrderAddress.Create().
+			SetName(addr.Name).
+			SetPhone(addr.Phone).
+			SetProvince(addr.Province).
+			SetCity(addr.City).
+			SetArea(addr.Area).
+			SetDetailed(addr.Detailed).
+			SetRemark(addr.Remark).
+			Save(m.ctx)
+		// 支付金额
+		payMoney := 0
+		if orderAddrError != nil {
+			return orderAddrError
+		}
 		var bulk []*ent.OrderGoodsSkuCreate
 		for _, sku := range skus {
 			var specsOption []*schema.SpecsOptionType
 			specsOption = nil
-			fmt.Println(sku)
 			if sku.Edges.GoodsSpu.IsCustomSku == true {
 				specsOption = order_utils.SpecsOptionToJson(sku.Edges.GoodsSpecsOption)
 			}
@@ -70,12 +92,15 @@ func (m Info) CreateOrder(orderInfo *CreateFormType) (string, error) {
 					SetAmount(productMap[sku.ID],
 					),
 			)
+			payMoney += sku.Price * productMap[sku.ID]
 		}
 		orderSkus, err3 := global.Db.OrderGoodsSku.CreateBulk(bulk...).Save(m.ctx)
 		if err3 != nil {
 			return err3
 		}
 		orderDb.AddOrderGoodsSku(orderSkus...)
+		orderDb.AddOrderAddress(orderAddr)
+		orderDb.SetPayMoney(payMoney)
 		_, err4 := orderDb.Save(m.ctx)
 		return err4
 	})

@@ -19,8 +19,10 @@ const (
 	FieldDeletedAt = "deleted_at"
 	// FieldOrderNumber holds the string denoting the order_number field in the database.
 	FieldOrderNumber = "order_number"
-	// FieldPrepayID holds the string denoting the prepay_id field in the database.
-	FieldPrepayID = "prepay_id"
+	// FieldPayMethod holds the string denoting the pay_method field in the database.
+	FieldPayMethod = "pay_method"
+	// FieldPayMoney holds the string denoting the pay_money field in the database.
+	FieldPayMoney = "pay_money"
 	// FieldRemark holds the string denoting the remark field in the database.
 	FieldRemark = "remark"
 	// FieldStatus holds the string denoting the status field in the database.
@@ -65,7 +67,8 @@ var Columns = []string{
 	FieldUpdatedAt,
 	FieldDeletedAt,
 	FieldOrderNumber,
-	FieldPrepayID,
+	FieldPayMethod,
+	FieldPayMoney,
 	FieldRemark,
 	FieldStatus,
 	FieldDeliveryStatus,

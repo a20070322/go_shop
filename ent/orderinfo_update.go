@@ -68,23 +68,43 @@ func (oiu *OrderInfoUpdate) SetOrderNumber(s string) *OrderInfoUpdate {
 	return oiu
 }
 
-// SetPrepayID sets the "prepay_id" field.
-func (oiu *OrderInfoUpdate) SetPrepayID(s string) *OrderInfoUpdate {
-	oiu.mutation.SetPrepayID(s)
+// SetPayMethod sets the "pay_method" field.
+func (oiu *OrderInfoUpdate) SetPayMethod(i int8) *OrderInfoUpdate {
+	oiu.mutation.ResetPayMethod()
+	oiu.mutation.SetPayMethod(i)
 	return oiu
 }
 
-// SetNillablePrepayID sets the "prepay_id" field if the given value is not nil.
-func (oiu *OrderInfoUpdate) SetNillablePrepayID(s *string) *OrderInfoUpdate {
-	if s != nil {
-		oiu.SetPrepayID(*s)
+// SetNillablePayMethod sets the "pay_method" field if the given value is not nil.
+func (oiu *OrderInfoUpdate) SetNillablePayMethod(i *int8) *OrderInfoUpdate {
+	if i != nil {
+		oiu.SetPayMethod(*i)
 	}
 	return oiu
 }
 
-// ClearPrepayID clears the value of the "prepay_id" field.
-func (oiu *OrderInfoUpdate) ClearPrepayID() *OrderInfoUpdate {
-	oiu.mutation.ClearPrepayID()
+// AddPayMethod adds i to the "pay_method" field.
+func (oiu *OrderInfoUpdate) AddPayMethod(i int8) *OrderInfoUpdate {
+	oiu.mutation.AddPayMethod(i)
+	return oiu
+}
+
+// ClearPayMethod clears the value of the "pay_method" field.
+func (oiu *OrderInfoUpdate) ClearPayMethod() *OrderInfoUpdate {
+	oiu.mutation.ClearPayMethod()
+	return oiu
+}
+
+// SetPayMoney sets the "pay_money" field.
+func (oiu *OrderInfoUpdate) SetPayMoney(i int) *OrderInfoUpdate {
+	oiu.mutation.ResetPayMoney()
+	oiu.mutation.SetPayMoney(i)
+	return oiu
+}
+
+// AddPayMoney adds i to the "pay_money" field.
+func (oiu *OrderInfoUpdate) AddPayMoney(i int) *OrderInfoUpdate {
+	oiu.mutation.AddPayMoney(i)
 	return oiu
 }
 
@@ -363,17 +383,38 @@ func (oiu *OrderInfoUpdate) sqlSave(ctx context.Context) (n int, err error) {
 			Column: orderinfo.FieldOrderNumber,
 		})
 	}
-	if value, ok := oiu.mutation.PrepayID(); ok {
+	if value, ok := oiu.mutation.PayMethod(); ok {
 		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
+			Type:   field.TypeInt8,
 			Value:  value,
-			Column: orderinfo.FieldPrepayID,
+			Column: orderinfo.FieldPayMethod,
 		})
 	}
-	if oiu.mutation.PrepayIDCleared() {
+	if value, ok := oiu.mutation.AddedPayMethod(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt8,
+			Value:  value,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if oiu.mutation.PayMethodCleared() {
 		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
-			Column: orderinfo.FieldPrepayID,
+			Type:   field.TypeInt8,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if value, ok := oiu.mutation.PayMoney(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
+		})
+	}
+	if value, ok := oiu.mutation.AddedPayMoney(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
 		})
 	}
 	if value, ok := oiu.mutation.Remark(); ok {
@@ -617,23 +658,43 @@ func (oiuo *OrderInfoUpdateOne) SetOrderNumber(s string) *OrderInfoUpdateOne {
 	return oiuo
 }
 
-// SetPrepayID sets the "prepay_id" field.
-func (oiuo *OrderInfoUpdateOne) SetPrepayID(s string) *OrderInfoUpdateOne {
-	oiuo.mutation.SetPrepayID(s)
+// SetPayMethod sets the "pay_method" field.
+func (oiuo *OrderInfoUpdateOne) SetPayMethod(i int8) *OrderInfoUpdateOne {
+	oiuo.mutation.ResetPayMethod()
+	oiuo.mutation.SetPayMethod(i)
 	return oiuo
 }
 
-// SetNillablePrepayID sets the "prepay_id" field if the given value is not nil.
-func (oiuo *OrderInfoUpdateOne) SetNillablePrepayID(s *string) *OrderInfoUpdateOne {
-	if s != nil {
-		oiuo.SetPrepayID(*s)
+// SetNillablePayMethod sets the "pay_method" field if the given value is not nil.
+func (oiuo *OrderInfoUpdateOne) SetNillablePayMethod(i *int8) *OrderInfoUpdateOne {
+	if i != nil {
+		oiuo.SetPayMethod(*i)
 	}
 	return oiuo
 }
 
-// ClearPrepayID clears the value of the "prepay_id" field.
-func (oiuo *OrderInfoUpdateOne) ClearPrepayID() *OrderInfoUpdateOne {
-	oiuo.mutation.ClearPrepayID()
+// AddPayMethod adds i to the "pay_method" field.
+func (oiuo *OrderInfoUpdateOne) AddPayMethod(i int8) *OrderInfoUpdateOne {
+	oiuo.mutation.AddPayMethod(i)
+	return oiuo
+}
+
+// ClearPayMethod clears the value of the "pay_method" field.
+func (oiuo *OrderInfoUpdateOne) ClearPayMethod() *OrderInfoUpdateOne {
+	oiuo.mutation.ClearPayMethod()
+	return oiuo
+}
+
+// SetPayMoney sets the "pay_money" field.
+func (oiuo *OrderInfoUpdateOne) SetPayMoney(i int) *OrderInfoUpdateOne {
+	oiuo.mutation.ResetPayMoney()
+	oiuo.mutation.SetPayMoney(i)
+	return oiuo
+}
+
+// AddPayMoney adds i to the "pay_money" field.
+func (oiuo *OrderInfoUpdateOne) AddPayMoney(i int) *OrderInfoUpdateOne {
+	oiuo.mutation.AddPayMoney(i)
 	return oiuo
 }
 
@@ -936,17 +997,38 @@ func (oiuo *OrderInfoUpdateOne) sqlSave(ctx context.Context) (_node *OrderInfo, 
 			Column: orderinfo.FieldOrderNumber,
 		})
 	}
-	if value, ok := oiuo.mutation.PrepayID(); ok {
+	if value, ok := oiuo.mutation.PayMethod(); ok {
 		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
+			Type:   field.TypeInt8,
 			Value:  value,
-			Column: orderinfo.FieldPrepayID,
+			Column: orderinfo.FieldPayMethod,
 		})
 	}
-	if oiuo.mutation.PrepayIDCleared() {
+	if value, ok := oiuo.mutation.AddedPayMethod(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt8,
+			Value:  value,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if oiuo.mutation.PayMethodCleared() {
 		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
-			Column: orderinfo.FieldPrepayID,
+			Type:   field.TypeInt8,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if value, ok := oiuo.mutation.PayMoney(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
+		})
+	}
+	if value, ok := oiuo.mutation.AddedPayMoney(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
 		})
 	}
 	if value, ok := oiuo.mutation.Remark(); ok {

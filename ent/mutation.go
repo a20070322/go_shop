@@ -11828,7 +11828,10 @@ type OrderInfoMutation struct {
 	updated_at             *time.Time
 	deleted_at             *time.Time
 	order_number           *string
-	prepay_id              *string
+	pay_method             *int8
+	addpay_method          *int8
+	pay_money              *int
+	addpay_money           *int
 	remark                 *string
 	status                 *int8
 	addstatus              *int8
@@ -12097,53 +12100,130 @@ func (m *OrderInfoMutation) ResetOrderNumber() {
 	m.order_number = nil
 }
 
-// SetPrepayID sets the "prepay_id" field.
-func (m *OrderInfoMutation) SetPrepayID(s string) {
-	m.prepay_id = &s
+// SetPayMethod sets the "pay_method" field.
+func (m *OrderInfoMutation) SetPayMethod(i int8) {
+	m.pay_method = &i
+	m.addpay_method = nil
 }
 
-// PrepayID returns the value of the "prepay_id" field in the mutation.
-func (m *OrderInfoMutation) PrepayID() (r string, exists bool) {
-	v := m.prepay_id
+// PayMethod returns the value of the "pay_method" field in the mutation.
+func (m *OrderInfoMutation) PayMethod() (r int8, exists bool) {
+	v := m.pay_method
 	if v == nil {
 		return
 	}
 	return *v, true
 }
 
-// OldPrepayID returns the old "prepay_id" field's value of the OrderInfo entity.
+// OldPayMethod returns the old "pay_method" field's value of the OrderInfo entity.
 // If the OrderInfo object wasn't provided to the builder, the object is fetched from the database.
 // An error is returned if the mutation operation is not UpdateOne, or the database query fails.
-func (m *OrderInfoMutation) OldPrepayID(ctx context.Context) (v string, err error) {
+func (m *OrderInfoMutation) OldPayMethod(ctx context.Context) (v int8, err error) {
 	if !m.op.Is(OpUpdateOne) {
-		return v, fmt.Errorf("OldPrepayID is only allowed on UpdateOne operations")
+		return v, fmt.Errorf("OldPayMethod is only allowed on UpdateOne operations")
 	}
 	if m.id == nil || m.oldValue == nil {
-		return v, fmt.Errorf("OldPrepayID requires an ID field in the mutation")
+		return v, fmt.Errorf("OldPayMethod requires an ID field in the mutation")
 	}
 	oldValue, err := m.oldValue(ctx)
 	if err != nil {
-		return v, fmt.Errorf("querying old value for OldPrepayID: %w", err)
+		return v, fmt.Errorf("querying old value for OldPayMethod: %w", err)
 	}
-	return oldValue.PrepayID, nil
+	return oldValue.PayMethod, nil
 }
 
-// ClearPrepayID clears the value of the "prepay_id" field.
-func (m *OrderInfoMutation) ClearPrepayID() {
-	m.prepay_id = nil
-	m.clearedFields[orderinfo.FieldPrepayID] = struct{}{}
+// AddPayMethod adds i to the "pay_method" field.
+func (m *OrderInfoMutation) AddPayMethod(i int8) {
+	if m.addpay_method != nil {
+		*m.addpay_method += i
+	} else {
+		m.addpay_method = &i
+	}
 }
 
-// PrepayIDCleared returns if the "prepay_id" field was cleared in this mutation.
-func (m *OrderInfoMutation) PrepayIDCleared() bool {
-	_, ok := m.clearedFields[orderinfo.FieldPrepayID]
+// AddedPayMethod returns the value that was added to the "pay_method" field in this mutation.
+func (m *OrderInfoMutation) AddedPayMethod() (r int8, exists bool) {
+	v := m.addpay_method
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ClearPayMethod clears the value of the "pay_method" field.
+func (m *OrderInfoMutation) ClearPayMethod() {
+	m.pay_method = nil
+	m.addpay_method = nil
+	m.clearedFields[orderinfo.FieldPayMethod] = struct{}{}
+}
+
+// PayMethodCleared returns if the "pay_method" field was cleared in this mutation.
+func (m *OrderInfoMutation) PayMethodCleared() bool {
+	_, ok := m.clearedFields[orderinfo.FieldPayMethod]
 	return ok
 }
 
-// ResetPrepayID resets all changes to the "prepay_id" field.
-func (m *OrderInfoMutation) ResetPrepayID() {
-	m.prepay_id = nil
-	delete(m.clearedFields, orderinfo.FieldPrepayID)
+// ResetPayMethod resets all changes to the "pay_method" field.
+func (m *OrderInfoMutation) ResetPayMethod() {
+	m.pay_method = nil
+	m.addpay_method = nil
+	delete(m.clearedFields, orderinfo.FieldPayMethod)
+}
+
+// SetPayMoney sets the "pay_money" field.
+func (m *OrderInfoMutation) SetPayMoney(i int) {
+	m.pay_money = &i
+	m.addpay_money = nil
+}
+
+// PayMoney returns the value of the "pay_money" field in the mutation.
+func (m *OrderInfoMutation) PayMoney() (r int, exists bool) {
+	v := m.pay_money
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// OldPayMoney returns the old "pay_money" field's value of the OrderInfo entity.
+// If the OrderInfo object wasn't provided to the builder, the object is fetched from the database.
+// An error is returned if the mutation operation is not UpdateOne, or the database query fails.
+func (m *OrderInfoMutation) OldPayMoney(ctx context.Context) (v int, err error) {
+	if !m.op.Is(OpUpdateOne) {
+		return v, fmt.Errorf("OldPayMoney is only allowed on UpdateOne operations")
+	}
+	if m.id == nil || m.oldValue == nil {
+		return v, fmt.Errorf("OldPayMoney requires an ID field in the mutation")
+	}
+	oldValue, err := m.oldValue(ctx)
+	if err != nil {
+		return v, fmt.Errorf("querying old value for OldPayMoney: %w", err)
+	}
+	return oldValue.PayMoney, nil
+}
+
+// AddPayMoney adds i to the "pay_money" field.
+func (m *OrderInfoMutation) AddPayMoney(i int) {
+	if m.addpay_money != nil {
+		*m.addpay_money += i
+	} else {
+		m.addpay_money = &i
+	}
+}
+
+// AddedPayMoney returns the value that was added to the "pay_money" field in this mutation.
+func (m *OrderInfoMutation) AddedPayMoney() (r int, exists bool) {
+	v := m.addpay_money
+	if v == nil {
+		return
+	}
+	return *v, true
+}
+
+// ResetPayMoney resets all changes to the "pay_money" field.
+func (m *OrderInfoMutation) ResetPayMoney() {
+	m.pay_money = nil
+	m.addpay_money = nil
 }
 
 // SetRemark sets the "remark" field.
@@ -12466,7 +12546,7 @@ func (m *OrderInfoMutation) Type() string {
 // order to get all numeric fields that were incremented/decremented, call
 // AddedFields().
 func (m *OrderInfoMutation) Fields() []string {
-	fields := make([]string, 0, 8)
+	fields := make([]string, 0, 9)
 	if m.created_at != nil {
 		fields = append(fields, orderinfo.FieldCreatedAt)
 	}
@@ -12479,8 +12559,11 @@ func (m *OrderInfoMutation) Fields() []string {
 	if m.order_number != nil {
 		fields = append(fields, orderinfo.FieldOrderNumber)
 	}
-	if m.prepay_id != nil {
-		fields = append(fields, orderinfo.FieldPrepayID)
+	if m.pay_method != nil {
+		fields = append(fields, orderinfo.FieldPayMethod)
+	}
+	if m.pay_money != nil {
+		fields = append(fields, orderinfo.FieldPayMoney)
 	}
 	if m.remark != nil {
 		fields = append(fields, orderinfo.FieldRemark)
@@ -12507,8 +12590,10 @@ func (m *OrderInfoMutation) Field(name string) (ent.Value, bool) {
 		return m.DeletedAt()
 	case orderinfo.FieldOrderNumber:
 		return m.OrderNumber()
-	case orderinfo.FieldPrepayID:
-		return m.PrepayID()
+	case orderinfo.FieldPayMethod:
+		return m.PayMethod()
+	case orderinfo.FieldPayMoney:
+		return m.PayMoney()
 	case orderinfo.FieldRemark:
 		return m.Remark()
 	case orderinfo.FieldStatus:
@@ -12532,8 +12617,10 @@ func (m *OrderInfoMutation) OldField(ctx context.Context, name string) (ent.Valu
 		return m.OldDeletedAt(ctx)
 	case orderinfo.FieldOrderNumber:
 		return m.OldOrderNumber(ctx)
-	case orderinfo.FieldPrepayID:
-		return m.OldPrepayID(ctx)
+	case orderinfo.FieldPayMethod:
+		return m.OldPayMethod(ctx)
+	case orderinfo.FieldPayMoney:
+		return m.OldPayMoney(ctx)
 	case orderinfo.FieldRemark:
 		return m.OldRemark(ctx)
 	case orderinfo.FieldStatus:
@@ -12577,12 +12664,19 @@ func (m *OrderInfoMutation) SetField(name string, value ent.Value) error {
 		}
 		m.SetOrderNumber(v)
 		return nil
-	case orderinfo.FieldPrepayID:
-		v, ok := value.(string)
+	case orderinfo.FieldPayMethod:
+		v, ok := value.(int8)
 		if !ok {
 			return fmt.Errorf("unexpected type %T for field %s", value, name)
 		}
-		m.SetPrepayID(v)
+		m.SetPayMethod(v)
+		return nil
+	case orderinfo.FieldPayMoney:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.SetPayMoney(v)
 		return nil
 	case orderinfo.FieldRemark:
 		v, ok := value.(string)
@@ -12613,6 +12707,12 @@ func (m *OrderInfoMutation) SetField(name string, value ent.Value) error {
 // this mutation.
 func (m *OrderInfoMutation) AddedFields() []string {
 	var fields []string
+	if m.addpay_method != nil {
+		fields = append(fields, orderinfo.FieldPayMethod)
+	}
+	if m.addpay_money != nil {
+		fields = append(fields, orderinfo.FieldPayMoney)
+	}
 	if m.addstatus != nil {
 		fields = append(fields, orderinfo.FieldStatus)
 	}
@@ -12627,6 +12727,10 @@ func (m *OrderInfoMutation) AddedFields() []string {
 // was not set, or was not defined in the schema.
 func (m *OrderInfoMutation) AddedField(name string) (ent.Value, bool) {
 	switch name {
+	case orderinfo.FieldPayMethod:
+		return m.AddedPayMethod()
+	case orderinfo.FieldPayMoney:
+		return m.AddedPayMoney()
 	case orderinfo.FieldStatus:
 		return m.AddedStatus()
 	case orderinfo.FieldDeliveryStatus:
@@ -12640,6 +12744,20 @@ func (m *OrderInfoMutation) AddedField(name string) (ent.Value, bool) {
 // type.
 func (m *OrderInfoMutation) AddField(name string, value ent.Value) error {
 	switch name {
+	case orderinfo.FieldPayMethod:
+		v, ok := value.(int8)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddPayMethod(v)
+		return nil
+	case orderinfo.FieldPayMoney:
+		v, ok := value.(int)
+		if !ok {
+			return fmt.Errorf("unexpected type %T for field %s", value, name)
+		}
+		m.AddPayMoney(v)
+		return nil
 	case orderinfo.FieldStatus:
 		v, ok := value.(int8)
 		if !ok {
@@ -12668,8 +12786,8 @@ func (m *OrderInfoMutation) ClearedFields() []string {
 	if m.FieldCleared(orderinfo.FieldDeletedAt) {
 		fields = append(fields, orderinfo.FieldDeletedAt)
 	}
-	if m.FieldCleared(orderinfo.FieldPrepayID) {
-		fields = append(fields, orderinfo.FieldPrepayID)
+	if m.FieldCleared(orderinfo.FieldPayMethod) {
+		fields = append(fields, orderinfo.FieldPayMethod)
 	}
 	if m.FieldCleared(orderinfo.FieldRemark) {
 		fields = append(fields, orderinfo.FieldRemark)
@@ -12694,8 +12812,8 @@ func (m *OrderInfoMutation) ClearField(name string) error {
 	case orderinfo.FieldDeletedAt:
 		m.ClearDeletedAt()
 		return nil
-	case orderinfo.FieldPrepayID:
-		m.ClearPrepayID()
+	case orderinfo.FieldPayMethod:
+		m.ClearPayMethod()
 		return nil
 	case orderinfo.FieldRemark:
 		m.ClearRemark()
@@ -12720,8 +12838,11 @@ func (m *OrderInfoMutation) ResetField(name string) error {
 	case orderinfo.FieldOrderNumber:
 		m.ResetOrderNumber()
 		return nil
-	case orderinfo.FieldPrepayID:
-		m.ResetPrepayID()
+	case orderinfo.FieldPayMethod:
+		m.ResetPayMethod()
+		return nil
+	case orderinfo.FieldPayMoney:
+		m.ResetPayMoney()
 		return nil
 	case orderinfo.FieldRemark:
 		m.ResetRemark()
