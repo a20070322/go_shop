@@ -92,6 +92,20 @@ func (gsc *GoodsSpuCreate) SetNillableSpuHeadImg(s *string) *GoodsSpuCreate {
 	return gsc
 }
 
+// SetSalesNum sets the "sales_num" field.
+func (gsc *GoodsSpuCreate) SetSalesNum(i int) *GoodsSpuCreate {
+	gsc.mutation.SetSalesNum(i)
+	return gsc
+}
+
+// SetNillableSalesNum sets the "sales_num" field if the given value is not nil.
+func (gsc *GoodsSpuCreate) SetNillableSalesNum(i *int) *GoodsSpuCreate {
+	if i != nil {
+		gsc.SetSalesNum(*i)
+	}
+	return gsc
+}
+
 // SetSpuDesc sets the "spu_desc" field.
 func (gsc *GoodsSpuCreate) SetSpuDesc(s string) *GoodsSpuCreate {
 	gsc.mutation.SetSpuDesc(s)
@@ -336,6 +350,14 @@ func (gsc *GoodsSpuCreate) createSpec() (*GoodsSpu, *sqlgraph.CreateSpec) {
 			Column: goodsspu.FieldSpuHeadImg,
 		})
 		_node.SpuHeadImg = value
+	}
+	if value, ok := gsc.mutation.SalesNum(); ok {
+		_spec.Fields = append(_spec.Fields, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: goodsspu.FieldSalesNum,
+		})
+		_node.SalesNum = value
 	}
 	if value, ok := gsc.mutation.SpuDesc(); ok {
 		_spec.Fields = append(_spec.Fields, &sqlgraph.FieldSpec{

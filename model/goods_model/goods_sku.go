@@ -55,7 +55,7 @@ func (m *Sku) GetSku(form *SkuGetFormType) (*ent.GoodsSku, error) {
 }
 
 // 校验库存
-func (m Sku) CheckGetSku(products []*order_utils.OrderCreateGoodsItem) (bool, []*ent.GoodsSku, map[int]int, error) {
+func (m Sku) CheckGetSku(products []*order_utils.OrderCreateGoodsItem,isBreak bool) (bool, []*ent.GoodsSku, map[int]int, error) {
 	if products == nil {
 		return false, nil, nil, errors.New("products is nil")
 	}
@@ -72,15 +72,23 @@ func (m Sku) CheckGetSku(products []*order_utils.OrderCreateGoodsItem) (bool, []
 		global.Logger.Error(err.Error())
 		return false, skus, maps, err
 	}
+	var errStockNum error
 	for _, sku := range skus {
 		if maps[sku.ID] < 1 {
 			return false, nil, maps, errors.New("订单商品数据异常")
 		}
 		if sku.StockNum < maps[sku.ID] {
-			return false, nil, maps, errors.New("订单商品中部分库存不足")
+			errStockNum = errors.New("订单商品中部分库存不足")
+			if isBreak {
+				return false, nil, maps, errStockNum
+			}
+
 		}
 	}
-	return true, skus, maps, nil
+	if errStockNum != nil {
+		return false, skus, maps, errStockNum
+	}
+	return true, skus, maps, errStockNum
 }
 
 type MoldType = string

@@ -102,7 +102,7 @@ func DelayWorkOn() {
 				global.Logger.Error("%s"+errJson.Error(),"DelayWorkOn error")
 				return
 			}
-			global.Logger.Info("延时队列方法执行 [ %s ] : %s",payload.MethodName,payload.PayLoad)
+			global.Logger.Info(fmt.Sprintf("延时队列方法执行 [ %s ] : %s", payload.MethodName, payload.PayLoad))
 			DelayForwarding(d,&payload)
 		}
 	}()

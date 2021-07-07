@@ -84,8 +84,7 @@ func PriorityWorkOn() {
 			"x-max-priority": int32(10),
 		},
 	)
-	//设置每次从消息队列获取任务的数量
-	if global.RabbitMq.DelayCh.Qos(1, 0,false) != nil {
+	if err != nil {
 		global.Logger.Panic(err.Error())
 	}
 	go func() {
@@ -96,7 +95,7 @@ func PriorityWorkOn() {
 				global.Logger.Error("%s"+errJson.Error(), "PriorityWorkOn error")
 				return
 			}
-			global.Logger.Info("公共优先级队列方法执行 [ %s ] : %s", payload.MethodName, payload.PayLoad)
+			global.Logger.Info(fmt.Sprintf("公共优先级队列方法执行 [ %s ] : %s", payload.MethodName, payload.PayLoad))
 			PriorityForwarding(d, &payload)
 		}
 	}()

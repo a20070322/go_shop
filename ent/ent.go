@@ -24,6 +24,7 @@ import (
 	"github.com/a20070322/shop-go/ent/orderaddress"
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
+	"github.com/a20070322/shop-go/ent/wechatpay"
 )
 
 // ent aliases to avoid import conflicts in user's code.
@@ -58,6 +59,7 @@ func columnChecker(table string) func(string) error {
 		orderaddress.Table:        orderaddress.ValidColumn,
 		ordergoodssku.Table:       ordergoodssku.ValidColumn,
 		orderinfo.Table:           orderinfo.ValidColumn,
+		wechatpay.Table:           wechatpay.ValidColumn,
 	}
 	check, ok := checks[table]
 	if !ok {

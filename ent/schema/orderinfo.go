@@ -1,6 +1,5 @@
 package schema
 
-import "C"
 import (
 	"entgo.io/ent"
 	"entgo.io/ent/schema/edge"
@@ -25,10 +24,11 @@ func (OrderInfo) Fields() []ent.Field {
 		field.String("order_number").
 			Unique().
 			Comment("订单号"),
-		field.String("prepay_id").
-			Unique().
+		field.Int8("pay_method").
 			Optional().
-			Comment("微信支付prepay_id"),
+			Comment("支付方式"), // 0 微信支付  1 余额支付 2 支付宝支付
+		field.Int("pay_money").
+			Comment("支付金额"),
 		field.Text("remark").
 			Optional().
 			Comment("订单备注"),
@@ -48,5 +48,7 @@ func (OrderInfo) Edges() []ent.Edge {
 			Ref("order_info").
 			Unique(),
 		edge.To("order_goods_sku", OrderGoodsSku.Type),
+		edge.To("order_address", OrderAddress.Type),
+		edge.To("wechat_pay", WeChatPay.Type),
 	}
 }

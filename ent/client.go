@@ -23,6 +23,7 @@ import (
 	"github.com/a20070322/shop-go/ent/orderaddress"
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
+	"github.com/a20070322/shop-go/ent/wechatpay"
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
@@ -62,6 +63,8 @@ type Client struct {
 	OrderGoodsSku *OrderGoodsSkuClient
 	// OrderInfo is the client for interacting with the OrderInfo builders.
 	OrderInfo *OrderInfoClient
+	// WeChatPay is the client for interacting with the WeChatPay builders.
+	WeChatPay *WeChatPayClient
 }
 
 // NewClient creates a new client configured with the given options.
@@ -89,6 +92,7 @@ func (c *Client) init() {
 	c.OrderAddress = NewOrderAddressClient(c.config)
 	c.OrderGoodsSku = NewOrderGoodsSkuClient(c.config)
 	c.OrderInfo = NewOrderInfoClient(c.config)
+	c.WeChatPay = NewWeChatPayClient(c.config)
 }
 
 // Open opens a database/sql.DB specified by the driver name and
@@ -136,6 +140,7 @@ func (c *Client) Tx(ctx context.Context) (*Tx, error) {
 		OrderAddress:        NewOrderAddressClient(cfg),
 		OrderGoodsSku:       NewOrderGoodsSkuClient(cfg),
 		OrderInfo:           NewOrderInfoClient(cfg),
+		WeChatPay:           NewWeChatPayClient(cfg),
 	}, nil
 }
 
@@ -168,6 +173,7 @@ func (c *Client) BeginTx(ctx context.Context, opts *sql.TxOptions) (*Tx, error) 
 		OrderAddress:        NewOrderAddressClient(cfg),
 		OrderGoodsSku:       NewOrderGoodsSkuClient(cfg),
 		OrderInfo:           NewOrderInfoClient(cfg),
+		WeChatPay:           NewWeChatPayClient(cfg),
 	}, nil
 }
 
@@ -211,6 +217,7 @@ func (c *Client) Use(hooks ...Hook) {
 	c.OrderAddress.Use(hooks...)
 	c.OrderGoodsSku.Use(hooks...)
 	c.OrderInfo.Use(hooks...)
+	c.WeChatPay.Use(hooks...)
 }
 
 // BasicBannerClient is a client for the BasicBanner schema.
@@ -1576,6 +1583,22 @@ func (c *OrderAddressClient) GetX(ctx context.Context, id int) *OrderAddress {
 	return obj
 }
 
+// QueryOrderInfo queries the order_info edge of a OrderAddress.
+func (c *OrderAddressClient) QueryOrderInfo(oa *OrderAddress) *OrderInfoQuery {
+	query := &OrderInfoQuery{config: c.config}
+	query.path = func(ctx context.Context) (fromV *sql.Selector, _ error) {
+		id := oa.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderaddress.Table, orderaddress.FieldID, id),
+			sqlgraph.To(orderinfo.Table, orderinfo.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, orderaddress.OrderInfoTable, orderaddress.OrderInfoColumn),
+		)
+		fromV = sqlgraph.Neighbors(oa.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
 // Hooks returns the client hooks.
 func (c *OrderAddressClient) Hooks() []Hook {
 	return c.hooks.OrderAddress
@@ -1820,7 +1843,145 @@ func (c *OrderInfoClient) QueryOrderGoodsSku(oi *OrderInfo) *OrderGoodsSkuQuery 
 	return query
 }
 
+// QueryOrderAddress queries the order_address edge of a OrderInfo.
+func (c *OrderInfoClient) QueryOrderAddress(oi *OrderInfo) *OrderAddressQuery {
+	query := &OrderAddressQuery{config: c.config}
+	query.path = func(ctx context.Context) (fromV *sql.Selector, _ error) {
+		id := oi.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderinfo.Table, orderinfo.FieldID, id),
+			sqlgraph.To(orderaddress.Table, orderaddress.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, orderinfo.OrderAddressTable, orderinfo.OrderAddressColumn),
+		)
+		fromV = sqlgraph.Neighbors(oi.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// QueryWechatPay queries the wechat_pay edge of a OrderInfo.
+func (c *OrderInfoClient) QueryWechatPay(oi *OrderInfo) *WeChatPayQuery {
+	query := &WeChatPayQuery{config: c.config}
+	query.path = func(ctx context.Context) (fromV *sql.Selector, _ error) {
+		id := oi.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(orderinfo.Table, orderinfo.FieldID, id),
+			sqlgraph.To(wechatpay.Table, wechatpay.FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, orderinfo.WechatPayTable, orderinfo.WechatPayColumn),
+		)
+		fromV = sqlgraph.Neighbors(oi.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
 // Hooks returns the client hooks.
 func (c *OrderInfoClient) Hooks() []Hook {
 	return c.hooks.OrderInfo
+}
+
+// WeChatPayClient is a client for the WeChatPay schema.
+type WeChatPayClient struct {
+	config
+}
+
+// NewWeChatPayClient returns a client for the WeChatPay from the given config.
+func NewWeChatPayClient(c config) *WeChatPayClient {
+	return &WeChatPayClient{config: c}
+}
+
+// Use adds a list of mutation hooks to the hooks stack.
+// A call to `Use(f, g, h)` equals to `wechatpay.Hooks(f(g(h())))`.
+func (c *WeChatPayClient) Use(hooks ...Hook) {
+	c.hooks.WeChatPay = append(c.hooks.WeChatPay, hooks...)
+}
+
+// Create returns a create builder for WeChatPay.
+func (c *WeChatPayClient) Create() *WeChatPayCreate {
+	mutation := newWeChatPayMutation(c.config, OpCreate)
+	return &WeChatPayCreate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// CreateBulk returns a builder for creating a bulk of WeChatPay entities.
+func (c *WeChatPayClient) CreateBulk(builders ...*WeChatPayCreate) *WeChatPayCreateBulk {
+	return &WeChatPayCreateBulk{config: c.config, builders: builders}
+}
+
+// Update returns an update builder for WeChatPay.
+func (c *WeChatPayClient) Update() *WeChatPayUpdate {
+	mutation := newWeChatPayMutation(c.config, OpUpdate)
+	return &WeChatPayUpdate{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOne returns an update builder for the given entity.
+func (c *WeChatPayClient) UpdateOne(wcp *WeChatPay) *WeChatPayUpdateOne {
+	mutation := newWeChatPayMutation(c.config, OpUpdateOne, withWeChatPay(wcp))
+	return &WeChatPayUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// UpdateOneID returns an update builder for the given id.
+func (c *WeChatPayClient) UpdateOneID(id int) *WeChatPayUpdateOne {
+	mutation := newWeChatPayMutation(c.config, OpUpdateOne, withWeChatPayID(id))
+	return &WeChatPayUpdateOne{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// Delete returns a delete builder for WeChatPay.
+func (c *WeChatPayClient) Delete() *WeChatPayDelete {
+	mutation := newWeChatPayMutation(c.config, OpDelete)
+	return &WeChatPayDelete{config: c.config, hooks: c.Hooks(), mutation: mutation}
+}
+
+// DeleteOne returns a delete builder for the given entity.
+func (c *WeChatPayClient) DeleteOne(wcp *WeChatPay) *WeChatPayDeleteOne {
+	return c.DeleteOneID(wcp.ID)
+}
+
+// DeleteOneID returns a delete builder for the given id.
+func (c *WeChatPayClient) DeleteOneID(id int) *WeChatPayDeleteOne {
+	builder := c.Delete().Where(wechatpay.ID(id))
+	builder.mutation.id = &id
+	builder.mutation.op = OpDeleteOne
+	return &WeChatPayDeleteOne{builder}
+}
+
+// Query returns a query builder for WeChatPay.
+func (c *WeChatPayClient) Query() *WeChatPayQuery {
+	return &WeChatPayQuery{
+		config: c.config,
+	}
+}
+
+// Get returns a WeChatPay entity by its id.
+func (c *WeChatPayClient) Get(ctx context.Context, id int) (*WeChatPay, error) {
+	return c.Query().Where(wechatpay.ID(id)).Only(ctx)
+}
+
+// GetX is like Get, but panics if an error occurs.
+func (c *WeChatPayClient) GetX(ctx context.Context, id int) *WeChatPay {
+	obj, err := c.Get(ctx, id)
+	if err != nil {
+		panic(err)
+	}
+	return obj
+}
+
+// QueryOrderInfo queries the order_info edge of a WeChatPay.
+func (c *WeChatPayClient) QueryOrderInfo(wcp *WeChatPay) *OrderInfoQuery {
+	query := &OrderInfoQuery{config: c.config}
+	query.path = func(ctx context.Context) (fromV *sql.Selector, _ error) {
+		id := wcp.ID
+		step := sqlgraph.NewStep(
+			sqlgraph.From(wechatpay.Table, wechatpay.FieldID, id),
+			sqlgraph.To(orderinfo.Table, orderinfo.FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, wechatpay.OrderInfoTable, wechatpay.OrderInfoColumn),
+		)
+		fromV = sqlgraph.Neighbors(wcp.driver.Dialect(), step)
+		return fromV, nil
+	}
+	return query
+}
+
+// Hooks returns the client hooks.
+func (c *WeChatPayClient) Hooks() []Hook {
+	return c.hooks.WeChatPay
 }

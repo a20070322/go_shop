@@ -20,7 +20,7 @@ func (m *MiniChat) Init(config *config.MinChat) {
 	m.AppId = config.AppId
 	m.secret = config.Secret
 	//m.GetCatchToken()
-	m.GetAccessToken()
+	m.GetCatchToken()
 }
 
 // 获取缓存token

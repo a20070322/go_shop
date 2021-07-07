@@ -19,8 +19,10 @@ const (
 	FieldDeletedAt = "deleted_at"
 	// FieldOrderNumber holds the string denoting the order_number field in the database.
 	FieldOrderNumber = "order_number"
-	// FieldPrepayID holds the string denoting the prepay_id field in the database.
-	FieldPrepayID = "prepay_id"
+	// FieldPayMethod holds the string denoting the pay_method field in the database.
+	FieldPayMethod = "pay_method"
+	// FieldPayMoney holds the string denoting the pay_money field in the database.
+	FieldPayMoney = "pay_money"
 	// FieldRemark holds the string denoting the remark field in the database.
 	FieldRemark = "remark"
 	// FieldStatus holds the string denoting the status field in the database.
@@ -31,6 +33,10 @@ const (
 	EdgeCustomer = "customer"
 	// EdgeOrderGoodsSku holds the string denoting the order_goods_sku edge name in mutations.
 	EdgeOrderGoodsSku = "order_goods_sku"
+	// EdgeOrderAddress holds the string denoting the order_address edge name in mutations.
+	EdgeOrderAddress = "order_address"
+	// EdgeWechatPay holds the string denoting the wechat_pay edge name in mutations.
+	EdgeWechatPay = "wechat_pay"
 	// Table holds the table name of the orderinfo in the database.
 	Table = "order_infos"
 	// CustomerTable is the table the holds the customer relation/edge.
@@ -47,6 +53,20 @@ const (
 	OrderGoodsSkuInverseTable = "order_goods_skus"
 	// OrderGoodsSkuColumn is the table column denoting the order_goods_sku relation/edge.
 	OrderGoodsSkuColumn = "order_info_order_goods_sku"
+	// OrderAddressTable is the table the holds the order_address relation/edge.
+	OrderAddressTable = "order_addresses"
+	// OrderAddressInverseTable is the table name for the OrderAddress entity.
+	// It exists in this package in order to avoid circular dependency with the "orderaddress" package.
+	OrderAddressInverseTable = "order_addresses"
+	// OrderAddressColumn is the table column denoting the order_address relation/edge.
+	OrderAddressColumn = "order_info_order_address"
+	// WechatPayTable is the table the holds the wechat_pay relation/edge.
+	WechatPayTable = "we_chat_pays"
+	// WechatPayInverseTable is the table name for the WeChatPay entity.
+	// It exists in this package in order to avoid circular dependency with the "wechatpay" package.
+	WechatPayInverseTable = "we_chat_pays"
+	// WechatPayColumn is the table column denoting the wechat_pay relation/edge.
+	WechatPayColumn = "order_info_wechat_pay"
 )
 
 // Columns holds all SQL columns for orderinfo fields.
@@ -56,7 +76,8 @@ var Columns = []string{
 	FieldUpdatedAt,
 	FieldDeletedAt,
 	FieldOrderNumber,
-	FieldPrepayID,
+	FieldPayMethod,
+	FieldPayMoney,
 	FieldRemark,
 	FieldStatus,
 	FieldDeliveryStatus,

@@ -121,10 +121,17 @@ func OrderNumber(v string) predicate.OrderInfo {
 	})
 }
 
-// PrepayID applies equality check predicate on the "prepay_id" field. It's identical to PrepayIDEQ.
-func PrepayID(v string) predicate.OrderInfo {
+// PayMethod applies equality check predicate on the "pay_method" field. It's identical to PayMethodEQ.
+func PayMethod(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.EQ(s.C(FieldPrepayID), v))
+		s.Where(sql.EQ(s.C(FieldPayMethod), v))
+	})
+}
+
+// PayMoney applies equality check predicate on the "pay_money" field. It's identical to PayMoneyEQ.
+func PayMoney(v int) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldPayMoney), v))
 	})
 }
 
@@ -516,22 +523,22 @@ func OrderNumberContainsFold(v string) predicate.OrderInfo {
 	})
 }
 
-// PrepayIDEQ applies the EQ predicate on the "prepay_id" field.
-func PrepayIDEQ(v string) predicate.OrderInfo {
+// PayMethodEQ applies the EQ predicate on the "pay_method" field.
+func PayMethodEQ(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.EQ(s.C(FieldPrepayID), v))
+		s.Where(sql.EQ(s.C(FieldPayMethod), v))
 	})
 }
 
-// PrepayIDNEQ applies the NEQ predicate on the "prepay_id" field.
-func PrepayIDNEQ(v string) predicate.OrderInfo {
+// PayMethodNEQ applies the NEQ predicate on the "pay_method" field.
+func PayMethodNEQ(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.NEQ(s.C(FieldPrepayID), v))
+		s.Where(sql.NEQ(s.C(FieldPayMethod), v))
 	})
 }
 
-// PrepayIDIn applies the In predicate on the "prepay_id" field.
-func PrepayIDIn(vs ...string) predicate.OrderInfo {
+// PayMethodIn applies the In predicate on the "pay_method" field.
+func PayMethodIn(vs ...int8) predicate.OrderInfo {
 	v := make([]interface{}, len(vs))
 	for i := range v {
 		v[i] = vs[i]
@@ -543,12 +550,12 @@ func PrepayIDIn(vs ...string) predicate.OrderInfo {
 			s.Where(sql.False())
 			return
 		}
-		s.Where(sql.In(s.C(FieldPrepayID), v...))
+		s.Where(sql.In(s.C(FieldPayMethod), v...))
 	})
 }
 
-// PrepayIDNotIn applies the NotIn predicate on the "prepay_id" field.
-func PrepayIDNotIn(vs ...string) predicate.OrderInfo {
+// PayMethodNotIn applies the NotIn predicate on the "pay_method" field.
+func PayMethodNotIn(vs ...int8) predicate.OrderInfo {
 	v := make([]interface{}, len(vs))
 	for i := range v {
 		v[i] = vs[i]
@@ -560,84 +567,125 @@ func PrepayIDNotIn(vs ...string) predicate.OrderInfo {
 			s.Where(sql.False())
 			return
 		}
-		s.Where(sql.NotIn(s.C(FieldPrepayID), v...))
+		s.Where(sql.NotIn(s.C(FieldPayMethod), v...))
 	})
 }
 
-// PrepayIDGT applies the GT predicate on the "prepay_id" field.
-func PrepayIDGT(v string) predicate.OrderInfo {
+// PayMethodGT applies the GT predicate on the "pay_method" field.
+func PayMethodGT(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.GT(s.C(FieldPrepayID), v))
+		s.Where(sql.GT(s.C(FieldPayMethod), v))
 	})
 }
 
-// PrepayIDGTE applies the GTE predicate on the "prepay_id" field.
-func PrepayIDGTE(v string) predicate.OrderInfo {
+// PayMethodGTE applies the GTE predicate on the "pay_method" field.
+func PayMethodGTE(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.GTE(s.C(FieldPrepayID), v))
+		s.Where(sql.GTE(s.C(FieldPayMethod), v))
 	})
 }
 
-// PrepayIDLT applies the LT predicate on the "prepay_id" field.
-func PrepayIDLT(v string) predicate.OrderInfo {
+// PayMethodLT applies the LT predicate on the "pay_method" field.
+func PayMethodLT(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.LT(s.C(FieldPrepayID), v))
+		s.Where(sql.LT(s.C(FieldPayMethod), v))
 	})
 }
 
-// PrepayIDLTE applies the LTE predicate on the "prepay_id" field.
-func PrepayIDLTE(v string) predicate.OrderInfo {
+// PayMethodLTE applies the LTE predicate on the "pay_method" field.
+func PayMethodLTE(v int8) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.LTE(s.C(FieldPrepayID), v))
+		s.Where(sql.LTE(s.C(FieldPayMethod), v))
 	})
 }
 
-// PrepayIDContains applies the Contains predicate on the "prepay_id" field.
-func PrepayIDContains(v string) predicate.OrderInfo {
+// PayMethodIsNil applies the IsNil predicate on the "pay_method" field.
+func PayMethodIsNil() predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.Contains(s.C(FieldPrepayID), v))
+		s.Where(sql.IsNull(s.C(FieldPayMethod)))
 	})
 }
 
-// PrepayIDHasPrefix applies the HasPrefix predicate on the "prepay_id" field.
-func PrepayIDHasPrefix(v string) predicate.OrderInfo {
+// PayMethodNotNil applies the NotNil predicate on the "pay_method" field.
+func PayMethodNotNil() predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.HasPrefix(s.C(FieldPrepayID), v))
+		s.Where(sql.NotNull(s.C(FieldPayMethod)))
 	})
 }
 
-// PrepayIDHasSuffix applies the HasSuffix predicate on the "prepay_id" field.
-func PrepayIDHasSuffix(v string) predicate.OrderInfo {
+// PayMoneyEQ applies the EQ predicate on the "pay_money" field.
+func PayMoneyEQ(v int) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.HasSuffix(s.C(FieldPrepayID), v))
+		s.Where(sql.EQ(s.C(FieldPayMoney), v))
 	})
 }
 
-// PrepayIDIsNil applies the IsNil predicate on the "prepay_id" field.
-func PrepayIDIsNil() predicate.OrderInfo {
+// PayMoneyNEQ applies the NEQ predicate on the "pay_money" field.
+func PayMoneyNEQ(v int) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.IsNull(s.C(FieldPrepayID)))
+		s.Where(sql.NEQ(s.C(FieldPayMoney), v))
 	})
 }
 
-// PrepayIDNotNil applies the NotNil predicate on the "prepay_id" field.
-func PrepayIDNotNil() predicate.OrderInfo {
+// PayMoneyIn applies the In predicate on the "pay_money" field.
+func PayMoneyIn(vs ...int) predicate.OrderInfo {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.NotNull(s.C(FieldPrepayID)))
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldPayMoney), v...))
 	})
 }
 
-// PrepayIDEqualFold applies the EqualFold predicate on the "prepay_id" field.
-func PrepayIDEqualFold(v string) predicate.OrderInfo {
+// PayMoneyNotIn applies the NotIn predicate on the "pay_money" field.
+func PayMoneyNotIn(vs ...int) predicate.OrderInfo {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.EqualFold(s.C(FieldPrepayID), v))
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldPayMoney), v...))
 	})
 }
 
-// PrepayIDContainsFold applies the ContainsFold predicate on the "prepay_id" field.
-func PrepayIDContainsFold(v string) predicate.OrderInfo {
+// PayMoneyGT applies the GT predicate on the "pay_money" field.
+func PayMoneyGT(v int) predicate.OrderInfo {
 	return predicate.OrderInfo(func(s *sql.Selector) {
-		s.Where(sql.ContainsFold(s.C(FieldPrepayID), v))
+		s.Where(sql.GT(s.C(FieldPayMoney), v))
+	})
+}
+
+// PayMoneyGTE applies the GTE predicate on the "pay_money" field.
+func PayMoneyGTE(v int) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldPayMoney), v))
+	})
+}
+
+// PayMoneyLT applies the LT predicate on the "pay_money" field.
+func PayMoneyLT(v int) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldPayMoney), v))
+	})
+}
+
+// PayMoneyLTE applies the LTE predicate on the "pay_money" field.
+func PayMoneyLTE(v int) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldPayMoney), v))
 	})
 }
 
@@ -965,6 +1013,62 @@ func HasOrderGoodsSkuWith(preds ...predicate.OrderGoodsSku) predicate.OrderInfo 
 			sqlgraph.From(Table, FieldID),
 			sqlgraph.To(OrderGoodsSkuInverseTable, FieldID),
 			sqlgraph.Edge(sqlgraph.O2M, false, OrderGoodsSkuTable, OrderGoodsSkuColumn),
+		)
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
+	})
+}
+
+// HasOrderAddress applies the HasEdge predicate on the "order_address" edge.
+func HasOrderAddress() predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(OrderAddressTable, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, OrderAddressTable, OrderAddressColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasOrderAddressWith applies the HasEdge predicate on the "order_address" edge with a given conditions (other predicates).
+func HasOrderAddressWith(preds ...predicate.OrderAddress) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(OrderAddressInverseTable, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, OrderAddressTable, OrderAddressColumn),
+		)
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
+	})
+}
+
+// HasWechatPay applies the HasEdge predicate on the "wechat_pay" edge.
+func HasWechatPay() predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(WechatPayTable, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, WechatPayTable, WechatPayColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasWechatPayWith applies the HasEdge predicate on the "wechat_pay" edge with a given conditions (other predicates).
+func HasWechatPayWith(preds ...predicate.WeChatPay) predicate.OrderInfo {
+	return predicate.OrderInfo(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(WechatPayInverseTable, FieldID),
+			sqlgraph.Edge(sqlgraph.O2M, false, WechatPayTable, WechatPayColumn),
 		)
 		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
 			for _, p := range preds {

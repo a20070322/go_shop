@@ -23,6 +23,8 @@ const (
 	FieldSpuCode = "spu_code"
 	// FieldSpuHeadImg holds the string denoting the spu_head_img field in the database.
 	FieldSpuHeadImg = "spu_head_img"
+	// FieldSalesNum holds the string denoting the sales_num field in the database.
+	FieldSalesNum = "sales_num"
 	// FieldSpuDesc holds the string denoting the spu_desc field in the database.
 	FieldSpuDesc = "spu_desc"
 	// FieldSpuDetails holds the string denoting the spu_details field in the database.
@@ -78,6 +80,7 @@ var Columns = []string{
 	FieldSpuName,
 	FieldSpuCode,
 	FieldSpuHeadImg,
+	FieldSalesNum,
 	FieldSpuDesc,
 	FieldSpuDetails,
 	FieldIsCustomSku,

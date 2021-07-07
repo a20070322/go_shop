@@ -7,19 +7,60 @@ const (
 	Label = "order_address"
 	// FieldID holds the string denoting the id field in the database.
 	FieldID = "id"
+	// FieldName holds the string denoting the name field in the database.
+	FieldName = "name"
+	// FieldPhone holds the string denoting the phone field in the database.
+	FieldPhone = "phone"
+	// FieldProvince holds the string denoting the province field in the database.
+	FieldProvince = "province"
+	// FieldCity holds the string denoting the city field in the database.
+	FieldCity = "city"
+	// FieldArea holds the string denoting the area field in the database.
+	FieldArea = "area"
+	// FieldDetailed holds the string denoting the detailed field in the database.
+	FieldDetailed = "detailed"
+	// FieldRemark holds the string denoting the remark field in the database.
+	FieldRemark = "remark"
+	// EdgeOrderInfo holds the string denoting the order_info edge name in mutations.
+	EdgeOrderInfo = "order_info"
 	// Table holds the table name of the orderaddress in the database.
 	Table = "order_addresses"
+	// OrderInfoTable is the table the holds the order_info relation/edge.
+	OrderInfoTable = "order_addresses"
+	// OrderInfoInverseTable is the table name for the OrderInfo entity.
+	// It exists in this package in order to avoid circular dependency with the "orderinfo" package.
+	OrderInfoInverseTable = "order_infos"
+	// OrderInfoColumn is the table column denoting the order_info relation/edge.
+	OrderInfoColumn = "order_info_order_address"
 )
 
 // Columns holds all SQL columns for orderaddress fields.
 var Columns = []string{
 	FieldID,
+	FieldName,
+	FieldPhone,
+	FieldProvince,
+	FieldCity,
+	FieldArea,
+	FieldDetailed,
+	FieldRemark,
+}
+
+// ForeignKeys holds the SQL foreign-keys that are owned by the "order_addresses"
+// table and are not defined as standalone fields in the schema.
+var ForeignKeys = []string{
+	"order_info_order_address",
 }
 
 // ValidColumn reports if the column name is valid (part of the table columns).
 func ValidColumn(column string) bool {
 	for i := range Columns {
 		if column == Columns[i] {
+			return true
+		}
+	}
+	for i := range ForeignKeys {
+		if column == ForeignKeys[i] {
 			return true
 		}
 	}

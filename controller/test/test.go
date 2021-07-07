@@ -1,15 +1,14 @@
 package test
 
 import (
-	"entgo.io/ent/dialect/sql"
 	"fmt"
 	"github.com/a20070322/shop-go/ent"
 	"github.com/a20070322/shop-go/ent/goodsclassify"
-	"github.com/a20070322/shop-go/ent/goodssku"
-	"github.com/a20070322/shop-go/ent/goodsspu"
 	"github.com/a20070322/shop-go/global"
 	"github.com/a20070322/shop-go/pkg/utils/response"
+	"github.com/a20070322/shop-go/pkg/wechat/pay"
 	"github.com/gin-gonic/gin"
+	"github.com/wechatpay-apiv3/wechatpay-go/core/downloader"
 	"net/http"
 )
 
@@ -80,6 +79,9 @@ type ItemFormType2 struct {
 
 // 分类对接nodejs 数据导入
 func (t Test) Test2(ctx *gin.Context) {
+	certVisitor := downloader.MgrInstance().GetCertificateVisitor(global.AppSetting.WechatPay.MchID)
+	certMap := certVisitor.ExportAll(ctx)
+	fmt.Println(certMap)
 
 	//var form []ItemFormType2
 	//if err := ctx.ShouldBind(&form); err != nil {
@@ -104,9 +106,8 @@ func (t Test) Test2(ctx *gin.Context) {
 	//	)
 	//}
 	//global.Db.GoodsClassify.CreateBulk(bulk...).Save(ctx)
-
-
-	global.Db.GoodsSku.Update().Where().SetStockNum(100).SetSalesNum(10).Save(ctx)
+	//
+	//global.Db.GoodsSku.Update().Where().SetStockNum(100).SetSalesNum(10).Save(ctx)
 	response.Success(ctx, "ok", "")
 }
 
@@ -116,33 +117,15 @@ func (t Test) Test3(ctx *gin.Context) {
 }
 
 func (t Test) Test4(ctx *gin.Context) {
-	//oyCvV5Op3NNJWwuSZDUdXM_D67YI
-	//wechat.PayInit(ctx).JsapiPrepay(&wechat.FormJsapiPrepay{
-	//	OrderNumber: "1234567890",
-	//	OpenID:      "oyCvV5Op3NNJWwuSZDUdXM_D67YI",
-	//	Total:       10,
-	//})
-
-	//list,_ := global.Db.GoodsSpu.Query().Where(goodsspu.IDEQ(1)).WithGoodsSku(func(query *ent.GoodsSkuQuery) {
-	//	query.GroupBy(goodssku.FieldSalesNum).Aggregate(ent.Sum(goodssku.FieldSalesNum)).Int(ctx)
-	//}).First(ctx)
-	//response.Success(ctx, "ok", list)
-	//list,_ := global.Db.GoodsSku.Query().All(ctx)
-	//for _,v := range list{
-	//	v.Update().SetPrice(v.Price*100).Save(ctx)
-	//}
-	//str := "12345"
-	//str2 := string([]rune(str)[:len(str)-2])
-	//str3 :=  string([]rune(str)[len(str)-2:len(str)])
-	//
-	//response.Success(ctx, "ok", str2+"."+str3)
-	list,_:=global.Db.GoodsSpu.Query().Order(func(s *sql.Selector) {
-		t := sql.Table(goodssku.Table)
-		s.Join(t).On(s.C(goodsspu.FieldID),t.C(goodssku.GoodsSpuColumn))
-		s.OrderBy(sql.Desc(t.C(goodssku.FieldSalesNum)))
-	}).Limit(10).All(ctx)
-
-	response.Success(ctx, "ok", list)
+	noRep,err := pay.PayInit(ctx,global.AppSetting.WechatPay).PayNotify(ctx.Request)
+	if err != nil {
+		response.Success(ctx, "ok",err.Error())
+	}
+	rep,err2 := noRep.DecryptCipherText()
+	if err2 != nil {
+		response.Success(ctx, "ok",err2.Error())
+	}
+	response.Success(ctx, "ok",rep)
 }
 
 type ItemFormType5 struct {

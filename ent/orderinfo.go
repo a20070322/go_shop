@@ -26,9 +26,12 @@ type OrderInfo struct {
 	// OrderNumber holds the value of the "order_number" field.
 	// 订单号
 	OrderNumber string `json:"order_number,omitempty"`
-	// PrepayID holds the value of the "prepay_id" field.
-	// 微信支付prepay_id
-	PrepayID string `json:"prepay_id,omitempty"`
+	// PayMethod holds the value of the "pay_method" field.
+	// 支付方式
+	PayMethod int8 `json:"pay_method,omitempty"`
+	// PayMoney holds the value of the "pay_money" field.
+	// 支付金额
+	PayMoney int `json:"pay_money,omitempty"`
 	// Remark holds the value of the "remark" field.
 	// 订单备注
 	Remark string `json:"remark,omitempty"`
@@ -50,9 +53,13 @@ type OrderInfoEdges struct {
 	Customer *Customer `json:"customer,omitempty"`
 	// OrderGoodsSku holds the value of the order_goods_sku edge.
 	OrderGoodsSku []*OrderGoodsSku `json:"order_goods_sku,omitempty"`
+	// OrderAddress holds the value of the order_address edge.
+	OrderAddress []*OrderAddress `json:"order_address,omitempty"`
+	// WechatPay holds the value of the wechat_pay edge.
+	WechatPay []*WeChatPay `json:"wechat_pay,omitempty"`
 	// loadedTypes holds the information for reporting if a
 	// type was loaded (or requested) in eager-loading or not.
-	loadedTypes [2]bool
+	loadedTypes [4]bool
 }
 
 // CustomerOrErr returns the Customer value or an error if the edge
@@ -78,14 +85,32 @@ func (e OrderInfoEdges) OrderGoodsSkuOrErr() ([]*OrderGoodsSku, error) {
 	return nil, &NotLoadedError{edge: "order_goods_sku"}
 }
 
+// OrderAddressOrErr returns the OrderAddress value or an error if the edge
+// was not loaded in eager-loading.
+func (e OrderInfoEdges) OrderAddressOrErr() ([]*OrderAddress, error) {
+	if e.loadedTypes[2] {
+		return e.OrderAddress, nil
+	}
+	return nil, &NotLoadedError{edge: "order_address"}
+}
+
+// WechatPayOrErr returns the WechatPay value or an error if the edge
+// was not loaded in eager-loading.
+func (e OrderInfoEdges) WechatPayOrErr() ([]*WeChatPay, error) {
+	if e.loadedTypes[3] {
+		return e.WechatPay, nil
+	}
+	return nil, &NotLoadedError{edge: "wechat_pay"}
+}
+
 // scanValues returns the types for scanning values from sql.Rows.
 func (*OrderInfo) scanValues(columns []string) ([]interface{}, error) {
 	values := make([]interface{}, len(columns))
 	for i := range columns {
 		switch columns[i] {
-		case orderinfo.FieldID, orderinfo.FieldStatus, orderinfo.FieldDeliveryStatus:
+		case orderinfo.FieldID, orderinfo.FieldPayMethod, orderinfo.FieldPayMoney, orderinfo.FieldStatus, orderinfo.FieldDeliveryStatus:
 			values[i] = new(sql.NullInt64)
-		case orderinfo.FieldOrderNumber, orderinfo.FieldPrepayID, orderinfo.FieldRemark:
+		case orderinfo.FieldOrderNumber, orderinfo.FieldRemark:
 			values[i] = new(sql.NullString)
 		case orderinfo.FieldCreatedAt, orderinfo.FieldUpdatedAt, orderinfo.FieldDeletedAt:
 			values[i] = new(sql.NullTime)
@@ -136,11 +161,17 @@ func (oi *OrderInfo) assignValues(columns []string, values []interface{}) error 
 			} else if value.Valid {
 				oi.OrderNumber = value.String
 			}
-		case orderinfo.FieldPrepayID:
-			if value, ok := values[i].(*sql.NullString); !ok {
-				return fmt.Errorf("unexpected type %T for field prepay_id", values[i])
+		case orderinfo.FieldPayMethod:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for field pay_method", values[i])
 			} else if value.Valid {
-				oi.PrepayID = value.String
+				oi.PayMethod = int8(value.Int64)
+			}
+		case orderinfo.FieldPayMoney:
+			if value, ok := values[i].(*sql.NullInt64); !ok {
+				return fmt.Errorf("unexpected type %T for field pay_money", values[i])
+			} else if value.Valid {
+				oi.PayMoney = int(value.Int64)
 			}
 		case orderinfo.FieldRemark:
 			if value, ok := values[i].(*sql.NullString); !ok {
@@ -182,6 +213,16 @@ func (oi *OrderInfo) QueryOrderGoodsSku() *OrderGoodsSkuQuery {
 	return (&OrderInfoClient{config: oi.config}).QueryOrderGoodsSku(oi)
 }
 
+// QueryOrderAddress queries the "order_address" edge of the OrderInfo entity.
+func (oi *OrderInfo) QueryOrderAddress() *OrderAddressQuery {
+	return (&OrderInfoClient{config: oi.config}).QueryOrderAddress(oi)
+}
+
+// QueryWechatPay queries the "wechat_pay" edge of the OrderInfo entity.
+func (oi *OrderInfo) QueryWechatPay() *WeChatPayQuery {
+	return (&OrderInfoClient{config: oi.config}).QueryWechatPay(oi)
+}
+
 // Update returns a builder for updating this OrderInfo.
 // Note that you need to call OrderInfo.Unwrap() before calling this method if this OrderInfo
 // was returned from a transaction, and the transaction was committed or rolled back.
@@ -213,8 +254,10 @@ func (oi *OrderInfo) String() string {
 	builder.WriteString(oi.DeletedAt.Format(time.ANSIC))
 	builder.WriteString(", order_number=")
 	builder.WriteString(oi.OrderNumber)
-	builder.WriteString(", prepay_id=")
-	builder.WriteString(oi.PrepayID)
+	builder.WriteString(", pay_method=")
+	builder.WriteString(fmt.Sprintf("%v", oi.PayMethod))
+	builder.WriteString(", pay_money=")
+	builder.WriteString(fmt.Sprintf("%v", oi.PayMoney))
 	builder.WriteString(", remark=")
 	builder.WriteString(oi.Remark)
 	builder.WriteString(", status=")

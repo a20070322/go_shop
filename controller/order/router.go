@@ -9,5 +9,6 @@ import (
 func Router(r *gin.RouterGroup)  {
 	g := r.Group("order")
 	g.POST("/create",middleware.JwtAuth(jwt.UserGroupCustomer), Order{}.Create)
-
+	g.POST("/pre_create",middleware.JwtAuth(jwt.UserGroupCustomer), Order{}.PreCreateOrder)
+	g.POST("/state",middleware.JwtAuth(jwt.UserGroupCustomer), Order{}.StateOrder)
 }

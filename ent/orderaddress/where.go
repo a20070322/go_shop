@@ -4,6 +4,7 @@ package orderaddress
 
 import (
 	"entgo.io/ent/dialect/sql"
+	"entgo.io/ent/dialect/sql/sqlgraph"
 	"github.com/a20070322/shop-go/ent/predicate"
 )
 
@@ -87,6 +88,874 @@ func IDLT(id int) predicate.OrderAddress {
 func IDLTE(id int) predicate.OrderAddress {
 	return predicate.OrderAddress(func(s *sql.Selector) {
 		s.Where(sql.LTE(s.C(FieldID), id))
+	})
+}
+
+// Name applies equality check predicate on the "name" field. It's identical to NameEQ.
+func Name(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldName), v))
+	})
+}
+
+// Phone applies equality check predicate on the "phone" field. It's identical to PhoneEQ.
+func Phone(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldPhone), v))
+	})
+}
+
+// Province applies equality check predicate on the "province" field. It's identical to ProvinceEQ.
+func Province(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldProvince), v))
+	})
+}
+
+// City applies equality check predicate on the "city" field. It's identical to CityEQ.
+func City(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldCity), v))
+	})
+}
+
+// Area applies equality check predicate on the "area" field. It's identical to AreaEQ.
+func Area(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldArea), v))
+	})
+}
+
+// Detailed applies equality check predicate on the "detailed" field. It's identical to DetailedEQ.
+func Detailed(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldDetailed), v))
+	})
+}
+
+// Remark applies equality check predicate on the "remark" field. It's identical to RemarkEQ.
+func Remark(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldRemark), v))
+	})
+}
+
+// NameEQ applies the EQ predicate on the "name" field.
+func NameEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldName), v))
+	})
+}
+
+// NameNEQ applies the NEQ predicate on the "name" field.
+func NameNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldName), v))
+	})
+}
+
+// NameIn applies the In predicate on the "name" field.
+func NameIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldName), v...))
+	})
+}
+
+// NameNotIn applies the NotIn predicate on the "name" field.
+func NameNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldName), v...))
+	})
+}
+
+// NameGT applies the GT predicate on the "name" field.
+func NameGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldName), v))
+	})
+}
+
+// NameGTE applies the GTE predicate on the "name" field.
+func NameGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldName), v))
+	})
+}
+
+// NameLT applies the LT predicate on the "name" field.
+func NameLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldName), v))
+	})
+}
+
+// NameLTE applies the LTE predicate on the "name" field.
+func NameLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldName), v))
+	})
+}
+
+// NameContains applies the Contains predicate on the "name" field.
+func NameContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldName), v))
+	})
+}
+
+// NameHasPrefix applies the HasPrefix predicate on the "name" field.
+func NameHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldName), v))
+	})
+}
+
+// NameHasSuffix applies the HasSuffix predicate on the "name" field.
+func NameHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldName), v))
+	})
+}
+
+// NameEqualFold applies the EqualFold predicate on the "name" field.
+func NameEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldName), v))
+	})
+}
+
+// NameContainsFold applies the ContainsFold predicate on the "name" field.
+func NameContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldName), v))
+	})
+}
+
+// PhoneEQ applies the EQ predicate on the "phone" field.
+func PhoneEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneNEQ applies the NEQ predicate on the "phone" field.
+func PhoneNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneIn applies the In predicate on the "phone" field.
+func PhoneIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldPhone), v...))
+	})
+}
+
+// PhoneNotIn applies the NotIn predicate on the "phone" field.
+func PhoneNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldPhone), v...))
+	})
+}
+
+// PhoneGT applies the GT predicate on the "phone" field.
+func PhoneGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneGTE applies the GTE predicate on the "phone" field.
+func PhoneGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneLT applies the LT predicate on the "phone" field.
+func PhoneLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneLTE applies the LTE predicate on the "phone" field.
+func PhoneLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneContains applies the Contains predicate on the "phone" field.
+func PhoneContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneHasPrefix applies the HasPrefix predicate on the "phone" field.
+func PhoneHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneHasSuffix applies the HasSuffix predicate on the "phone" field.
+func PhoneHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneEqualFold applies the EqualFold predicate on the "phone" field.
+func PhoneEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldPhone), v))
+	})
+}
+
+// PhoneContainsFold applies the ContainsFold predicate on the "phone" field.
+func PhoneContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldPhone), v))
+	})
+}
+
+// ProvinceEQ applies the EQ predicate on the "province" field.
+func ProvinceEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceNEQ applies the NEQ predicate on the "province" field.
+func ProvinceNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceIn applies the In predicate on the "province" field.
+func ProvinceIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldProvince), v...))
+	})
+}
+
+// ProvinceNotIn applies the NotIn predicate on the "province" field.
+func ProvinceNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldProvince), v...))
+	})
+}
+
+// ProvinceGT applies the GT predicate on the "province" field.
+func ProvinceGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceGTE applies the GTE predicate on the "province" field.
+func ProvinceGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceLT applies the LT predicate on the "province" field.
+func ProvinceLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceLTE applies the LTE predicate on the "province" field.
+func ProvinceLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceContains applies the Contains predicate on the "province" field.
+func ProvinceContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceHasPrefix applies the HasPrefix predicate on the "province" field.
+func ProvinceHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceHasSuffix applies the HasSuffix predicate on the "province" field.
+func ProvinceHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceEqualFold applies the EqualFold predicate on the "province" field.
+func ProvinceEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldProvince), v))
+	})
+}
+
+// ProvinceContainsFold applies the ContainsFold predicate on the "province" field.
+func ProvinceContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldProvince), v))
+	})
+}
+
+// CityEQ applies the EQ predicate on the "city" field.
+func CityEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldCity), v))
+	})
+}
+
+// CityNEQ applies the NEQ predicate on the "city" field.
+func CityNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldCity), v))
+	})
+}
+
+// CityIn applies the In predicate on the "city" field.
+func CityIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldCity), v...))
+	})
+}
+
+// CityNotIn applies the NotIn predicate on the "city" field.
+func CityNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldCity), v...))
+	})
+}
+
+// CityGT applies the GT predicate on the "city" field.
+func CityGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldCity), v))
+	})
+}
+
+// CityGTE applies the GTE predicate on the "city" field.
+func CityGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldCity), v))
+	})
+}
+
+// CityLT applies the LT predicate on the "city" field.
+func CityLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldCity), v))
+	})
+}
+
+// CityLTE applies the LTE predicate on the "city" field.
+func CityLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldCity), v))
+	})
+}
+
+// CityContains applies the Contains predicate on the "city" field.
+func CityContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldCity), v))
+	})
+}
+
+// CityHasPrefix applies the HasPrefix predicate on the "city" field.
+func CityHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldCity), v))
+	})
+}
+
+// CityHasSuffix applies the HasSuffix predicate on the "city" field.
+func CityHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldCity), v))
+	})
+}
+
+// CityEqualFold applies the EqualFold predicate on the "city" field.
+func CityEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldCity), v))
+	})
+}
+
+// CityContainsFold applies the ContainsFold predicate on the "city" field.
+func CityContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldCity), v))
+	})
+}
+
+// AreaEQ applies the EQ predicate on the "area" field.
+func AreaEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldArea), v))
+	})
+}
+
+// AreaNEQ applies the NEQ predicate on the "area" field.
+func AreaNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldArea), v))
+	})
+}
+
+// AreaIn applies the In predicate on the "area" field.
+func AreaIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldArea), v...))
+	})
+}
+
+// AreaNotIn applies the NotIn predicate on the "area" field.
+func AreaNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldArea), v...))
+	})
+}
+
+// AreaGT applies the GT predicate on the "area" field.
+func AreaGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldArea), v))
+	})
+}
+
+// AreaGTE applies the GTE predicate on the "area" field.
+func AreaGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldArea), v))
+	})
+}
+
+// AreaLT applies the LT predicate on the "area" field.
+func AreaLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldArea), v))
+	})
+}
+
+// AreaLTE applies the LTE predicate on the "area" field.
+func AreaLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldArea), v))
+	})
+}
+
+// AreaContains applies the Contains predicate on the "area" field.
+func AreaContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldArea), v))
+	})
+}
+
+// AreaHasPrefix applies the HasPrefix predicate on the "area" field.
+func AreaHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldArea), v))
+	})
+}
+
+// AreaHasSuffix applies the HasSuffix predicate on the "area" field.
+func AreaHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldArea), v))
+	})
+}
+
+// AreaEqualFold applies the EqualFold predicate on the "area" field.
+func AreaEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldArea), v))
+	})
+}
+
+// AreaContainsFold applies the ContainsFold predicate on the "area" field.
+func AreaContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldArea), v))
+	})
+}
+
+// DetailedEQ applies the EQ predicate on the "detailed" field.
+func DetailedEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedNEQ applies the NEQ predicate on the "detailed" field.
+func DetailedNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedIn applies the In predicate on the "detailed" field.
+func DetailedIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldDetailed), v...))
+	})
+}
+
+// DetailedNotIn applies the NotIn predicate on the "detailed" field.
+func DetailedNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldDetailed), v...))
+	})
+}
+
+// DetailedGT applies the GT predicate on the "detailed" field.
+func DetailedGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedGTE applies the GTE predicate on the "detailed" field.
+func DetailedGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedLT applies the LT predicate on the "detailed" field.
+func DetailedLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedLTE applies the LTE predicate on the "detailed" field.
+func DetailedLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedContains applies the Contains predicate on the "detailed" field.
+func DetailedContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedHasPrefix applies the HasPrefix predicate on the "detailed" field.
+func DetailedHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedHasSuffix applies the HasSuffix predicate on the "detailed" field.
+func DetailedHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedEqualFold applies the EqualFold predicate on the "detailed" field.
+func DetailedEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldDetailed), v))
+	})
+}
+
+// DetailedContainsFold applies the ContainsFold predicate on the "detailed" field.
+func DetailedContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldDetailed), v))
+	})
+}
+
+// RemarkEQ applies the EQ predicate on the "remark" field.
+func RemarkEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkNEQ applies the NEQ predicate on the "remark" field.
+func RemarkNEQ(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkIn applies the In predicate on the "remark" field.
+func RemarkIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldRemark), v...))
+	})
+}
+
+// RemarkNotIn applies the NotIn predicate on the "remark" field.
+func RemarkNotIn(vs ...string) predicate.OrderAddress {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldRemark), v...))
+	})
+}
+
+// RemarkGT applies the GT predicate on the "remark" field.
+func RemarkGT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkGTE applies the GTE predicate on the "remark" field.
+func RemarkGTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkLT applies the LT predicate on the "remark" field.
+func RemarkLT(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkLTE applies the LTE predicate on the "remark" field.
+func RemarkLTE(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkContains applies the Contains predicate on the "remark" field.
+func RemarkContains(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.Contains(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkHasPrefix applies the HasPrefix predicate on the "remark" field.
+func RemarkHasPrefix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasPrefix(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkHasSuffix applies the HasSuffix predicate on the "remark" field.
+func RemarkHasSuffix(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.HasSuffix(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkIsNil applies the IsNil predicate on the "remark" field.
+func RemarkIsNil() predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.IsNull(s.C(FieldRemark)))
+	})
+}
+
+// RemarkNotNil applies the NotNil predicate on the "remark" field.
+func RemarkNotNil() predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.NotNull(s.C(FieldRemark)))
+	})
+}
+
+// RemarkEqualFold applies the EqualFold predicate on the "remark" field.
+func RemarkEqualFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.EqualFold(s.C(FieldRemark), v))
+	})
+}
+
+// RemarkContainsFold applies the ContainsFold predicate on the "remark" field.
+func RemarkContainsFold(v string) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		s.Where(sql.ContainsFold(s.C(FieldRemark), v))
+	})
+}
+
+// HasOrderInfo applies the HasEdge predicate on the "order_info" edge.
+func HasOrderInfo() predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(OrderInfoTable, FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, OrderInfoTable, OrderInfoColumn),
+		)
+		sqlgraph.HasNeighbors(s, step)
+	})
+}
+
+// HasOrderInfoWith applies the HasEdge predicate on the "order_info" edge with a given conditions (other predicates).
+func HasOrderInfoWith(preds ...predicate.OrderInfo) predicate.OrderAddress {
+	return predicate.OrderAddress(func(s *sql.Selector) {
+		step := sqlgraph.NewStep(
+			sqlgraph.From(Table, FieldID),
+			sqlgraph.To(OrderInfoInverseTable, FieldID),
+			sqlgraph.Edge(sqlgraph.M2O, true, OrderInfoTable, OrderInfoColumn),
+		)
+		sqlgraph.HasNeighborsWith(s, step, func(s *sql.Selector) {
+			for _, p := range preds {
+				p(s)
+			}
+		})
 	})
 }
 

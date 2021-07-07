@@ -5,7 +5,6 @@ import (
 	"github.com/a20070322/shop-go/types"
 	"github.com/a20070322/shop-go/types/config"
 	"github.com/go-redis/redis/v8"
-	"github.com/wechatpay-apiv3/wechatpay-go/core"
 	"go.uber.org/zap"
 )
 
@@ -14,4 +13,6 @@ var Db *ent.Client
 var Rdb *redis.Client
 var AppSetting *config.AppConfigure
 var RabbitMq *types.RabbitMqType
-var PayClient *core.Client
+//var PayClient *core.Client
+var WeChatPay *types.WeChatPay
+

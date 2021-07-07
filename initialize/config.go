@@ -17,5 +17,4 @@ func Config() {
 	if err := v.Unmarshal(&global.AppSetting); err != nil {
 		fmt.Printf("err:%s", err)
 	}
-	fmt.Println("配置文件初始化成功")
 }

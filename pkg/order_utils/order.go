@@ -6,8 +6,8 @@ import (
 )
 
 type OrderCreateGoodsItem struct {
-	SkuID  int `json:"sku_id"`
-	Amount int `json:"amount"`
+	SkuID  int `json:"sku_id" binding:"required"`
+	Amount int `json:"amount" binding:"required"`
 }
 
 

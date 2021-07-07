@@ -19,6 +19,7 @@ import (
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/schema"
+	"github.com/a20070322/shop-go/ent/wechatpay"
 )
 
 // The init function reads all schema descriptors with runtime code
@@ -249,11 +250,32 @@ func init() {
 	// orderinfo.UpdateDefaultUpdatedAt holds the default value on update for the updated_at field.
 	orderinfo.UpdateDefaultUpdatedAt = orderinfoDescUpdatedAt.UpdateDefault.(func() time.Time)
 	// orderinfoDescStatus is the schema descriptor for status field.
-	orderinfoDescStatus := orderinfoFields[3].Descriptor()
+	orderinfoDescStatus := orderinfoFields[4].Descriptor()
 	// orderinfo.DefaultStatus holds the default value on creation for the status field.
 	orderinfo.DefaultStatus = orderinfoDescStatus.Default.(int8)
 	// orderinfoDescDeliveryStatus is the schema descriptor for delivery_status field.
-	orderinfoDescDeliveryStatus := orderinfoFields[4].Descriptor()
+	orderinfoDescDeliveryStatus := orderinfoFields[5].Descriptor()
 	// orderinfo.DefaultDeliveryStatus holds the default value on creation for the delivery_status field.
 	orderinfo.DefaultDeliveryStatus = orderinfoDescDeliveryStatus.Default.(int8)
+	wechatpayMixin := schema.WeChatPay{}.Mixin()
+	wechatpayMixinFields0 := wechatpayMixin[0].Fields()
+	_ = wechatpayMixinFields0
+	wechatpayFields := schema.WeChatPay{}.Fields()
+	_ = wechatpayFields
+	// wechatpayDescCreatedAt is the schema descriptor for created_at field.
+	wechatpayDescCreatedAt := wechatpayMixinFields0[0].Descriptor()
+	// wechatpay.DefaultCreatedAt holds the default value on creation for the created_at field.
+	wechatpay.DefaultCreatedAt = wechatpayDescCreatedAt.Default.(func() time.Time)
+	// wechatpayDescUpdatedAt is the schema descriptor for updated_at field.
+	wechatpayDescUpdatedAt := wechatpayMixinFields0[1].Descriptor()
+	// wechatpay.UpdateDefaultUpdatedAt holds the default value on update for the updated_at field.
+	wechatpay.UpdateDefaultUpdatedAt = wechatpayDescUpdatedAt.UpdateDefault.(func() time.Time)
+	// wechatpayDescPayerTotal is the schema descriptor for payer_total field.
+	wechatpayDescPayerTotal := wechatpayFields[6].Descriptor()
+	// wechatpay.DefaultPayerTotal holds the default value on creation for the payer_total field.
+	wechatpay.DefaultPayerTotal = wechatpayDescPayerTotal.Default.(int32)
+	// wechatpayDescTradeState is the schema descriptor for trade_state field.
+	wechatpayDescTradeState := wechatpayFields[7].Descriptor()
+	// wechatpay.DefaultTradeState holds the default value on creation for the trade_state field.
+	wechatpay.DefaultTradeState = wechatpayDescTradeState.Default.(int8)
 }

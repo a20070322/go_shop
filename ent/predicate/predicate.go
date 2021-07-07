@@ -47,3 +47,6 @@ type OrderGoodsSku func(*sql.Selector)
 
 // OrderInfo is the predicate function for orderinfo builders.
 type OrderInfo func(*sql.Selector)
+
+// WeChatPay is the predicate function for wechatpay builders.
+type WeChatPay func(*sql.Selector)

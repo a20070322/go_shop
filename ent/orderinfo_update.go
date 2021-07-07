@@ -11,9 +11,11 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/a20070322/shop-go/ent/customer"
+	"github.com/a20070322/shop-go/ent/orderaddress"
 	"github.com/a20070322/shop-go/ent/ordergoodssku"
 	"github.com/a20070322/shop-go/ent/orderinfo"
 	"github.com/a20070322/shop-go/ent/predicate"
+	"github.com/a20070322/shop-go/ent/wechatpay"
 )
 
 // OrderInfoUpdate is the builder for updating OrderInfo entities.
@@ -67,23 +69,43 @@ func (oiu *OrderInfoUpdate) SetOrderNumber(s string) *OrderInfoUpdate {
 	return oiu
 }
 
-// SetPrepayID sets the "prepay_id" field.
-func (oiu *OrderInfoUpdate) SetPrepayID(s string) *OrderInfoUpdate {
-	oiu.mutation.SetPrepayID(s)
+// SetPayMethod sets the "pay_method" field.
+func (oiu *OrderInfoUpdate) SetPayMethod(i int8) *OrderInfoUpdate {
+	oiu.mutation.ResetPayMethod()
+	oiu.mutation.SetPayMethod(i)
 	return oiu
 }
 
-// SetNillablePrepayID sets the "prepay_id" field if the given value is not nil.
-func (oiu *OrderInfoUpdate) SetNillablePrepayID(s *string) *OrderInfoUpdate {
-	if s != nil {
-		oiu.SetPrepayID(*s)
+// SetNillablePayMethod sets the "pay_method" field if the given value is not nil.
+func (oiu *OrderInfoUpdate) SetNillablePayMethod(i *int8) *OrderInfoUpdate {
+	if i != nil {
+		oiu.SetPayMethod(*i)
 	}
 	return oiu
 }
 
-// ClearPrepayID clears the value of the "prepay_id" field.
-func (oiu *OrderInfoUpdate) ClearPrepayID() *OrderInfoUpdate {
-	oiu.mutation.ClearPrepayID()
+// AddPayMethod adds i to the "pay_method" field.
+func (oiu *OrderInfoUpdate) AddPayMethod(i int8) *OrderInfoUpdate {
+	oiu.mutation.AddPayMethod(i)
+	return oiu
+}
+
+// ClearPayMethod clears the value of the "pay_method" field.
+func (oiu *OrderInfoUpdate) ClearPayMethod() *OrderInfoUpdate {
+	oiu.mutation.ClearPayMethod()
+	return oiu
+}
+
+// SetPayMoney sets the "pay_money" field.
+func (oiu *OrderInfoUpdate) SetPayMoney(i int) *OrderInfoUpdate {
+	oiu.mutation.ResetPayMoney()
+	oiu.mutation.SetPayMoney(i)
+	return oiu
+}
+
+// AddPayMoney adds i to the "pay_money" field.
+func (oiu *OrderInfoUpdate) AddPayMoney(i int) *OrderInfoUpdate {
+	oiu.mutation.AddPayMoney(i)
 	return oiu
 }
 
@@ -183,6 +205,36 @@ func (oiu *OrderInfoUpdate) AddOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfoUpda
 	return oiu.AddOrderGoodsSkuIDs(ids...)
 }
 
+// AddOrderAddresIDs adds the "order_address" edge to the OrderAddress entity by IDs.
+func (oiu *OrderInfoUpdate) AddOrderAddresIDs(ids ...int) *OrderInfoUpdate {
+	oiu.mutation.AddOrderAddresIDs(ids...)
+	return oiu
+}
+
+// AddOrderAddress adds the "order_address" edges to the OrderAddress entity.
+func (oiu *OrderInfoUpdate) AddOrderAddress(o ...*OrderAddress) *OrderInfoUpdate {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiu.AddOrderAddresIDs(ids...)
+}
+
+// AddWechatPayIDs adds the "wechat_pay" edge to the WeChatPay entity by IDs.
+func (oiu *OrderInfoUpdate) AddWechatPayIDs(ids ...int) *OrderInfoUpdate {
+	oiu.mutation.AddWechatPayIDs(ids...)
+	return oiu
+}
+
+// AddWechatPay adds the "wechat_pay" edges to the WeChatPay entity.
+func (oiu *OrderInfoUpdate) AddWechatPay(w ...*WeChatPay) *OrderInfoUpdate {
+	ids := make([]int, len(w))
+	for i := range w {
+		ids[i] = w[i].ID
+	}
+	return oiu.AddWechatPayIDs(ids...)
+}
+
 // Mutation returns the OrderInfoMutation object of the builder.
 func (oiu *OrderInfoUpdate) Mutation() *OrderInfoMutation {
 	return oiu.mutation
@@ -213,6 +265,48 @@ func (oiu *OrderInfoUpdate) RemoveOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfoU
 		ids[i] = o[i].ID
 	}
 	return oiu.RemoveOrderGoodsSkuIDs(ids...)
+}
+
+// ClearOrderAddress clears all "order_address" edges to the OrderAddress entity.
+func (oiu *OrderInfoUpdate) ClearOrderAddress() *OrderInfoUpdate {
+	oiu.mutation.ClearOrderAddress()
+	return oiu
+}
+
+// RemoveOrderAddresIDs removes the "order_address" edge to OrderAddress entities by IDs.
+func (oiu *OrderInfoUpdate) RemoveOrderAddresIDs(ids ...int) *OrderInfoUpdate {
+	oiu.mutation.RemoveOrderAddresIDs(ids...)
+	return oiu
+}
+
+// RemoveOrderAddress removes "order_address" edges to OrderAddress entities.
+func (oiu *OrderInfoUpdate) RemoveOrderAddress(o ...*OrderAddress) *OrderInfoUpdate {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiu.RemoveOrderAddresIDs(ids...)
+}
+
+// ClearWechatPay clears all "wechat_pay" edges to the WeChatPay entity.
+func (oiu *OrderInfoUpdate) ClearWechatPay() *OrderInfoUpdate {
+	oiu.mutation.ClearWechatPay()
+	return oiu
+}
+
+// RemoveWechatPayIDs removes the "wechat_pay" edge to WeChatPay entities by IDs.
+func (oiu *OrderInfoUpdate) RemoveWechatPayIDs(ids ...int) *OrderInfoUpdate {
+	oiu.mutation.RemoveWechatPayIDs(ids...)
+	return oiu
+}
+
+// RemoveWechatPay removes "wechat_pay" edges to WeChatPay entities.
+func (oiu *OrderInfoUpdate) RemoveWechatPay(w ...*WeChatPay) *OrderInfoUpdate {
+	ids := make([]int, len(w))
+	for i := range w {
+		ids[i] = w[i].ID
+	}
+	return oiu.RemoveWechatPayIDs(ids...)
 }
 
 // Save executes the query and returns the number of nodes affected by the update operation.
@@ -326,17 +420,38 @@ func (oiu *OrderInfoUpdate) sqlSave(ctx context.Context) (n int, err error) {
 			Column: orderinfo.FieldOrderNumber,
 		})
 	}
-	if value, ok := oiu.mutation.PrepayID(); ok {
+	if value, ok := oiu.mutation.PayMethod(); ok {
 		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
+			Type:   field.TypeInt8,
 			Value:  value,
-			Column: orderinfo.FieldPrepayID,
+			Column: orderinfo.FieldPayMethod,
 		})
 	}
-	if oiu.mutation.PrepayIDCleared() {
+	if value, ok := oiu.mutation.AddedPayMethod(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt8,
+			Value:  value,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if oiu.mutation.PayMethodCleared() {
 		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
-			Column: orderinfo.FieldPrepayID,
+			Type:   field.TypeInt8,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if value, ok := oiu.mutation.PayMoney(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
+		})
+	}
+	if value, ok := oiu.mutation.AddedPayMoney(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
 		})
 	}
 	if value, ok := oiu.mutation.Remark(); ok {
@@ -469,6 +584,114 @@ func (oiu *OrderInfoUpdate) sqlSave(ctx context.Context) (n int, err error) {
 		}
 		_spec.Edges.Add = append(_spec.Edges.Add, edge)
 	}
+	if oiu.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiu.mutation.RemovedOrderAddressIDs(); len(nodes) > 0 && !oiu.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiu.mutation.OrderAddressIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if oiu.mutation.WechatPayCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.WechatPayTable,
+			Columns: []string{orderinfo.WechatPayColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: wechatpay.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiu.mutation.RemovedWechatPayIDs(); len(nodes) > 0 && !oiu.mutation.WechatPayCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.WechatPayTable,
+			Columns: []string{orderinfo.WechatPayColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: wechatpay.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiu.mutation.WechatPayIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.WechatPayTable,
+			Columns: []string{orderinfo.WechatPayColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: wechatpay.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
 	if n, err = sqlgraph.UpdateNodes(ctx, oiu.driver, _spec); err != nil {
 		if _, ok := err.(*sqlgraph.NotFoundError); ok {
 			err = &NotFoundError{orderinfo.Label}
@@ -526,23 +749,43 @@ func (oiuo *OrderInfoUpdateOne) SetOrderNumber(s string) *OrderInfoUpdateOne {
 	return oiuo
 }
 
-// SetPrepayID sets the "prepay_id" field.
-func (oiuo *OrderInfoUpdateOne) SetPrepayID(s string) *OrderInfoUpdateOne {
-	oiuo.mutation.SetPrepayID(s)
+// SetPayMethod sets the "pay_method" field.
+func (oiuo *OrderInfoUpdateOne) SetPayMethod(i int8) *OrderInfoUpdateOne {
+	oiuo.mutation.ResetPayMethod()
+	oiuo.mutation.SetPayMethod(i)
 	return oiuo
 }
 
-// SetNillablePrepayID sets the "prepay_id" field if the given value is not nil.
-func (oiuo *OrderInfoUpdateOne) SetNillablePrepayID(s *string) *OrderInfoUpdateOne {
-	if s != nil {
-		oiuo.SetPrepayID(*s)
+// SetNillablePayMethod sets the "pay_method" field if the given value is not nil.
+func (oiuo *OrderInfoUpdateOne) SetNillablePayMethod(i *int8) *OrderInfoUpdateOne {
+	if i != nil {
+		oiuo.SetPayMethod(*i)
 	}
 	return oiuo
 }
 
-// ClearPrepayID clears the value of the "prepay_id" field.
-func (oiuo *OrderInfoUpdateOne) ClearPrepayID() *OrderInfoUpdateOne {
-	oiuo.mutation.ClearPrepayID()
+// AddPayMethod adds i to the "pay_method" field.
+func (oiuo *OrderInfoUpdateOne) AddPayMethod(i int8) *OrderInfoUpdateOne {
+	oiuo.mutation.AddPayMethod(i)
+	return oiuo
+}
+
+// ClearPayMethod clears the value of the "pay_method" field.
+func (oiuo *OrderInfoUpdateOne) ClearPayMethod() *OrderInfoUpdateOne {
+	oiuo.mutation.ClearPayMethod()
+	return oiuo
+}
+
+// SetPayMoney sets the "pay_money" field.
+func (oiuo *OrderInfoUpdateOne) SetPayMoney(i int) *OrderInfoUpdateOne {
+	oiuo.mutation.ResetPayMoney()
+	oiuo.mutation.SetPayMoney(i)
+	return oiuo
+}
+
+// AddPayMoney adds i to the "pay_money" field.
+func (oiuo *OrderInfoUpdateOne) AddPayMoney(i int) *OrderInfoUpdateOne {
+	oiuo.mutation.AddPayMoney(i)
 	return oiuo
 }
 
@@ -642,6 +885,36 @@ func (oiuo *OrderInfoUpdateOne) AddOrderGoodsSku(o ...*OrderGoodsSku) *OrderInfo
 	return oiuo.AddOrderGoodsSkuIDs(ids...)
 }
 
+// AddOrderAddresIDs adds the "order_address" edge to the OrderAddress entity by IDs.
+func (oiuo *OrderInfoUpdateOne) AddOrderAddresIDs(ids ...int) *OrderInfoUpdateOne {
+	oiuo.mutation.AddOrderAddresIDs(ids...)
+	return oiuo
+}
+
+// AddOrderAddress adds the "order_address" edges to the OrderAddress entity.
+func (oiuo *OrderInfoUpdateOne) AddOrderAddress(o ...*OrderAddress) *OrderInfoUpdateOne {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiuo.AddOrderAddresIDs(ids...)
+}
+
+// AddWechatPayIDs adds the "wechat_pay" edge to the WeChatPay entity by IDs.
+func (oiuo *OrderInfoUpdateOne) AddWechatPayIDs(ids ...int) *OrderInfoUpdateOne {
+	oiuo.mutation.AddWechatPayIDs(ids...)
+	return oiuo
+}
+
+// AddWechatPay adds the "wechat_pay" edges to the WeChatPay entity.
+func (oiuo *OrderInfoUpdateOne) AddWechatPay(w ...*WeChatPay) *OrderInfoUpdateOne {
+	ids := make([]int, len(w))
+	for i := range w {
+		ids[i] = w[i].ID
+	}
+	return oiuo.AddWechatPayIDs(ids...)
+}
+
 // Mutation returns the OrderInfoMutation object of the builder.
 func (oiuo *OrderInfoUpdateOne) Mutation() *OrderInfoMutation {
 	return oiuo.mutation
@@ -672,6 +945,48 @@ func (oiuo *OrderInfoUpdateOne) RemoveOrderGoodsSku(o ...*OrderGoodsSku) *OrderI
 		ids[i] = o[i].ID
 	}
 	return oiuo.RemoveOrderGoodsSkuIDs(ids...)
+}
+
+// ClearOrderAddress clears all "order_address" edges to the OrderAddress entity.
+func (oiuo *OrderInfoUpdateOne) ClearOrderAddress() *OrderInfoUpdateOne {
+	oiuo.mutation.ClearOrderAddress()
+	return oiuo
+}
+
+// RemoveOrderAddresIDs removes the "order_address" edge to OrderAddress entities by IDs.
+func (oiuo *OrderInfoUpdateOne) RemoveOrderAddresIDs(ids ...int) *OrderInfoUpdateOne {
+	oiuo.mutation.RemoveOrderAddresIDs(ids...)
+	return oiuo
+}
+
+// RemoveOrderAddress removes "order_address" edges to OrderAddress entities.
+func (oiuo *OrderInfoUpdateOne) RemoveOrderAddress(o ...*OrderAddress) *OrderInfoUpdateOne {
+	ids := make([]int, len(o))
+	for i := range o {
+		ids[i] = o[i].ID
+	}
+	return oiuo.RemoveOrderAddresIDs(ids...)
+}
+
+// ClearWechatPay clears all "wechat_pay" edges to the WeChatPay entity.
+func (oiuo *OrderInfoUpdateOne) ClearWechatPay() *OrderInfoUpdateOne {
+	oiuo.mutation.ClearWechatPay()
+	return oiuo
+}
+
+// RemoveWechatPayIDs removes the "wechat_pay" edge to WeChatPay entities by IDs.
+func (oiuo *OrderInfoUpdateOne) RemoveWechatPayIDs(ids ...int) *OrderInfoUpdateOne {
+	oiuo.mutation.RemoveWechatPayIDs(ids...)
+	return oiuo
+}
+
+// RemoveWechatPay removes "wechat_pay" edges to WeChatPay entities.
+func (oiuo *OrderInfoUpdateOne) RemoveWechatPay(w ...*WeChatPay) *OrderInfoUpdateOne {
+	ids := make([]int, len(w))
+	for i := range w {
+		ids[i] = w[i].ID
+	}
+	return oiuo.RemoveWechatPayIDs(ids...)
 }
 
 // Select allows selecting one or more fields (columns) of the returned entity.
@@ -809,17 +1124,38 @@ func (oiuo *OrderInfoUpdateOne) sqlSave(ctx context.Context) (_node *OrderInfo, 
 			Column: orderinfo.FieldOrderNumber,
 		})
 	}
-	if value, ok := oiuo.mutation.PrepayID(); ok {
+	if value, ok := oiuo.mutation.PayMethod(); ok {
 		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
+			Type:   field.TypeInt8,
 			Value:  value,
-			Column: orderinfo.FieldPrepayID,
+			Column: orderinfo.FieldPayMethod,
 		})
 	}
-	if oiuo.mutation.PrepayIDCleared() {
+	if value, ok := oiuo.mutation.AddedPayMethod(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt8,
+			Value:  value,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if oiuo.mutation.PayMethodCleared() {
 		_spec.Fields.Clear = append(_spec.Fields.Clear, &sqlgraph.FieldSpec{
-			Type:   field.TypeString,
-			Column: orderinfo.FieldPrepayID,
+			Type:   field.TypeInt8,
+			Column: orderinfo.FieldPayMethod,
+		})
+	}
+	if value, ok := oiuo.mutation.PayMoney(); ok {
+		_spec.Fields.Set = append(_spec.Fields.Set, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
+		})
+	}
+	if value, ok := oiuo.mutation.AddedPayMoney(); ok {
+		_spec.Fields.Add = append(_spec.Fields.Add, &sqlgraph.FieldSpec{
+			Type:   field.TypeInt,
+			Value:  value,
+			Column: orderinfo.FieldPayMoney,
 		})
 	}
 	if value, ok := oiuo.mutation.Remark(); ok {
@@ -944,6 +1280,114 @@ func (oiuo *OrderInfoUpdateOne) sqlSave(ctx context.Context) (_node *OrderInfo, 
 				IDSpec: &sqlgraph.FieldSpec{
 					Type:   field.TypeInt,
 					Column: ordergoodssku.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if oiuo.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiuo.mutation.RemovedOrderAddressIDs(); len(nodes) > 0 && !oiuo.mutation.OrderAddressCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiuo.mutation.OrderAddressIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.OrderAddressTable,
+			Columns: []string{orderinfo.OrderAddressColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: orderaddress.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Add = append(_spec.Edges.Add, edge)
+	}
+	if oiuo.mutation.WechatPayCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.WechatPayTable,
+			Columns: []string{orderinfo.WechatPayColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: wechatpay.FieldID,
+				},
+			},
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiuo.mutation.RemovedWechatPayIDs(); len(nodes) > 0 && !oiuo.mutation.WechatPayCleared() {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.WechatPayTable,
+			Columns: []string{orderinfo.WechatPayColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: wechatpay.FieldID,
+				},
+			},
+		}
+		for _, k := range nodes {
+			edge.Target.Nodes = append(edge.Target.Nodes, k)
+		}
+		_spec.Edges.Clear = append(_spec.Edges.Clear, edge)
+	}
+	if nodes := oiuo.mutation.WechatPayIDs(); len(nodes) > 0 {
+		edge := &sqlgraph.EdgeSpec{
+			Rel:     sqlgraph.O2M,
+			Inverse: false,
+			Table:   orderinfo.WechatPayTable,
+			Columns: []string{orderinfo.WechatPayColumn},
+			Bidi:    false,
+			Target: &sqlgraph.EdgeTarget{
+				IDSpec: &sqlgraph.FieldSpec{
+					Type:   field.TypeInt,
+					Column: wechatpay.FieldID,
 				},
 			},
 		}

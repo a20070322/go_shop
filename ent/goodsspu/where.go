@@ -135,6 +135,13 @@ func SpuHeadImg(v string) predicate.GoodsSpu {
 	})
 }
 
+// SalesNum applies equality check predicate on the "sales_num" field. It's identical to SalesNumEQ.
+func SalesNum(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldSalesNum), v))
+	})
+}
+
 // SpuDesc applies equality check predicate on the "spu_desc" field. It's identical to SpuDescEQ.
 func SpuDesc(v string) predicate.GoodsSpu {
 	return predicate.GoodsSpu(func(s *sql.Selector) {
@@ -756,6 +763,96 @@ func SpuHeadImgEqualFold(v string) predicate.GoodsSpu {
 func SpuHeadImgContainsFold(v string) predicate.GoodsSpu {
 	return predicate.GoodsSpu(func(s *sql.Selector) {
 		s.Where(sql.ContainsFold(s.C(FieldSpuHeadImg), v))
+	})
+}
+
+// SalesNumEQ applies the EQ predicate on the "sales_num" field.
+func SalesNumEQ(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.EQ(s.C(FieldSalesNum), v))
+	})
+}
+
+// SalesNumNEQ applies the NEQ predicate on the "sales_num" field.
+func SalesNumNEQ(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.NEQ(s.C(FieldSalesNum), v))
+	})
+}
+
+// SalesNumIn applies the In predicate on the "sales_num" field.
+func SalesNumIn(vs ...int) predicate.GoodsSpu {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.In(s.C(FieldSalesNum), v...))
+	})
+}
+
+// SalesNumNotIn applies the NotIn predicate on the "sales_num" field.
+func SalesNumNotIn(vs ...int) predicate.GoodsSpu {
+	v := make([]interface{}, len(vs))
+	for i := range v {
+		v[i] = vs[i]
+	}
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		// if not arguments were provided, append the FALSE constants,
+		// since we can't apply "IN ()". This will make this predicate falsy.
+		if len(v) == 0 {
+			s.Where(sql.False())
+			return
+		}
+		s.Where(sql.NotIn(s.C(FieldSalesNum), v...))
+	})
+}
+
+// SalesNumGT applies the GT predicate on the "sales_num" field.
+func SalesNumGT(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.GT(s.C(FieldSalesNum), v))
+	})
+}
+
+// SalesNumGTE applies the GTE predicate on the "sales_num" field.
+func SalesNumGTE(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.GTE(s.C(FieldSalesNum), v))
+	})
+}
+
+// SalesNumLT applies the LT predicate on the "sales_num" field.
+func SalesNumLT(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.LT(s.C(FieldSalesNum), v))
+	})
+}
+
+// SalesNumLTE applies the LTE predicate on the "sales_num" field.
+func SalesNumLTE(v int) predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.LTE(s.C(FieldSalesNum), v))
+	})
+}
+
+// SalesNumIsNil applies the IsNil predicate on the "sales_num" field.
+func SalesNumIsNil() predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.IsNull(s.C(FieldSalesNum)))
+	})
+}
+
+// SalesNumNotNil applies the NotNil predicate on the "sales_num" field.
+func SalesNumNotNil() predicate.GoodsSpu {
+	return predicate.GoodsSpu(func(s *sql.Selector) {
+		s.Where(sql.NotNull(s.C(FieldSalesNum)))
 	})
 }
 

@@ -40,6 +40,8 @@ type Tx struct {
 	OrderGoodsSku *OrderGoodsSkuClient
 	// OrderInfo is the client for interacting with the OrderInfo builders.
 	OrderInfo *OrderInfoClient
+	// WeChatPay is the client for interacting with the WeChatPay builders.
+	WeChatPay *WeChatPayClient
 
 	// lazily loaded.
 	client     *Client
@@ -189,6 +191,7 @@ func (tx *Tx) init() {
 	tx.OrderAddress = NewOrderAddressClient(tx.config)
 	tx.OrderGoodsSku = NewOrderGoodsSkuClient(tx.config)
 	tx.OrderInfo = NewOrderInfoClient(tx.config)
+	tx.WeChatPay = NewWeChatPayClient(tx.config)
 }
 
 // txDriver wraps the given dialect.Tx with a nop dialect.Driver implementation.

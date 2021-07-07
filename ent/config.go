@@ -38,6 +38,7 @@ type hooks struct {
 	OrderAddress        []ent.Hook
 	OrderGoodsSku       []ent.Hook
 	OrderInfo           []ent.Hook
+	WeChatPay           []ent.Hook
 }
 
 // Options applies the options on the config object.
